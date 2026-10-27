@@ -1,6 +1,7 @@
 # PayPal AI Hackathon 2026
 
 Contest research checked: 2026-10-19 (KST).
+Submission requirements rechecked: 2026-10-27 (KST).
 
 - [PACT design](./PACT.md)
 - [Project glossary](./GLOSSARY.md)
@@ -126,7 +127,7 @@ The [local runbook](docs/feasibility/negotiated-image-runbook.md) covers request
 The standalone image command does not run agent negotiation, persistent intake, or payments.
 The application connects those services through the source exchange and existing transaction worker.
 The target interface uses one transaction detail view with expandable agreement, checker, and payment evidence.
-A private [2:45 review draft](docs/feasibility/demo-recording-runbook-20261025.md) combines actual browser actions, recorded command execution, and labeled retained evidence.
+A [2:45 public-upload candidate](docs/feasibility/demo-recording-runbook-20261025.md) combines actual browser actions, recorded command execution, and labeled retained evidence.
 The [actual Gemini command](docs/feasibility/evidence/single-command-live-gemini-20261025.json) used synthetic PayPal responses and made no additional payment.
 The public source repository and MIT License are available for review.
 The demonstration exports evidence without Disputes API submission.
