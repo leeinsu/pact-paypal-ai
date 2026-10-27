@@ -6,7 +6,10 @@ Submission requirements rechecked: 2026-10-27 (KST).
 - [PACT design](./PACT.md)
 - [Project glossary](./GLOSSARY.md)
 - [Source setup guide](./docs/feasibility/clean-start-20261025.md)
+- [Judge guide](./JUDGE_GUIDE.md)
 - [Submission description](./docs/feasibility/submission-description-draft-20261025.md)
+- [Devpost entry draft](./docs/submission/devpost-entry.md)
+- [Non-video submission checklist](./docs/submission/non-video-checklist.md)
 - [Public source repository](https://github.com/leeinsu/pact-paypal-ai)
 
 ## Submission summary
