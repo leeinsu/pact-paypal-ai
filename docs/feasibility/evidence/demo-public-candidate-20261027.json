@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-27",
+  "video": "local public-upload candidate",
+  "sha256": "907ef8e23e8aba84dace38e3effcd0cfdc9bb5bcf1b2a14d739068eecdc62d9a",
+  "bytes": 2735498,
+  "probe": {
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 900,
+        "pixel_format": "yuv420p",
+        "frame_rate": "25/1"
+      }
+    ],
+    "duration_seconds": 165,
+    "audio_streams": 0
+  },
+  "complete_decode_passed": true,
+  "visual_review": {
+    "contact_sheet_interval_seconds": 15,
+    "result": "The English text is readable. The final card shows 565 tests and the public repository."
+  },
+  "actual_model_requests": 0,
+  "actual_paypal_requests": 0,
+  "additional_payment_jpy": 0,
+  "publication": {
+    "youtube_uploaded": false,
+    "devpost_submitted": false
+  },
+  "limits": [
+    "Consent and actual recovery use retained records.",
+    "Offline signatures do not independently verify PayPal settlement.",
+    "This self-review does not establish independent judge acceptance."
+  ]
+}

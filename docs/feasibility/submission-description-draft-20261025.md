@@ -1,7 +1,7 @@
 # PACT submission description draft
 
 Date: 2026-10-25.
-Status: Local draft. No publication or submission occurred.
+Status: The source repository is public. YouTube upload and final submission remain open.
 Terms follow the [shared glossary](../../GLOSSARY.md).
 
 ## Problem and intended users
@@ -47,13 +47,13 @@ The [source setup check](clean-start-20261025.md) passed 550 tests and isolated 
 
 The later single-command regression passed all 559 tests.
 A [recorded command](evidence/single-command-live-gemini-20261025.json) also completed with actual Gemini and synthetic PayPal responses.
-The private 165-second v3 draft records model execution, damaged-output rejection, and offline verification.
-The v3 draft keeps the transaction ID visible during browser scrolling.
+The 165-second upload candidate records model execution, damaged-output rejection, and offline verification.
+The upload candidate keeps the transaction ID visible during browser scrolling.
 Consent and actual payment interruption use retained records.
 The later G4 suite and [restored source archive](evidence/source-archive-post-g4-20261025.json) each passed 565 tests with existing dependencies.
 G4 passed independent review within its [bounded Sandbox delivery scope](g4-acceptance-20261025.md).
 Missing output preserves paid state, unresolved delivery, support, and evidence after restart.
-Adopted demonstration acceptance remains open.
+The public-upload candidate passed media and visual checks.
 
 ## Limits reviewers must see
 

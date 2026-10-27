@@ -1,16 +1,43 @@
 # Record the bounded PACT demonstration
 
 Date: 2026-10-25.
-Status: A private 165-second review draft exists. Adopted demonstration acceptance and public submission remain open.
+Status: A 165-second public-upload candidate exists. YouTube upload and final submission remain open.
 Terms follow the [shared glossary](../../GLOSSARY.md).
 
-## Current timed review draft
+## Current public-upload candidate
+
+Use `/home/user/.local/state/pact-demo-recording-20261025/pact-demo-public-165s.mp4` for the public upload.
+The [candidate record](evidence/demo-public-candidate-20261027.json) identifies its hash and media checks.
+The final card reports 565 passing tests and the public source repository.
+The video contains English text and no audio.
+
+Use this YouTube title:
+
+```text
+PACT — Bounded Agent Commerce with Gemini and PayPal Sandbox
+```
+
+Use this YouTube description:
+
+```text
+PACT lets a buyer and provider delegate a bounded image task to separate agents.
+Gemini chooses permitted actions. Local checks enforce signed Mandates and output rules.
+PayPal Sandbox handles consent, authorization, capture, void, and payment readback.
+
+Source: https://github.com/leeinsu/pact-paypal-ai
+This prototype uses Sandbox payments only.
+```
+
+Set the YouTube visibility to Public.
+Do not add music or third-party footage.
+
+## Earlier timed review draft
 
 The v3 draft preserves the v2 content and adds a fixed transaction label during browser scrolling.
 The [v3 record](evidence/demo-review-v3-20261025.json) identifies the video hash, complete decoding result, and inspected frames.
-Use `/home/user/.local/state/pact-demo-recording-20261025/pact-review-v3-165s.mp4` for the current private draft.
-The final card retains the 559-test result from recording time.
-The later local regression and restored archive each passed 562 tests.
+Use `/home/user/.local/state/pact-demo-recording-20261025/pact-review-v3-165s.mp4` for the earlier private draft.
+The earlier final card retains the 559-test result from recording time.
+Later regression checks reached 565 passing tests.
 
 ### Adopted scope review
 
@@ -57,8 +84,8 @@ The model command uses synthetic PayPal responses and a separate transaction.
 Preparation made zero PayPal requests and no additional payment.
 The cumulative authorization and conservative consumption remain JPY 2500 and JPY 12.
 These results do not establish complete acceptance of the adopted demonstration.
-The [submission description](submission-description-draft-20261025.md) remains a local draft.
-No public upload or submission occurred.
+The [submission description](submission-description-draft-20261025.md) remains a draft.
+The source repository is public. No YouTube upload or Devpost submission occurred.
 
 ## Historical first draft
 
@@ -149,7 +176,7 @@ The current Tailscale address provides private access and does not establish pub
 The repository uses the top-level MIT License.
 The [source setup check](clean-start-20261025.md) passed fresh dependency installation, all 550 tests, and synthetic HTTPS startup.
 The [public repository](https://github.com/leeinsu/pact-paypal-ai) and MIT License are available.
-Fresh-account commerce setup, public video, and final submission remain unverified.
+Fresh-account commerce setup, public YouTube availability, and final submission remain unverified.
 Do not publish credentials, private state, participant evidence packages, or browser artifacts.
 Final Devpost submission has not been performed.
 
