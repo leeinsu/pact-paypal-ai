@@ -1,0 +1,46 @@
+{
+  "artifacts": {
+    "README.md": "e5c5265c369961877a9404641feb7b6a8e32d57a9d364f0403f11e2d0c405327",
+    "acceptance/transaction/test_delegation.py": "d1741d999c7dd7763ebda9827ffb0ff0cb41f1d6964457fe472aca5d74eb381d",
+    "acceptance/transaction/test_negotiation.py": "1c588d9d3a819a52c5198581ee97bad9148f97fa453c2bd082a95b1135617043",
+    "acceptance/transaction/test_worker.py": "bcbc5aa34a926d8d5069e63f01e524648f2ab3cb2328fbe77418d1d1f3ca81a1",
+    "docs/feasibility/g3-authentication-20261024.md": "6beb90b0f2bc6984855ea9922754139ab0094eb8d7bdb9cae0cdad4bb3631978",
+    "docs/feasibility/g3-signed-flow-20261024.md": "a6517a8727af22462f03bcb121b3b1c19840ef8c2258ef414c8ff25fda93755e",
+    "docs/pact-revision-proposal.md": "a3586be7576696144fb90d43c7c050e7fed325c8be6ad7ab29a1bc0f579957cb",
+    "pact/delegation.py": "e71685c66824a16e8b8ecd05eeaf65a0aef216c3ef820ef1ea13f1af0ec92e6e",
+    "pact/negotiation.py": "40172d87a9fa7ea8ac211d2ad52a13018b71a6ce94d299383cf5e3d6cc88b39d",
+    "pact/reservations.py": "07a4f7d25a3bc67eeefd28be2d9f166e3dd1f23199bba688f135b74f4069c854",
+    "pact/worker.py": "0948d20bfdd079d35d8ba7166f35fdcb09919f456a51a6e9f67b064dd86c23bf"
+  },
+  "command": "PATH=\"/tmp/pact-opencv-venv/bin:$PATH\" DEVFLOW_TEST_RESULT=/tmp/pact-g3-signed-flow-tests.json ./verify.sh",
+  "credential_access": false,
+  "dependency_check": "No broken requirements found.",
+  "exit_code": 0,
+  "external_http_requests": 0,
+  "g2_freeze_sha256": "d6698d24443725123ec9363bb782193442371904746fdc7fd36bace882715c29",
+  "language_review": "Reviewed changed English prose and glossary terms. No additional exceptions. No formal ASD-STE100 compliance claim.",
+  "local_tests": {
+    "executed": 313,
+    "failure_class": "none",
+    "failures": 0,
+    "skipped": []
+  },
+  "new_tests": {
+    "delegation": 16,
+    "negotiation": 10,
+    "worker": 9
+  },
+  "payment_requests": 0,
+  "recorded_at_utc": "2026-10-24T06:51:40.195747+00:00",
+  "scope": "User-signed Mandates, both agent signatures, linked proposals, and the local core transaction worker. G3 remains open.",
+  "test_log_sha256": "9bf7ad070a6de5ebf00e9f74a3ef911aa329ee3c0436a36ac6bfca3c346f3566",
+  "unchanged_g2_repository_artifacts": 97,
+  "unchanged_g2_runtime_binaries": 3,
+  "verified_baselines": {
+    "authentication": 8,
+    "operations": 12,
+    "payments": 10,
+    "reservations": 6,
+    "transport": 18
+  }
+}

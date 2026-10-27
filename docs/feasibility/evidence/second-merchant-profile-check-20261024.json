@@ -1,0 +1,60 @@
+{
+  "account_tests_passed": 17,
+  "artifacts": {
+    "acceptance/transaction/test_accounts.py": "463ae55788e14cb99927ef921483abb9a2795275557af911165310d87fe54413",
+    "docs/feasibility/second-merchant-profile-check-20261024.md": "26670ea0edb94776a1fd9ae33f3140fd36614e32258f9ec9d2383a2c53de71a5",
+    "pact/paypal.py": "8a187106a58a6ee5eaf0d0e841067c06c3d1ca1346d92a2e153052c589b9e329"
+  },
+  "browser": {
+    "confirmation_visible": false,
+    "consent": true,
+    "corrected_application_status": 400,
+    "https_return": true,
+    "new_account_login": true
+  },
+  "budget": {
+    "authorization_increased": false,
+    "authorization_jpy": 2500,
+    "authorization_reset": false,
+    "payment_mutations": 0,
+    "sandbox_spend_jpy": 0,
+    "vault_mutations": 0
+  },
+  "business_validation_relaxed": false,
+  "date": "2026-10-24",
+  "existing_rest_app_preserved": true,
+  "language_review": {
+    "formal_compliance_claimed": false,
+    "scope": "New report and evidence labels"
+  },
+  "new_account_credentials_present": true,
+  "ordinary_service_status": 200,
+  "original_credentials_replaced": false,
+  "original_seller_exact_cause_established": false,
+  "private_state_counts": {
+    "merchant_registration_challenges": 0,
+    "merchants": 0
+  },
+  "profile": {
+    "account_type_present": false,
+    "business_type_established": false,
+    "corrected_production_request_status": 200,
+    "oauth_explicit_schema_status": 200,
+    "openid_explicit_schema_status": 200,
+    "openid_without_schema_status": 401,
+    "payer_id_present": true,
+    "verified_account_equals_true_string": true,
+    "verified_account_type": "str",
+    "without_schema_error": "invalid_schema"
+  },
+  "regression_failed_before_correction": true,
+  "schema_correction_applied": true,
+  "scope": "Second business account profile comparison and explicit schema correction",
+  "temporary_diagnostics_removed": true,
+  "tests": {
+    "executed": 513,
+    "failure_class": "none",
+    "failures": 0,
+    "skipped": []
+  }
+}

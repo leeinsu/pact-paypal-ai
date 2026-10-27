@@ -1,0 +1,80 @@
+{
+  "account_mutation_requests": 0,
+  "artifacts": {
+    "README.md": "f22f5312c951fc60832562a55407edf043b341aca7065ffedeb77446e6adad33",
+    "acceptance/transaction/test_web.py": "fa61d182f8a10cc68ea4ed335c112f9d26f028ea45c752f02f38249164a667fe",
+    "docs/feasibility/g3-browser-workspace-20261024.md": "0abda9868ac108a24d0074e8819371d97a36bf3e938ad3d64389a48b5ab1caf1",
+    "docs/feasibility/user-checklist.ko.md": "eb5e687940624ba2c3f7cfed5b6fee66b4c89d50e6ab5f9d784b3cb0d18ad1a6",
+    "pact/http.py": "593df51a79e2eec8d728ecbc22664fa9e3ce2f1ac43c4d23a346670fe14aa637",
+    "pact/web/app.css": "f2479bf3270152104409b521432149e5cf9c349bd9bf64d9e7e023369e804674",
+    "pact/web/app.js": "006db0b8275494e47eb04749c73170c74325bfba4be13955c69ff1f24141d85a",
+    "pact/web/index.html": "9590eb809633456f47e489080d820af8d3d05d3a596bd30f1d5e9293690bc704"
+  },
+  "command": "PATH=\"/tmp/pact-opencv-venv/bin:$PATH\" DEVFLOW_TEST_RESULT=/tmp/pact-g3-browser-workspace-tests.json ./verify.sh",
+  "credential_access": false,
+  "exit_code": 0,
+  "g2_freeze_sha256": "d6698d24443725123ec9363bb782193442371904746fdc7fd36bace882715c29",
+  "language_review": "Reviewed changed English prose and glossary terms. The Korean checklist follows the explicit user exception. No formal ASD-STE100 compliance claim.",
+  "local_test_external_requests": 0,
+  "local_tests": {
+    "executed": 476,
+    "failure_class": "none",
+    "failures": 0,
+    "skipped": []
+  },
+  "manual_browser_checks": {
+    "changed_purpose_finish_requests": 0,
+    "damaged_download_rejected": true,
+    "engine": "Chromium",
+    "http_only_cookie": true,
+    "mobile_horizontal_overflow": false,
+    "mobile_width_pixels": 375,
+    "nonextractable_private_key": true,
+    "nonparticipant_rejected": true,
+    "output_and_evidence_downloads": true,
+    "paid_detail": true,
+    "stop_notice": true,
+    "synthetic_identity_persistence": true,
+    "temporary_browser_identity_removed": true,
+    "temporary_certificate_exception_removed": true,
+    "wrong_purpose_challenge_rejected": true
+  },
+  "manual_browser_loopback_https": true,
+  "new_tests": {
+    "browser_assets": 4
+  },
+  "payment_requests": 0,
+  "recorded_at_utc": "2026-10-24T12:02:05.032519+00:00",
+  "scope": "Local browser workspace with synthetic transactions. G3 remains open.",
+  "test_log_sha256": "5dfabfa8e99fac513171be0ca604a4cb9896c9663bd4d85a1b63bb08c025d634",
+  "unchanged_g2_repository_artifacts": 97,
+  "unchanged_g2_runtime_binaries": 3,
+  "unverified": [
+    "Actual PayPal account consent",
+    "Complete agent transaction",
+    "Other browser engines",
+    "Public deployment",
+    "Device recovery",
+    "Evidence retention controls"
+  ],
+  "verified_baselines": {
+    "authentication": 8,
+    "buyer-linkage": 7,
+    "conditions": 13,
+    "detail": 6,
+    "http": 6,
+    "http-records": 9,
+    "local-runtime": 5,
+    "merchant-linkage": 8,
+    "notifications": 6,
+    "offline-records": 6,
+    "operations": 12,
+    "payments": 10,
+    "readback": 5,
+    "records": 6,
+    "reservations": 6,
+    "signed-flow": 11,
+    "submission": 9,
+    "transport": 18
+  }
+}

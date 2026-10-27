@@ -1,0 +1,124 @@
+{
+  "evidence_class": "preview_diagnostic_only",
+  "purpose": "Partition rejected input pixels without reference masks or rule changes.",
+  "reference_masks_used": false,
+  "results": [
+    {
+      "row_index": 28,
+      "input_sha256": "a5480e09160ea3b9443b49b93b20503407e938e0d6a559dd9dfd564ed5d654bc",
+      "perimeter_reference_rgb": [
+        255,
+        255,
+        255
+      ],
+      "counts": {
+        "connected_background": 599504,
+        "disconnected_background_color": 80820,
+        "intermediate_color": 23475,
+        "foreground_candidate": 217801,
+        "eroded_boundary": 18657
+      },
+      "checker_result": {
+        "status": "unsupported",
+        "input_sha256": "a5480e09160ea3b9443b49b93b20503407e938e0d6a559dd9dfd564ed5d654bc",
+        "width": 960,
+        "height": 960,
+        "rule_id": "g2-v2",
+        "region_counts": {
+          "total": 921600,
+          "background": 599504,
+          "foreground_candidate": 217801,
+          "foreground": 199144,
+          "uncertain": 122952,
+          "foreground_components": 53
+        },
+        "reason_codes": [
+          "foreground_components_not_one",
+          "uncertain_region_exceeds_limit",
+          "input_boundary_ambiguous"
+        ]
+      }
+    },
+    {
+      "row_index": 29,
+      "input_sha256": "8efe84fe276fb909a6c223cd6aec7d4cac6e2058c423bc1568ea89ed197f5a4a",
+      "perimeter_reference_rgb": [
+        255,
+        255,
+        255
+      ],
+      "counts": {
+        "connected_background": 255020,
+        "disconnected_background_color": 15092,
+        "intermediate_color": 15836,
+        "foreground_candidate": 74052,
+        "eroded_boundary": 20692
+      },
+      "checker_result": {
+        "status": "unsupported",
+        "input_sha256": "8efe84fe276fb909a6c223cd6aec7d4cac6e2058c423bc1568ea89ed197f5a4a",
+        "width": 600,
+        "height": 600,
+        "rule_id": "g2-v2",
+        "region_counts": {
+          "total": 360000,
+          "background": 255020,
+          "foreground_candidate": 74052,
+          "foreground": 53360,
+          "uncertain": 51620,
+          "foreground_components": 379
+        },
+        "reason_codes": [
+          "foreground_components_not_one",
+          "uncertain_region_exceeds_limit",
+          "input_boundary_ambiguous"
+        ]
+      }
+    }
+  ],
+  "single_pixel_probe": {
+    "evidence_class": "synthetic_diagnostic_only",
+    "changed_pixels": 1,
+    "pixel_rgb": [
+      220,
+      220,
+      220
+    ],
+    "results": [
+      {
+        "status": "supported",
+        "input_sha256": "2c5c7e87576b40181317d0afffcefe7dfce06912ea8e2a3e1185f6c352a23ec4",
+        "width": 100,
+        "height": 100,
+        "rule_id": "g2-v1",
+        "region_counts": {
+          "total": 10000,
+          "background": 7400,
+          "foreground_candidate": 2599,
+          "foreground": 2399,
+          "uncertain": 201,
+          "foreground_components": 1
+        },
+        "reason_codes": []
+      },
+      {
+        "status": "unsupported",
+        "input_sha256": "2c5c7e87576b40181317d0afffcefe7dfce06912ea8e2a3e1185f6c352a23ec4",
+        "width": 100,
+        "height": 100,
+        "rule_id": "g2-v2",
+        "region_counts": {
+          "total": 10000,
+          "background": 7400,
+          "foreground_candidate": 2599,
+          "foreground": 2399,
+          "uncertain": 201,
+          "foreground_components": 1
+        },
+        "reason_codes": [
+          "input_boundary_ambiguous"
+        ]
+      }
+    ]
+  }
+}

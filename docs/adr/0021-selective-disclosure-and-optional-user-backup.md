@@ -1,3 +1,18 @@
-# 원본 증거는 선택해서 공개하고 사용자별 백업을 허용한다
+# Separate delivery storage from optional user backup
 
-대화 원문, 파일과 개인정보는 각 사용자 쪽에 암호화해 보관한다. 평소에는 확인값과 필요한 일부 내용만 공유하고 분쟁 때 필요한 원본만 공개한다. 사용자는 개인 에이전트가 자기 자료를 선택한 저장소에 암호화해 백업하도록 설정할 수 있으며 복호화 열쇠를 직접 관리한다. 보관 종료 뒤에는 원본과 복호화 열쇠를 삭제하고 삭제한 자료의 종류와 시각을 기록한다. 법과 회계에 필요한 최소 기록은 남길 수 있다. 한 사용자는 상대방이 정당하게 보관하는 자료의 삭제를 강제할 수 없다.
+The server stores original and output files encrypted with access controls for the agreed delivery and retention conditions.
+The server encryption key remains separate from the database, files, repository, user signing keys, and user backup keys.
+The server process can decrypt files, so PACT does not guarantee confidentiality against the host administrator.
+Ordinary support operators cannot download files or change account bindings.
+Each party receives only permitted evidence and files.
+Optional user backup encrypts that user's materials in a chosen destination under the user's backup key.
+User backup and host-loss backup remain outside the core demonstration path.
+After retention ends and holds clear, deletion removes applicable originals and decryption material and records the scope and time.
+Required minimal legal and accounting records can remain.
+One user cannot force deletion of another party's legitimately retained copy.
+Confirmed payment grants access to the same immutable output.
+Delivery retry never creates another payment.
+Permanent file loss remains unresolved and requires support, not a delivery success claim.
+
+GD amendment adopted on 2026-10-24.
+See the [adoption record](../feasibility/gd-reconciliation-20261024.md) and [glossary](../../GLOSSARY.md).

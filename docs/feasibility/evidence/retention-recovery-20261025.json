@@ -1,0 +1,86 @@
+{
+  "date": "2026-10-25",
+  "scope": "Participant retention holds, actual application restart, and injected browser download failure. G3 and G4 remain open.",
+  "tests": {
+    "executed": 521,
+    "skipped": [],
+    "failures": 0,
+    "failure_class": "none"
+  },
+  "full_suite_seconds": 46.206,
+  "javascript_syntax_check": true,
+  "diff_whitespace_check": true,
+  "actual_browser": {
+    "restart_preserves_sessions": true,
+    "restart_download_status": [
+      200,
+      200
+    ],
+    "both_output_hashes_match": true,
+    "retention_actions_survive_restart": 4,
+    "both_holds": 2,
+    "buyer_release_remaining_holds": 1,
+    "provider_own_hold_remained": true,
+    "final_holds": 0,
+    "deletion_permitted": false,
+    "injected_output_failure_status": 503,
+    "retry_download_succeeded": true,
+    "retry_output_hash_checked": true,
+    "guide_includes_retry_and_support": true,
+    "guide_prevents_repayment": true
+  },
+  "offline_verification": {
+    "transaction_id": "sandbox-ai-20261025-01",
+    "signatures_verified": true,
+    "record_count": 14,
+    "retained_checkpoint_verified": true,
+    "output_verified": true,
+    "server_payment_assertion": "paid",
+    "paypal_settlement_verified": false,
+    "state_counts": {
+      "orders": 1,
+      "authorizations": 1,
+      "capture_intents": 1,
+      "settlements": 1,
+      "fulfillment_attempts": 1,
+      "consumptions": 2,
+      "reservations": 0,
+      "retention_actions": 4
+    }
+  },
+  "payment_authorization": {
+    "cumulative_limit_jpy": 2500,
+    "this_increment_consumed_jpy": 0,
+    "conservative_consumed_jpy": 10,
+    "remaining_jpy": 2490
+  },
+  "limitations": [
+    "No verified legal retention policy.",
+    "No deletion endpoint or automatic cleanup.",
+    "No complete support resolution workflow.",
+    "No actual interruption of an outstanding payment.",
+    "No host power failure simulation.",
+    "No independent G3 or G4 acceptance."
+  ],
+  "artifact_sha256": {
+    "pact/reservations.py": "dcc8a627dcab3ee034b3ea7decb6c53c01ea10e2f56e6c3521fe149ebd8e4793",
+    "pact/users.py": "847e29dd8f3e4b1b4182937924868262af15b6726222c99b0cf05a4b37728541",
+    "pact/http.py": "e0b8e73631703bc859b129fa0e2f956ac8331ea35d7c541662cf2ef76197236e",
+    "pact/records.py": "f015eb37004c540b47fefdf1c14521eef585bfc6da4e5580466f0e636f24b2ee",
+    "pact/verify_records.py": "42d0b4c457a1eaf1b30723422a201b93d24d38aa72de771bf4a898ff2881e982",
+    "pact/web/app.js": "856acc30c613f5c33f53f144b39f25da7a23361f85e1e485caecdb6198372af6",
+    "pact/web/index.html": "93e83037cec4b1c784dd79148b345755a7faa1613a1f468446c14338acd41f04",
+    "acceptance/transaction/test_retention.py": "69eebda13455ef303b5da689aa2d46f40711fd70cc3b9cf665513b534d2a704a",
+    "docs/feasibility/retention-recovery-20261025.md": "8447192f855a91b5057367f0319e7e5561775702ec6230f7f9bdf9f8af7946ba",
+    "README.md": "0261b8bd3490d40e2e94eb1237bb4e6a2fefff6cb4fd7a60b8b3a1fcbb278b66",
+    "docs/feasibility/user-checklist.ko.md": "91b4f7ec5241aeede668997daa7b302c46235048963fa52de221cff99b8c39e9"
+  },
+  "language_review": {
+    "scope": "Changed English prose, interface messages, glossary terms, conditions, quantities, and uncertainty.",
+    "exceptions": [
+      "The Korean checklist uses the existing user language exception.",
+      "Exact identifiers, commands, paths, API names, and quotations retain their required forms."
+    ],
+    "formal_asd_ste100_compliance_claimed": false
+  }
+}

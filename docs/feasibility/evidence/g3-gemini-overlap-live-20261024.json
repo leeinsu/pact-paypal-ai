@@ -1,0 +1,71 @@
+{
+  "case": "overlapping_policies",
+  "download_sha256": "f843468357c4ddb9d27a2b3134a70f9b73ad52a92fe8d9b75527424e5dc3b516",
+  "elapsed_seconds": 12.168,
+  "live_paypal_requests": 0,
+  "model_calls": [
+    {
+      "decision": {
+        "action": "propose",
+        "candidate": 1
+      },
+      "model_version": "gemini-3.1-flash-lite",
+      "role": "buyer",
+      "usage": {
+        "candidatesTokenCount": 19,
+        "promptTokenCount": 2183,
+        "totalTokenCount": 2202
+      }
+    },
+    {
+      "decision": {
+        "action": "accept",
+        "candidate": 0
+      },
+      "model_version": "gemini-3.1-flash-lite",
+      "role": "buyer",
+      "usage": {
+        "candidatesTokenCount": 12,
+        "promptTokenCount": 2343,
+        "totalTokenCount": 2355
+      }
+    },
+    {
+      "decision": {
+        "action": "propose",
+        "candidate": 0
+      },
+      "model_version": "gemini-3.1-flash-lite",
+      "role": "provider",
+      "usage": {
+        "candidatesTokenCount": 13,
+        "promptTokenCount": 2261,
+        "totalTokenCount": 2274
+      }
+    }
+  ],
+  "negotiation": {
+    "proposal_head": "362e5137594829938b1fa0140dc7867ae1a5ad3a907aa32e00ea63990f57eeaf",
+    "result": {
+      "amount": 6,
+      "canonical": "{\"amount_minor\":6,\"buyer\":\"f2f1043f421f658cfab3984c179459e8cfa5727cb5e6b333a4574588e00b1c8d\",\"buyer_mandate\":\"5ed65590fef317035b23ef5ebd089b87f127d70d569583befd4eeb0936f6e9d1\",\"currency\":\"JPY\",\"deadline\":400,\"provider\":\"11b3723b817b9f8f864a8312d97e18591b7e8876d71e8d6ff3670c73ec7a2c2d\",\"provider_mandate\":\"2841683de29716a2e62779985ba3934e4981ae808977be2e28b2ab3c7df2b8bb\",\"terms_sha256\":\"874c087629cd1e22220641087be0c1eb7b161a659fd2fa581566a7415b4bf60a\",\"transaction_id\":\"one\"}",
+      "committed": 100,
+      "digest": "7bbe2143c6ac94273052f308128e9b7fc0051ef9fdfb1bab5e2ff91a993ad2c6",
+      "id": "one"
+    },
+    "status": "finalized"
+  },
+  "repeat_worker_new_mutations": 0,
+  "synthetic_paypal_mutations": 3,
+  "synthetic_worker": {
+    "action": "none",
+    "agreement": "one",
+    "authorization_id": "auth",
+    "committed": 100,
+    "order_id": "order",
+    "output_sha256": "f843468357c4ddb9d27a2b3134a70f9b73ad52a92fe8d9b75527424e5dc3b516",
+    "payload_sha256": "d8d315de136dab198298c3fc0a713edae744ea842e560b465f5ed7e0545c8c45",
+    "request_id": "092a2f7fcd6f46eabd0bd097fa925f54",
+    "status": "paid"
+  }
+}

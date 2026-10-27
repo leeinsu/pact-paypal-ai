@@ -1,0 +1,186 @@
+{
+  "experiment": "g1-recorded-payment-20261024",
+  "local_test_date": "2026-10-24",
+  "local_timezone": "Asia/Seoul",
+  "scope": "Recorded repeat consent followed by one unattended authorization, separate capture, and readback",
+  "api_host": "api-m.sandbox.paypal.com",
+  "integration_test_passed": true,
+  "g1_passed": false,
+  "user_instruction": "2500엔 한도 내에서는 얼마든지 테스트해도 된다.",
+  "amount": {
+    "currency": "JPY",
+    "additional_test_budget": 2500,
+    "previous_additional_authorization": 1,
+    "authorized_this_experiment": 1,
+    "captured_this_experiment": 1,
+    "budget_used_conservatively": 2,
+    "remaining_test_budget_conservatively": 2498,
+    "prior_separate_captured_payment": 5000,
+    "accounting_rule": "Count gross authorization attempts. A void does not restore the test budget.",
+    "paypal_account_balance_or_limit_verified": false
+  },
+  "counts": {
+    "orders_created": 1,
+    "authorizations_created": 1,
+    "capture_requests": 1,
+    "void_requests": 0,
+    "refund_requests": 0
+  },
+  "result": {
+    "setup_status": "APPROVED",
+    "existing_payment_token_returned": true,
+    "authorization_status": "CREATED",
+    "capture_status": "COMPLETED",
+    "capture_readback_status": "COMPLETED",
+    "buyer_customer_merchant_bindings_verified": true,
+    "order_authorization_capture_links_verified": true,
+    "followup_browser_interactions": 0
+  },
+  "recording": {
+    "ok": true,
+    "videoSaved": true,
+    "cookiesCleared": true,
+    "contextClosed": true,
+    "startedAt": "2026-10-23T15:37:54.180Z",
+    "consentClickAt": "2026-10-23T15:39:00.345Z",
+    "returnAt": "2026-10-23T15:39:01.739Z",
+    "closedAt": "2026-10-23T15:39:11.857Z",
+    "followupBrowserInteractions": 0,
+    "sha256": "65b56235dff5a9caaa246f1c4edc01c4ca67e96dde2149d77b603cc6322f594c",
+    "duration_seconds": 75.08,
+    "bytes": 1851262,
+    "restricted_video_retained": true,
+    "scope": "Repeat consent with an existing buyer and saved payment token. The original payment has no consent video."
+  },
+  "recovery": {
+    "local_stop": "The setup customer differed from the existing payment token customer.",
+    "resolution": "Exchange and readback matched the previously verified token, buyer, and customer before payment.",
+    "setup_customer_retained_privately": true,
+    "exchange_replayed": false,
+    "payment_mutation_replayed": false,
+    "automatic_retry": false,
+    "unknown_results": false
+  },
+  "cleanup": {
+    "temporary_oauth_removed": true,
+    "callback_material_removed": true,
+    "consent_bridge_stopped": true,
+    "browser_context_closed": true,
+    "restricted_evidence_retained": true,
+    "saved_wallet_retained": true
+  },
+  "limitations": [
+    "Independent procedure and evidence review remain absent.",
+    "The video records repeat consent, not first-time Wallet creation.",
+    "The original JPY 5000 consent was not recorded.",
+    "JP merchant country and production eligibility remain independently unverified.",
+    "Unknown-result recovery and endpoint retention remain unverified.",
+    "This experiment does not establish the complete PACT product flow."
+  ],
+  "events": [
+    {
+      "operation": "oauth",
+      "method": "POST",
+      "http_status": 200,
+      "status": null,
+      "recorded_at": "2026-10-23T15:37:22.077943+00:00",
+      "endpoint_template": "/v1/oauth2/token"
+    },
+    {
+      "operation": "setup",
+      "method": "POST",
+      "http_status": 201,
+      "status": "PAYER_ACTION_REQUIRED",
+      "recorded_at": "2026-10-23T15:37:22.877711+00:00",
+      "endpoint_template": "/v3/vault/setup-tokens"
+    },
+    {
+      "operation": "setup_readback",
+      "method": "GET",
+      "http_status": 200,
+      "status": "APPROVED",
+      "recorded_at": "2026-10-23T15:39:02.730515+00:00",
+      "endpoint_template": "/v3/vault/setup-tokens/{setup_token_id}"
+    },
+    {
+      "operation": "setup_before_exchange",
+      "method": "GET",
+      "http_status": 200,
+      "status": "APPROVED",
+      "recorded_at": "2026-10-23T15:39:13.285547+00:00",
+      "endpoint_template": "/v3/vault/setup-tokens/{setup_token_id}"
+    },
+    {
+      "operation": "exchange",
+      "method": "POST",
+      "http_status": 200,
+      "status": null,
+      "recorded_at": "2026-10-23T15:39:14.207251+00:00",
+      "endpoint_template": "/v3/vault/payment-tokens"
+    },
+    {
+      "operation": "payment_token_readback",
+      "method": "GET",
+      "http_status": 200,
+      "status": null,
+      "recorded_at": "2026-10-23T15:39:14.645671+00:00",
+      "endpoint_template": "/v3/vault/payment-tokens/{payment_token_id}"
+    },
+    {
+      "operation": "order_create",
+      "method": "POST",
+      "http_status": 201,
+      "status": "CREATED",
+      "recorded_at": "2026-10-23T15:40:28.362204+00:00",
+      "endpoint_template": "/v2/checkout/orders"
+    },
+    {
+      "operation": "order_before_authorize",
+      "method": "GET",
+      "http_status": 200,
+      "status": "CREATED",
+      "recorded_at": "2026-10-23T15:40:29.030428+00:00",
+      "endpoint_template": "/v2/checkout/orders/{order_id}"
+    },
+    {
+      "operation": "order_authorize",
+      "method": "POST",
+      "http_status": 201,
+      "status": "COMPLETED",
+      "recorded_at": "2026-10-23T15:40:31.074679+00:00",
+      "endpoint_template": "/v2/checkout/orders/{order_id}/authorize"
+    },
+    {
+      "operation": "order_after_authorize",
+      "method": "GET",
+      "http_status": 200,
+      "status": "COMPLETED",
+      "recorded_at": "2026-10-23T15:40:31.527509+00:00",
+      "endpoint_template": "/v2/checkout/orders/{order_id}"
+    },
+    {
+      "operation": "authorization_readback",
+      "method": "GET",
+      "http_status": 200,
+      "status": "CREATED",
+      "recorded_at": "2026-10-23T15:40:31.880092+00:00",
+      "endpoint_template": "/v2/payments/authorizations/{authorization_id}"
+    },
+    {
+      "operation": "authorization_capture",
+      "method": "POST",
+      "http_status": 201,
+      "status": "COMPLETED",
+      "recorded_at": "2026-10-23T15:40:33.798082+00:00",
+      "endpoint_template": "/v2/payments/authorizations/{authorization_id}/capture"
+    },
+    {
+      "operation": "capture_readback",
+      "method": "GET",
+      "http_status": 200,
+      "status": "COMPLETED",
+      "recorded_at": "2026-10-23T15:40:34.143233+00:00",
+      "endpoint_template": "/v2/payments/captures/{capture_id}"
+    }
+  ]
+}

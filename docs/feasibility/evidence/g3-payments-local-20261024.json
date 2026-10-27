@@ -1,0 +1,45 @@
+{
+  "artifacts": {
+    "README.md": "287367cb1339eaa2d2c437a55b6200b538f05ec0be69b4b8430c23fe328016ce",
+    "acceptance/transaction/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "acceptance/transaction/test_payments.py": "b9ab55eaedc83562455f26672a5046981887411264f50b93d3a81f088c7c23e0",
+    "acceptance/transaction/test_reservations.py": "bbc77821371c0c1241ebbcbc7e6d3ac08d0ad149d8b9d1f6f4393f0650d4d0b7",
+    "docs/feasibility/g3-payments-20261024.md": "3a68431ac18cb6e736df59e8b3b95e8cd94fa669dd15725ead609542e2c4a4fb",
+    "docs/feasibility/g3-reservations-20261024.md": "1aee802c0763ebd96ccc29c5372e262b2b1f041fd8b30455f15dac0a13870b0b",
+    "docs/pact-revision-proposal.md": "74e5fe1506bb6714dbfbb493842f68db7aec42d31b816cedc65bcb0ecd5f0cfd",
+    "pact/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pact/reservations.py": "632d2ec9fb697a6fe83fb7274dfb0105f3fe6ccf372a880a316f688757a152d2",
+    "verify.sh": "79766002f29bcef71f84987d49dc581c0883a8d3c16d15a95e266aa5c6c42048"
+  },
+  "command": "PATH=\"/tmp/pact-opencv-venv/bin:$PATH\" DEVFLOW_TEST_RESULT=/tmp/pact-g3-payments-tests.json ./verify.sh",
+  "credential_access": false,
+  "exit_code": 0,
+  "language_review": "Checked glossary terms, sentence lengths, conditions, and uncertainty. No formal ASD-STE100 compliance claim.",
+  "local_tests": {
+    "executed": 192,
+    "failure_class": "none",
+    "failures": 0,
+    "skipped": []
+  },
+  "new_payment_tests": 24,
+  "payment_requests": 0,
+  "preserved_reservation_baseline": "docs/feasibility/evidence/g3-reservations-baseline-20261024",
+  "recorded_at_utc": "2026-10-24T05:28:34.484437+00:00",
+  "recovery_limit": "A committed capture intent permits queries only. A crash before HTTP can leave permanent uncertainty.",
+  "remaining": [
+    "Authenticated sessions and signature verification",
+    "Verified account registration",
+    "Encrypted files and persistent intake",
+    "Order and authorization mutation persistence",
+    "Payment transport and dispatch enforcement",
+    "Bounded nonpayment closure",
+    "Authorized output access",
+    "Integrated Sandbox response-loss evidence and independent G3 review"
+  ],
+  "scope": "Local payment storage only. G3 remains open.",
+  "sqlite_version": "3.46.1",
+  "test_log_sha256": "db54240a66ceed52e9b0af8b94396f38ce3abe2e9a8236c745fbe2b1af99b084",
+  "unchanged_g2_repository_artifacts": 97,
+  "unchanged_g2_runtime_binaries": 3,
+  "verified_baseline_artifacts": 6
+}

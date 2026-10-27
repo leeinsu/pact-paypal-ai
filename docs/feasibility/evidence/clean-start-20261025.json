@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-25",
+  "platform": "Linux x86_64",
+  "python": "3.13.5",
+  "dependencies": {
+    "cryptography": "50.0.2",
+    "opencv-python-headless": "4.13.0.92",
+    "numpy": "2.5.4",
+    "cffi": "2.1.1",
+    "pycparser": "3.12"
+  },
+  "fresh_virtual_environment": true,
+  "installed_from_requirements": true,
+  "package_wheel_cache_reused": true,
+  "source_snapshot": "/tmp/pact-source-verification-20261025",
+  "credentials": "Synthetic local values only.",
+  "tls": "Direct TLS with explicit certificate trust.",
+  "responses": {
+    "workspace": {
+      "status": 200,
+      "sha256": "57634ff2ef64c97f5f27615bbd5d45414f02b70e368093f8094b2d5bc0cf1ae9"
+    },
+    "/app.js": {
+      "status": 200,
+      "sha256": "361dff3d2904b8159ef0acd467635ed2450d14521e723fc399a43a59dfee5c6b"
+    },
+    "/app.css": {
+      "status": 200,
+      "sha256": "c49ad3b435a2c65d251a528a04f7459492c9bfaa892c629199adacefcbd166cc"
+    },
+    "/api/records/summary": {
+      "status": 200,
+      "sha256": "989b8a353a6023b8411b0610c0ed05b5b56f3a8dc329cfcd56fdaf797b5cc502"
+    }
+  },
+  "external_account_actions": 0,
+  "payment_dispatches": 0,
+  "isolated_process_stopped": true,
+  "tests": {
+    "executed": 550,
+    "skipped": [],
+    "failures": 0,
+    "failure_class": "none"
+  },
+  "secret_scan": {
+    "source_files_checked": 473,
+    "configured_sensitive_values_checked": 9,
+    "matches": [],
+    "limit": "Exact current configured values only. Historical or transformed credentials are not covered."
+  },
+  "source_verification": {
+    "git_head": "2252cb2b057d85248ec350402dd29964d4855804",
+    "uncommitted_source": true,
+    "runtime_and_test_files_compared": 88,
+    "current_matches_tested_snapshot": true,
+    "manifest_sha256": "7a59f399e0edd9f804d82758c9e1939c7163986a6c626646ac098ff4413adf21"
+  }
+}

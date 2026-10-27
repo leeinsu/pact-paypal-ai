@@ -1,0 +1,54 @@
+{
+  "artifacts": {
+    "README.md": "190671eca9d659cc8b2d86bf26a29193786a594563a8661358f178ece0dd0a74",
+    "acceptance/transaction/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "acceptance/transaction/test_closure.py": "d9836c6443e9adf94c56851701445d69e7bd81c3d344f71bf9a4ef0d404c4360",
+    "acceptance/transaction/test_files.py": "24574d1ffae4fa35b8950289fda897cc27b26c88575b357bbb4f32ee3fac1c05",
+    "acceptance/transaction/test_intake.py": "f795c9caddd122c4d638408b7d1084ebc563567856cd1cbe141120dfb562e01d",
+    "acceptance/transaction/test_payment_operations.py": "03a8bfc429d7c2537037a0e96e1653f72a780cd23c3ec75406a8a87b1d55eb60",
+    "acceptance/transaction/test_payments.py": "3b4ef7e79f9733eb4ef27232707269ad6f3d48a22a59f7fd2d638bd8d6b04462",
+    "acceptance/transaction/test_paypal.py": "e6e177c17820aa7842bb4d17c6ef4ea6355d831977fb8836ef91ec1b95610b03",
+    "acceptance/transaction/test_reservations.py": "bbc77821371c0c1241ebbcbc7e6d3ac08d0ad149d8b9d1f6f4393f0650d4d0b7",
+    "docs/feasibility/g3-operations-20261024.md": "c8f85ebaba428b68e3360782484cdc13c6a017396b95b17138f7d3f5e61dcd4e",
+    "docs/feasibility/g3-transport-20261024.md": "f82bafd9dcc939effe0620a9fdef796708ef453371ee8f15a3310cf2d5dcebe8",
+    "docs/pact-revision-proposal.md": "2c08c469eccf99b6a423ec18e85d2ce97a70c83291adc41158d3b56622b70dac",
+    "pact/files.py": "30c42f95c79ad31ebb6d9e658dd99dc7f247bbea048988b78ed8385c3fa404a6",
+    "pact/intake.py": "353a3833d5a24f76068d2f03ad63437b98e908ce3db424f41d9626abfa751b4c",
+    "pact/paypal.py": "c97417974b2f525eee1cb4c36920b3945eb32728081f50d9b26930d7e244f861",
+    "pact/requirements.txt": "8b5c18678b29b5e8e0fb586a35ac1dce3ccd9da321e8f12ace0e118350b4e568",
+    "pact/reservations.py": "c094933c5fd66f5ed343ddf2b8ed47fd9dc3d4a849164e53e68e1848f5229e21",
+    "verify.sh": "79766002f29bcef71f84987d49dc581c0883a8d3c16d15a95e266aa5c6c42048"
+  },
+  "command": "PATH=\"/tmp/pact-opencv-venv/bin:$PATH\" DEVFLOW_TEST_RESULT=/tmp/pact-g3-transport-tests.json ./verify.sh",
+  "credential_access": false,
+  "dependency_check": "python -m pip check: No broken requirements found.",
+  "exit_code": 0,
+  "external_http_requests": 0,
+  "g2_freeze_sha256": "d6698d24443725123ec9363bb782193442371904746fdc7fd36bace882715c29",
+  "language_review": "Reviewed changed English prose, glossary terms, active voice, conditions, quantities, uncertainty, and sentence lengths. No formal ASD-STE100 compliance claim.",
+  "local_tests": {
+    "executed": 257,
+    "failure_class": "none",
+    "failures": 0,
+    "skipped": []
+  },
+  "new_tests": {
+    "closure": 9,
+    "files": 6,
+    "intake": 8,
+    "transport": 20
+  },
+  "payment_requests": 0,
+  "recorded_at_utc": "2026-10-24T06:28:29.770901+00:00",
+  "recovery_limit": "No mutation replay. Unknown capture outcomes cannot use nonpayment closure.",
+  "scope": "Local Sandbox transport, encrypted immutable images, persistent intake, and pre-capture nonpayment closure. G3 remains open.",
+  "security_boundary": "Trusted internal callers must authenticate actors and verify signatures, delegated authority, consent, and account ownership.",
+  "test_log_sha256": "7150e8f79499ec2b72b46a96582686421b5d87612825494ef8f9fd4d9ae83fee",
+  "unchanged_g2_repository_artifacts": 97,
+  "unchanged_g2_runtime_binaries": 3,
+  "verified_baselines": {
+    "operations": 12,
+    "payments": 10,
+    "reservations": 6
+  }
+}

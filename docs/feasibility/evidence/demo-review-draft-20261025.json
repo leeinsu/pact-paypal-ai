@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-25",
+  "status": "Private timed review draft. Adopted demonstration acceptance remains open.",
+  "video": {
+    "path": "/home/user/.local/state/pact-demo-recording-20261025/pact-review-draft-165s.mp4",
+    "sha256": "0d060e7b97ea3027874b3681922c07e6acf7882d780760dbdf359600f3a3b31c",
+    "bytes": 4983738,
+    "duration_seconds": 165.0,
+    "codec": "h264",
+    "width": 1280,
+    "height": 900,
+    "frames_per_second": 25,
+    "audio": false,
+    "complete_decode_passed": true,
+    "visual_review": "AI and safety cards were inspected. Text fit the frame."
+  },
+  "segments": [
+    "01-intro",
+    "02-consent",
+    "03-ai",
+    "04-browser",
+    "05-safety",
+    "06-offline",
+    "07-limits"
+  ],
+  "actual_browser_seconds": 36.12,
+  "retained_transaction_id": "sandbox-source-ai-20261025-01",
+  "separate_recovery_transaction_id": "sandbox-recovery-20261025-01",
+  "local_failure_injection": {
+    "scope": "Local failure injection with synthetic PayPal responses.",
+    "injection": "The generator returns the unchanged opaque input instead of the agreed transparent output.",
+    "transaction_id": "one",
+    "worker_status": "closed",
+    "capture_intents": 0,
+    "consumptions": 0,
+    "synthetic_payment_completed": false,
+    "synthetic_authorization_voided": true,
+    "synthetic_mutations": [
+      "orders",
+      "authorize",
+      "void"
+    ],
+    "actual_paypal_requests": 0
+  },
+  "evidence_sources": [
+    "source-exchange-sandbox-20261025.json",
+    "browser-demo-excerpt-20261025.json",
+    "integrated-recovery-20261025.json",
+    "clean-start-20261025.json"
+  ],
+  "remaining_acceptance": [
+    "The consent screen is summarized from retained records, not replayed.",
+    "AI decisions and source rejection are summarized from retained execution records.",
+    "Failure injection and offline verification use explanation cards, not recorded terminal actions.",
+    "No independent review or public upload has occurred."
+  ],
+  "new_payments": 0,
+  "new_model_calls": 0,
+  "cumulative_authorization_jpy": 2500,
+  "conservative_consumption_jpy": 12,
+  "remaining_authorization_jpy": 2488,
+  "publication_performed": false
+}

@@ -1,3 +1,19 @@
-# 배경 제거 작업 하나로 양쪽 에이전트의 무인 거래를 시연한다
+# Present one complete transaction with explicit limits
 
-해커톤 시연은 구매 에이전트가 제공 에이전트에 상품 사진 배경 제거를 맡기는 한 흐름으로 제한한다. 이 작업은 결과가 시각적이고 파일 조건을 자동 검사할 수 있어 협상, 양쪽 서명, PayPal 승인, 이행 확인과 결제를 3분 안에 보여 줄 수 있다. 화면은 양쪽 에이전트와 가운데 거래 기록으로 나누고, 성공 뒤 같은 합의서의 재사용을 막는 장면까지 포함한다. 프로토콜의 범용성은 문서로 설명하며 장터와 다른 거래 종류는 구현하지 않는다.
+The demonstration covers one buyer, one provider, one linked merchant, JPY, and one negotiated raster task.
+The [image amendment](../feasibility/negotiated-image-contract-20261024.md) defines the active image scope.
+The demonstration must show requested image conditions, a rejected submission, and a supported replacement before agreement.
+One transaction detail view shows progress and user actions before expandable signatures and hashes.
+Its evidence sections show agreement and Mandates, output and checker results, then linked PayPal readback and downloaded file hashes.
+The transaction ID stays visible throughout.
+The planned 2:45 video includes prior consent, unattended payment, damaged-output rejection, readback recovery, replay prevention, and evidence export.
+Actual timing and the complete integrated demonstration remain unverified.
+The video must not synthesize a successful transaction or imply dispute submission.
+Negotiation value requires a fair deterministic comparator under the proposal's measurement protocol.
+Equal comparator performance removes any negotiation-superiority claim.
+The [2026-10-25 clarification](../feasibility/g5-delegated-commerce-20261025.md) evaluates delegated-commerce savings against human-operated transactions.
+The deterministic comparison evaluates additional AI contribution separately.
+Marketplace, multiple merchants, general task rules, and automated dispute submission remain outside scope.
+
+GD amendment adopted on 2026-10-24.
+See the [adoption record](../feasibility/gd-reconciliation-20261024.md) and [glossary](../../GLOSSARY.md).

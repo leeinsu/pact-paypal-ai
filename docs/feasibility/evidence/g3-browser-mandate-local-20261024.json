@@ -1,0 +1,52 @@
+{
+  "scope": "Browser registration and revocation of one-counterparty, device-signed Mandates.",
+  "automated_tests": {
+    "executed": 484,
+    "skipped": [],
+    "failures": 0,
+    "failure_class": "none"
+  },
+  "test_duration_seconds": 42.927,
+  "javascript_syntax": "passed",
+  "diff_whitespace": "passed",
+  "browser_assertions": [
+    "Review does not submit a Mandate.",
+    "Form changes invalidate the reviewed document.",
+    "Transaction limits cannot exceed the period limit.",
+    "Noncanonical agent keys and device keys are rejected.",
+    "Buyer and provider registration use real device signatures.",
+    "Buyer and provider revocation use real device signatures.",
+    "A lost response after registration preserves the Mandate ID.",
+    "A manual retry submits the identical signed document.",
+    "Logout clears the Mandate form and review.",
+    "The counterparty field accepts valid identifiers."
+  ],
+  "browser_test_environment": "Temporary local HTTPS server with synthetic payment and consent transports.",
+  "browser_cleanup": "Removed the synthetic identity and certificate exception. Stopped the temporary server.",
+  "integrity": {
+    "g2_frozen_artifacts": 97,
+    "external_runtime_artifacts": 3,
+    "historical_g3_baselines": 21,
+    "result": "passed"
+  },
+  "language_review": {
+    "scope": "Changed UI text, README sentence, and evidence prose.",
+    "result": "Reviewed for direct sentences and preserved meaning.",
+    "exceptions": [
+      "The user authorized Korean prose in the Korean checklist."
+    ],
+    "formal_asd_ste100_compliance_claimed": false
+  },
+  "limits": [
+    "No actual PayPal request or payment ran.",
+    "AI negotiation and integrated Sandbox validation remain incomplete."
+  ],
+  "artifacts": {
+    "pact/web/index.html": "5029944980c3159117d8d5683e111ff9f3edc1b3842a218615a4d27a767bc89b",
+    "pact/web/app.js": "32091e50c63809c30c634b1aa1cf3a2d3d4f04ca53e6eedc966121c898279e21",
+    "pact/web/app.css": "c49ad3b435a2c65d251a528a04f7459492c9bfaa892c629199adacefcbd166cc",
+    "acceptance/transaction/test_web.py": "40d98ba503952b5dc8455a835528990c5f6d15a68faceaa60a24613980119473",
+    "README.md": "fec41b8024b45a7a7145ca9311ebf8349d2ea8e2a5235b3e90f02b53d2c538b9",
+    "docs/feasibility/user-checklist.ko.md": "d890a9e1066450533519a5340aa2c25567df6d1223b7bff3dd7faf7d72d74a76"
+  }
+}

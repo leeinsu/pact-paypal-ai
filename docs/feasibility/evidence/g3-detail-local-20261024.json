@@ -1,0 +1,42 @@
+{
+  "artifacts": {
+    "README.md": "5c632da1c7a1673cd42ad9483405d3757d2fe0bfe4941f1c962ac21f59fd505f",
+    "acceptance/transaction/test_detail.py": "7e5500e25bcea5c37c930c8738a5b0fa9986f8e284beff815ba77083b64c8e6c",
+    "docs/feasibility/g3-detail-20261024.md": "989f19c2e0915057109ee7547cea330de463c21613454c4a3ad572c2f9d059da",
+    "docs/feasibility/g3-offline-records-20261024.md": "13941aa8d88606bd6774fa21883c181f969a7a2de223ed9e25eed90e16822e05",
+    "docs/pact-revision-proposal.md": "4d5493d87121cc040b546b1c0fb29b615c89d66121c91c4bf967ec4c4a6725dc",
+    "pact/users.py": "319934c153dfd0fbecdc0fab837e9d13094fc4c4aee49195d422d3a16cb9a166"
+  },
+  "command": "PATH=\"/tmp/pact-opencv-venv/bin:$PATH\" DEVFLOW_TEST_RESULT=/tmp/pact-g3-detail-tests.json ./verify.sh",
+  "credential_access": false,
+  "exit_code": 0,
+  "external_http_requests": 0,
+  "g2_freeze_sha256": "d6698d24443725123ec9363bb782193442371904746fdc7fd36bace882715c29",
+  "language_review": "Reviewed changed English prose and glossary terms. No additional exceptions. No formal ASD-STE100 compliance claim.",
+  "local_tests": {
+    "executed": 378,
+    "failure_class": "none",
+    "failures": 0,
+    "skipped": []
+  },
+  "new_tests": {
+    "transaction_detail": 19
+  },
+  "payment_requests": 0,
+  "recorded_at_utc": "2026-10-24T07:18:00.949710+00:00",
+  "scope": "Participant transaction snapshot and budget states. G3 remains open.",
+  "test_log_sha256": "60f44defc88fd1a50de7166e9097c56891e3dbb74a09b4b8b2d91dff8ed5d068",
+  "unchanged_g2_repository_artifacts": 97,
+  "unchanged_g2_runtime_binaries": 3,
+  "verified_baselines": {
+    "authentication": 8,
+    "conditions": 13,
+    "offline-records": 6,
+    "operations": 12,
+    "payments": 10,
+    "records": 6,
+    "reservations": 6,
+    "signed-flow": 11,
+    "transport": 18
+  }
+}

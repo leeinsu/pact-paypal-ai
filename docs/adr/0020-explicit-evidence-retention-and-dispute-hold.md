@@ -1,3 +1,13 @@
-# 거래마다 증거 보관 종료일을 정한다
+# Retain immutable evidence and suspend deletion during review
 
-최종 거래 합의서는 PayPal 분쟁 가능 기간과 필요한 의무 보관 기간을 반영한 보관 종료일을 포함한다. 분쟁이 시작되면 관련 증거의 삭제를 멈춘다. 분쟁과 추가 대응 기간이 끝난 뒤 새 종료일을 기록한다. 모든 거래 자료를 영구 보관하지 않는다.
+The signed agreement specifies a retention end date based on applicable PayPal dispute periods and required retention obligations.
+The project does not invent a legal retention period.
+Disputes, unresolved payments, and objections suspend deletion of related evidence.
+After those conditions end, the server records the applicable new retention date.
+Before capture, the server durably stores the encrypted output under its hash and verifies that hash by reading it again.
+A process restart must preserve the same output bytes.
+Storage failure prevents payment submission.
+PACT does not retain every transaction record forever.
+
+GD amendment adopted on 2026-10-24.
+See the [adoption record](../feasibility/gd-reconciliation-20261024.md) and [glossary](../../GLOSSARY.md).

@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-24",
+  "scope": "Verified PayPal account ownership with a fixed payer ID. Business classification and payment eligibility are excluded.",
+  "tests": {
+    "executed": 514,
+    "skipped": [],
+    "failures": 0,
+    "failure_class": "none"
+  },
+  "focused_tests": 18,
+  "regression_failed_before_change": true,
+  "live_browser": {
+    "fresh_consent": true,
+    "device_signature_registration": true,
+    "status": "Account connection recorded. No PACT transaction was authorized.",
+    "seller_label": "Connect PayPal seller account"
+  },
+  "private_state_counts": {
+    "merchant_count": 1,
+    "consented_merchant_challenges": 1,
+    "signed_merchant_challenges": 1
+  },
+  "payment_spend_jpy": 0,
+  "cumulative_authorization_jpy": 2500,
+  "artifact_sha256": {
+    "pact/accounts.py": "7c1a78402fc0b027f87ecb021d0cdb8cddddf631949aa44b7881570488ff6ee0",
+    "pact/web/index.html": "32d2bb88bc3f8c9477970b7fb82eedda36161f529c4478ed6b3d5a49bdca06c6",
+    "acceptance/transaction/test_accounts.py": "2d7b6b6e89c4465fda4992bb8f0383eb6db360038cb917f1b859b3d5b0adb830",
+    "docs/feasibility/g3-merchant-linkage-20261024.md": "55ee4f1d9c6d81edd201fae2841bb73af7afcb999147da7c8e220d86aee9c9df",
+    "docs/feasibility/merchant-verification-scope-20261024.md": "bc42bf87efe928dfd56ed65d99c185df4baf42930d1ff0c00a9bf68fce9ae260",
+    "docs/feasibility/user-checklist.ko.md": "ee45309de4d7f69a97dbde625734d9c62a91bbeb33b945c62d5b6da30341a5c0"
+  },
+  "language_review": {
+    "scope": "Changed Markdown prose and UI label. Korean checklist uses the existing exception.",
+    "formal_compliance_claim": false
+  }
+}

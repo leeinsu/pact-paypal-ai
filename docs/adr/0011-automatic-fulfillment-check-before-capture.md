@@ -1,3 +1,12 @@
-# 자동 이행 확인을 통과하면 결제를 실행한다
+# Check fulfillment before payment submission
 
-이행한 쪽이 증거를 제출하면 자동 이행 확인 도구가 합의된 거래 규칙서로 검사한다. 통과하면 상대 에이전트의 추가 승인을 기다리지 않고 PayPal 결제를 실행한다. 실패하거나 확인할 수 없으면 결제를 실행하지 않고 거래를 중단한다. 이 도구는 분쟁의 승패를 판단하지 않는다.
+The deterministic checker evaluates the submitted output against the signed rule version.
+A passing result permits payment submission without another user approval, subject to all payment conditions.
+The server locks the accepted output hash and checker result before submission.
+A failed result permits one rework only if the agreement allows it within the deadline.
+Another failure or an unverifiable result starts cancellation handling without capture.
+Reservations remain until payment impossibility is confirmed.
+The checker does not decide disputes or guarantee aesthetic quality.
+
+GD amendment adopted on 2026-10-24.
+See the [adoption record](../feasibility/gd-reconciliation-20261024.md) and [glossary](../../GLOSSARY.md).

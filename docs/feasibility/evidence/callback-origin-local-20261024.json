@@ -1,0 +1,68 @@
+{
+  "artifacts": {
+    "acceptance/transaction/test_server.py": "576c87058c9ab4b984ddb3d25e42f503ff53252658c4f4eb65c083ab2ec0b9d7",
+    "docs/feasibility/callback-origin-check-20261024.md": "a4623769a8cfae8cddff9176507bb0791832ac96aedc949d0edc13e3fb456db2",
+    "docs/feasibility/user-checklist.ko.md": "8ae2a6651cc89d3415479e410d965552a71ee99cad545b8513a9199fe619714b",
+    "pact/server.py": "9e03a7d07ed2483fd5d2d85d8c467e734c03ede1eabad01a7f8d4ed737410e15"
+  },
+  "browser_checks": {
+    "device_login": true,
+    "marker_matched": true,
+    "missing_consent_callback_status": 400,
+    "session_cookie_http_only": true,
+    "session_cookie_same_site": "Lax",
+    "session_cookie_secure": true,
+    "session_survives_paypal_visit": true,
+    "session_survives_server_restart": true,
+    "signed_summary_origin_matches": true
+  },
+  "budget": {
+    "authorization_increased": false,
+    "authorization_reset": false,
+    "payment_mutations": 0,
+    "payment_token_mutations": 0,
+    "sandbox_spend_jpy": 0,
+    "user_authorization_jpy": 2500
+  },
+  "command": "PATH=/tmp/pact-opencv-venv/bin:$PATH DEVFLOW_TEST_RESULT=/tmp/pact-address-tests.json ./verify.sh",
+  "date": "2026-10-24",
+  "integrity": {
+    "frozen_artifacts_verified": 100,
+    "historical_baselines_verified": 21
+  },
+  "language_review": {
+    "formal_compliance_claimed": false,
+    "scope": "Changed English report prose and code comment. Korean checklist uses the user exception."
+  },
+  "paypal": {
+    "consent_completed": false,
+    "developer_dashboard_changed": false,
+    "localhost_policy": "unverified",
+    "merchant_callback": "https://server-debian-dev.tailffdbc2.ts.net/api/paypal/merchant/callback",
+    "merchant_preflight": "invalid client_id or redirect_uri",
+    "specific_configuration_cause": "unverified"
+  },
+  "remaining": "Save matching Sandbox login settings and verify actual consent. G3 and G4 remain open.",
+  "route": {
+    "browser": "agent-controlled server browser",
+    "proxy": "existing Tailscale Serve",
+    "routing_changed": false,
+    "upstream": "http://127.0.0.1:3000",
+    "visibility": "tailnet only",
+    "workstation_forwarding_required": false
+  },
+  "scope": "Confirmed server-browser route and application origin alignment. PayPal consent remains pending dashboard configuration.",
+  "service_origin": "https://server-debian-dev.tailffdbc2.ts.net",
+  "tests": {
+    "executed": 512,
+    "failure_class": "none",
+    "failures": 0,
+    "skipped": []
+  },
+  "tls": {
+    "certificate_expires_utc": "2026-12-16T16:48:10Z",
+    "hostname_verified": true,
+    "independent_default_trust_validation": true,
+    "protocol": "TLSv1.3"
+  }
+}

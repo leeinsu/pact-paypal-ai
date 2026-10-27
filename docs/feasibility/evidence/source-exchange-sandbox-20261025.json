@@ -1,0 +1,146 @@
+{
+  "browser_contexts_retained": true,
+  "browser_output_hashes_match": true,
+  "browser_roles": [
+    "buyer",
+    "provider"
+  ],
+  "candidate_amount_jpy": 1,
+  "candidate_count": 1,
+  "conservative_consumed_jpy": 12,
+  "cumulative_limit_jpy": 2500,
+  "database_counts": {
+    "authorizations": 1,
+    "capture_intents": 1,
+    "consumptions": 2,
+    "fulfillment_attempts": 1,
+    "orders": 1,
+    "reservations": 0,
+    "settlements": 1
+  },
+  "device_private_keys_exported": false,
+  "limits": [
+    "One fixed-price candidate does not establish negotiation superiority.",
+    "The synthetic image does not establish photographic quality or customer value.",
+    "The offline verifier does not independently verify PayPal settlement.",
+    "No prior retained checkpoint was supplied.",
+    "Complete G4 acceptance and the recorded demonstration remain open."
+  ],
+  "live_ai": true,
+  "live_paypal": true,
+  "model_calls": [
+    {
+      "decision": {
+        "action": "propose",
+        "candidate": 0
+      },
+      "model_version": "gemini-3.1-flash-lite",
+      "role": "buyer",
+      "usage": {
+        "candidatesTokenCount": 19,
+        "promptTokenCount": 1296,
+        "totalTokenCount": 1315
+      }
+    },
+    {
+      "decision": {
+        "action": "propose",
+        "candidate": 1
+      },
+      "model_version": "gemini-3.1-flash-lite",
+      "role": "provider",
+      "usage": {
+        "candidatesTokenCount": 19,
+        "promptTokenCount": 916,
+        "totalTokenCount": 935
+      }
+    },
+    {
+      "decision": {
+        "action": "accept",
+        "candidate": 0
+      },
+      "model_version": "gemini-3.1-flash-lite",
+      "role": "provider",
+      "usage": {
+        "candidatesTokenCount": 18,
+        "promptTokenCount": 1380,
+        "totalTokenCount": 1398
+      }
+    }
+  ],
+  "negotiation_status": "finalized",
+  "offline_verification": {
+    "buyer": {
+      "output_verified": true,
+      "paypal_settlement_verified": false,
+      "record_count": 45,
+      "retained_checkpoint_verified": false,
+      "server_payment_assertion": "paid",
+      "signatures_verified": true,
+      "transaction_id": "sandbox-source-ai-20261025-01"
+    },
+    "provider": {
+      "output_verified": true,
+      "paypal_settlement_verified": false,
+      "record_count": 45,
+      "retained_checkpoint_verified": false,
+      "server_payment_assertion": "paid",
+      "signatures_verified": true,
+      "transaction_id": "sandbox-source-ai-20261025-01"
+    }
+  },
+  "participant_sessions_signed_out": true,
+  "private_artifact_sha256": {
+    "buyer-evidence-package.json": "654989d1828f2919516dd142d1e8af25e4cb9c735d5efba54f61230fd0662135",
+    "buyer-output.png": "f843468357c4ddb9d27a2b3134a70f9b73ad52a92fe8d9b75527424e5dc3b516",
+    "negotiation-result.json": "039a246edf76b292183cfd88235444686c6ca9d6bcf6981408dd985ada223b0e",
+    "payment-boundary.json": "a73ff0d8211ee63db6ee552ca1b8dde0dccfdeb67591f5a681adbcb3cbb4e1f5",
+    "provider-evidence-package.json": "654989d1828f2919516dd142d1e8af25e4cb9c735d5efba54f61230fd0662135",
+    "provider-output.png": "f843468357c4ddb9d27a2b3134a70f9b73ad52a92fe8d9b75527424e5dc3b516",
+    "repeat-no-network.json": "41ff25d2e9c7fc55f15bb3bc8733e2fe4649f96a339cf5eed0ddc2ab84950bc2",
+    "worker-repeat-result.json": "1e36f2fad33958b4287f512f765da2d703267494a726cc274afdc89b3736adc3",
+    "worker-result.json": "1e36f2fad33958b4287f512f765da2d703267494a726cc274afdc89b3736adc3"
+  },
+  "recorded_at": "2026-10-24T17:46:50.260474+00:00",
+  "remaining_jpy": 2488,
+  "repeat_worker_financial_tables_unchanged": true,
+  "repeat_worker_network_requests": 0,
+  "repeat_worker_result_unchanged": true,
+  "sandbox_spend_jpy": 1,
+  "schema_version": 1,
+  "source_fixture": "existing synthetic 100-by-100 PNG",
+  "source_reports": [
+    {
+      "reason_codes": [
+        "invalid_png"
+      ],
+      "status": "resubmit",
+      "submission_number": 1
+    },
+    {
+      "reason_codes": [],
+      "status": "ready_to_sign",
+      "submission_number": 2
+    }
+  ],
+  "source_sha256": {
+    "pact/agents.py": "471bc0a83f0fae200824e412633dd133daa4c255ccd978fda115b3fe306604db",
+    "pact/intake.py": "4905dac63695f04fdf07ee93d86a85c87aebd916f7963cf53cf2b8c1a72dd837",
+    "pact/server.py": "2afe75a36897546f9cfeb2b554c5e1400b1ade07f212b57d1663e2334d708f68",
+    "pact/support.py": "658842efd0d5e184bd4ad65433cf2ef15cfa8e755597fb819a6e2c294b54a4d4",
+    "pact/web/app.js": "361dff3d2904b8159ef0acd467635ed2450d14521e723fc399a43a59dfee5c6b"
+  },
+  "source_snapshot_verification": {
+    "credential_files_present": false,
+    "existing_dependencies_reused": true,
+    "failures": 0,
+    "fresh_dependency_installation_verified": false,
+    "log_sha256": "d8663d196392b87e239e5577ec13f0550611d171e64e03621102b4b136784093",
+    "seconds": 49.969,
+    "skips": 0,
+    "source_files": 473,
+    "tests": 550
+  },
+  "transaction_id": "sandbox-source-ai-20261025-01"
+}

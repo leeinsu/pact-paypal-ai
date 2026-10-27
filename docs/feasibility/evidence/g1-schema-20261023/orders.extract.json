@@ -1,0 +1,41 @@
+{
+  "/info/title": "Orders",
+  "/info/version": "2.36",
+  "/components/parameters/paypal_request_id": {
+    "name": "PayPal-Request-Id",
+    "in": "header",
+    "description": "A unique ID identifying the request header for idempotency purposes.",
+    "required": false,
+    "schema": {
+      "description": "A unique ID identifying the request header for idempotency purposes.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 10000,
+      "pattern": "^.*$"
+    },
+    "examples": {
+      "request_id": {
+        "summary": "A request id.",
+        "description": "A paypal-request-id header with a randomized value.",
+        "value": "17e81d06-77ab-11e8-adc0-fa71639ebebc"
+      }
+    }
+  },
+  "/paths/~1v2~1checkout~1orders/post/operationId": "orders.create",
+  "/paths/~1v2~1checkout~1orders/post/parameters/0": {
+    "$ref": "#/components/parameters/paypal_request_id"
+  },
+  "/paths/~1v2~1checkout~1orders~1{id}~1authorize/post/operationId": "orders.authorize",
+  "/paths/~1v2~1checkout~1orders~1{id}~1authorize/post/parameters/0": {
+    "$ref": "#/components/parameters/paypal_request_id"
+  },
+  "/paths/~1v2~1checkout~1orders~1{id}~1authorize/post/requestBody/content/application~1json/examples/samples_orders_authorize_paypal_wallet_vault_id/value": {
+    "payment_source": {
+      "paypal": {
+        "vault_id": "nkq2y9g"
+      }
+    }
+  },
+  "/paths/~1v2~1checkout~1orders~1{id}~1authorize/post/responses/201/content/application~1json/examples/samples_orders_authorize_paypal_wallet_vault_id/value/status": "COMPLETED",
+  "/paths/~1v2~1checkout~1orders~1{id}~1authorize/post/responses/201/content/application~1json/examples/samples_orders_authorize_paypal_wallet_vault_id/value/purchase_units/0/payments/authorizations/0/status": "CREATED"
+}

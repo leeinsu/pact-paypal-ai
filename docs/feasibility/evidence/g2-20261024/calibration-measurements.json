@@ -1,0 +1,419 @@
+{
+  "schema_version": 1,
+  "purpose": "Supplemental measurement exercise on rejected calibration originals. This is not held-out evaluation.",
+  "gate_status": "unresolved",
+  "output_generation": "The original bytes serve only as unchanged negative controls. No normal outputs are claimed.",
+  "reference_use": "The reference mask enters only the supplemental measurement function.",
+  "cases": [
+    {
+      "calibration_id": "0_0_147",
+      "independent_support": "unsupported",
+      "output_class": "unchanged",
+      "output_sha256": "3a6efc50419d341e64c3b13c0ab032ce8034882cc2f6cc99610b85a201bedfa0",
+      "measurements": {
+        "full_mask_alpha_error": {
+          "numerator": 24268095,
+          "denominator": 30600000
+        },
+        "interior_rgb_error": {
+          "numerator": 0,
+          "denominator": 68469
+        },
+        "output_confusion": {
+          "true_positive": 24831,
+          "false_positive": 95169,
+          "false_negative": 0,
+          "true_negative": 0
+        },
+        "output_contour": {
+          "intersection": 0,
+          "union": 3404,
+          "predicted_pixels": 1396,
+          "reference_pixels": 2008
+        },
+        "checker_input_status": "unsupported",
+        "checker_confusion": {
+          "true_positive": 22625,
+          "false_positive": 49066,
+          "false_negative": 2206,
+          "true_negative": 46103
+        },
+        "checker_contour": {
+          "intersection": 679,
+          "union": 21060,
+          "predicted_pixels": 19731,
+          "reference_pixels": 2008
+        }
+      }
+    },
+    {
+      "calibration_id": "0_0_155",
+      "independent_support": "unsupported",
+      "output_class": "unchanged",
+      "output_sha256": "534f7ef46d3c145cf766a7d0b9dae665a0ff2cd465521fd2628e9f8fc7135929",
+      "measurements": {
+        "full_mask_alpha_error": {
+          "numerator": 26564880,
+          "denominator": 30600000
+        },
+        "interior_rgb_error": {
+          "numerator": 0,
+          "denominator": 45384
+        },
+        "output_confusion": {
+          "true_positive": 15824,
+          "false_positive": 104176,
+          "false_negative": 0,
+          "true_negative": 0
+        },
+        "output_contour": {
+          "intersection": 0,
+          "union": 2092,
+          "predicted_pixels": 1396,
+          "reference_pixels": 696
+        },
+        "checker_input_status": "unsupported",
+        "checker_confusion": {
+          "true_positive": 13374,
+          "false_positive": 54847,
+          "false_negative": 2450,
+          "true_negative": 49329
+        },
+        "checker_contour": {
+          "intersection": 226,
+          "union": 30535,
+          "predicted_pixels": 30065,
+          "reference_pixels": 696
+        }
+      }
+    },
+    {
+      "calibration_id": "0_0_272",
+      "independent_support": "unsupported",
+      "output_class": "unchanged",
+      "output_sha256": "8408be7470bd095a57544b0b985708f83d4d4adfd07c1796be70c6449e362bb9",
+      "measurements": {
+        "full_mask_alpha_error": {
+          "numerator": 21680610,
+          "denominator": 30600000
+        },
+        "interior_rgb_error": {
+          "numerator": 0,
+          "denominator": 102360
+        },
+        "output_confusion": {
+          "true_positive": 34978,
+          "false_positive": 85022,
+          "false_negative": 0,
+          "true_negative": 0
+        },
+        "output_contour": {
+          "intersection": 0,
+          "union": 2254,
+          "predicted_pixels": 1396,
+          "reference_pixels": 858
+        },
+        "checker_input_status": "unsupported",
+        "checker_confusion": {
+          "true_positive": 34825,
+          "false_positive": 64346,
+          "false_negative": 153,
+          "true_negative": 20676
+        },
+        "checker_contour": {
+          "intersection": 247,
+          "union": 26238,
+          "predicted_pixels": 25627,
+          "reference_pixels": 858
+        }
+      }
+    },
+    {
+      "calibration_id": "0_0_280",
+      "independent_support": "unsupported",
+      "output_class": "unchanged",
+      "output_sha256": "6aa1961181ad77eaf4a519e29c4768a1b6fd6737e3e8c701b557c8c638fa9b03",
+      "measurements": {
+        "full_mask_alpha_error": {
+          "numerator": 21665565,
+          "denominator": 30600000
+        },
+        "interior_rgb_error": {
+          "numerator": 0,
+          "denominator": 102219
+        },
+        "output_confusion": {
+          "true_positive": 35037,
+          "false_positive": 84963,
+          "false_negative": 0,
+          "true_negative": 0
+        },
+        "output_contour": {
+          "intersection": 0,
+          "union": 2360,
+          "predicted_pixels": 1396,
+          "reference_pixels": 964
+        },
+        "checker_input_status": "unsupported",
+        "checker_confusion": {
+          "true_positive": 35035,
+          "false_positive": 23550,
+          "false_negative": 2,
+          "true_negative": 61413
+        },
+        "checker_contour": {
+          "intersection": 380,
+          "union": 6752,
+          "predicted_pixels": 6168,
+          "reference_pixels": 964
+        }
+      }
+    },
+    {
+      "calibration_id": "0_0_284",
+      "independent_support": "unsupported",
+      "output_class": "unchanged",
+      "output_sha256": "1bcd7fbc6b269082ad8bb6bad0aba5d22588b95d007e4b7fa4c395ed2d9f1418",
+      "measurements": {
+        "full_mask_alpha_error": {
+          "numerator": 24029670,
+          "denominator": 30600000
+        },
+        "interior_rgb_error": {
+          "numerator": 0,
+          "denominator": 70845
+        },
+        "output_confusion": {
+          "true_positive": 25766,
+          "false_positive": 94234,
+          "false_negative": 0,
+          "true_negative": 0
+        },
+        "output_contour": {
+          "intersection": 0,
+          "union": 3547,
+          "predicted_pixels": 1396,
+          "reference_pixels": 2151
+        },
+        "checker_input_status": "unsupported",
+        "checker_confusion": {
+          "true_positive": 25739,
+          "false_positive": 15433,
+          "false_negative": 27,
+          "true_negative": 78801
+        },
+        "checker_contour": {
+          "intersection": 432,
+          "union": 6806,
+          "predicted_pixels": 5087,
+          "reference_pixels": 2151
+        }
+      }
+    },
+    {
+      "calibration_id": "0_0_307",
+      "independent_support": "unsupported",
+      "output_class": "unchanged",
+      "output_sha256": "0b66be50abd3b3545961dc4a58118a53976509f7743f154ef1069247833ec203",
+      "measurements": {
+        "full_mask_alpha_error": {
+          "numerator": 27975285,
+          "denominator": 30600000
+        },
+        "interior_rgb_error": {
+          "numerator": 0,
+          "denominator": 29331
+        },
+        "output_confusion": {
+          "true_positive": 10293,
+          "false_positive": 109707,
+          "false_negative": 0,
+          "true_negative": 0
+        },
+        "output_contour": {
+          "intersection": 0,
+          "union": 1912,
+          "predicted_pixels": 1396,
+          "reference_pixels": 516
+        },
+        "checker_input_status": "unsupported",
+        "checker_confusion": {
+          "true_positive": 10004,
+          "false_positive": 93431,
+          "false_negative": 289,
+          "true_negative": 16276
+        },
+        "checker_contour": {
+          "intersection": 119,
+          "union": 9601,
+          "predicted_pixels": 9204,
+          "reference_pixels": 516
+        }
+      }
+    },
+    {
+      "calibration_id": "0_0_355",
+      "independent_support": "unsupported",
+      "output_class": "unchanged",
+      "output_sha256": "62c45f97757cf21704c9cdc7f60e0d7ade769bc4c177f9795a6255fbb0413653",
+      "measurements": {
+        "full_mask_alpha_error": {
+          "numerator": 26104605,
+          "denominator": 30600000
+        },
+        "interior_rgb_error": {
+          "numerator": 0,
+          "denominator": 51216
+        },
+        "output_confusion": {
+          "true_positive": 17629,
+          "false_positive": 102371,
+          "false_negative": 0,
+          "true_negative": 0
+        },
+        "output_contour": {
+          "intersection": 0,
+          "union": 1953,
+          "predicted_pixels": 1396,
+          "reference_pixels": 557
+        },
+        "checker_input_status": "unsupported",
+        "checker_confusion": {
+          "true_positive": 14758,
+          "false_positive": 4017,
+          "false_negative": 2871,
+          "true_negative": 98354
+        },
+        "checker_contour": {
+          "intersection": 215,
+          "union": 5038,
+          "predicted_pixels": 4696,
+          "reference_pixels": 557
+        }
+      }
+    },
+    {
+      "calibration_id": "0_0_431",
+      "independent_support": "unsupported",
+      "output_class": "unchanged",
+      "output_sha256": "6bc6e1803af067eb4ce7dfe7973e0dfd0f76e8cc1180f7dd97c71eb593986a79",
+      "measurements": {
+        "full_mask_alpha_error": {
+          "numerator": 20419380,
+          "denominator": 30600000
+        },
+        "interior_rgb_error": {
+          "numerator": 0,
+          "denominator": 116622
+        },
+        "output_confusion": {
+          "true_positive": 39924,
+          "false_positive": 80076,
+          "false_negative": 0,
+          "true_negative": 0
+        },
+        "output_contour": {
+          "intersection": 169,
+          "union": 2277,
+          "predicted_pixels": 1396,
+          "reference_pixels": 1050
+        },
+        "checker_input_status": "unsupported",
+        "checker_confusion": {
+          "true_positive": 33870,
+          "false_positive": 13883,
+          "false_negative": 6054,
+          "true_negative": 66193
+        },
+        "checker_contour": {
+          "intersection": 493,
+          "union": 13321,
+          "predicted_pixels": 12764,
+          "reference_pixels": 1050
+        }
+      }
+    },
+    {
+      "calibration_id": "0_0_547",
+      "independent_support": "unsupported",
+      "output_class": "unchanged",
+      "output_sha256": "364461cd283cd28483c3526535618fba687f5290878ead9792fb9196d320ab9f",
+      "measurements": {
+        "full_mask_alpha_error": {
+          "numerator": 21008175,
+          "denominator": 30600000
+        },
+        "interior_rgb_error": {
+          "numerator": 0,
+          "denominator": 108834
+        },
+        "output_confusion": {
+          "true_positive": 37615,
+          "false_positive": 82385,
+          "false_negative": 0,
+          "true_negative": 0
+        },
+        "output_contour": {
+          "intersection": 0,
+          "union": 2733,
+          "predicted_pixels": 1396,
+          "reference_pixels": 1337
+        },
+        "checker_input_status": "unsupported",
+        "checker_confusion": {
+          "true_positive": 37230,
+          "false_positive": 21695,
+          "false_negative": 385,
+          "true_negative": 60690
+        },
+        "checker_contour": {
+          "intersection": 552,
+          "union": 4050,
+          "predicted_pixels": 3265,
+          "reference_pixels": 1337
+        }
+      }
+    },
+    {
+      "calibration_id": "0_0_579",
+      "independent_support": "unsupported",
+      "output_class": "unchanged",
+      "output_sha256": "d29d99cb3e5b5458e083c0e20f7ef704c656bc4a1c2c74f8c7c298a6d8d9e951",
+      "measurements": {
+        "full_mask_alpha_error": {
+          "numerator": 24624840,
+          "denominator": 30600000
+        },
+        "interior_rgb_error": {
+          "numerator": 0,
+          "denominator": 68202
+        },
+        "output_confusion": {
+          "true_positive": 23432,
+          "false_positive": 96568,
+          "false_negative": 0,
+          "true_negative": 0
+        },
+        "output_contour": {
+          "intersection": 0,
+          "union": 2094,
+          "predicted_pixels": 1396,
+          "reference_pixels": 698
+        },
+        "checker_input_status": "unsupported",
+        "checker_confusion": {
+          "true_positive": 23354,
+          "false_positive": 51744,
+          "false_negative": 78,
+          "true_negative": 44824
+        },
+        "checker_contour": {
+          "intersection": 40,
+          "union": 18017,
+          "predicted_pixels": 17359,
+          "reference_pixels": 698
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "calibration_id": "0_13_13885",
+    "source_member": "MSRA-B/0_13_13885.jpg",
+    "source_order_one_based": 123,
+    "source_sha256": "c48fd909d72c61e26d8785de91e60cd78bd7a6170852c77f742bf0cfac6f57b1",
+    "input_sha256": "d343758062645f33e5c42a93822f75bc4dcccd0f0f1fe87d72162b6df354d3ea",
+    "width": 400,
+    "height": 259,
+    "independent_support": "unsupported",
+    "label_reason": "The photograph has a yellow border and visible fabric texture beneath the object.",
+    "checker_result": {
+      "status": "unsupported",
+      "input_sha256": "d343758062645f33e5c42a93822f75bc4dcccd0f0f1fe87d72162b6df354d3ea",
+      "width": 400,
+      "height": 259,
+      "rule_id": "g2-v2",
+      "region_counts": {
+        "total": 103600,
+        "background": 721,
+        "foreground_candidate": 43344,
+        "foreground": 38211,
+        "uncertain": 64668,
+        "foreground_components": 99
+      },
+      "reason_codes": [
+        "perimeter_not_uniform",
+        "foreground_components_not_one",
+        "uncertain_region_exceeds_limit",
+        "input_boundary_ambiguous"
+      ]
+    }
+  },
+  {
+    "calibration_id": "0_13_13553",
+    "source_member": "MSRA-B/0_13_13553.jpg",
+    "source_order_one_based": 120,
+    "source_sha256": "bb648a1b74431ebaa4782b7673a3e8417fbd3f1d523774c38dd5f3b95010c1e9",
+    "input_sha256": "1eaf0f71ed19c85af99d0c1e758548a8b867b90ab92a50b62c1e27d08613c731",
+    "width": 300,
+    "height": 400,
+    "independent_support": "uncertain",
+    "label_reason": "The single opaque fruit has a dark background with visible tonal variation. Exact uniformity remains uncertain.",
+    "checker_result": {
+      "status": "unsupported",
+      "input_sha256": "1eaf0f71ed19c85af99d0c1e758548a8b867b90ab92a50b62c1e27d08613c731",
+      "width": 300,
+      "height": 400,
+      "rule_id": "g2-v2",
+      "region_counts": {
+        "total": 120000,
+        "background": 739,
+        "foreground_candidate": 83947,
+        "foreground": 75453,
+        "uncertain": 43808,
+        "foreground_components": 109
+      },
+      "reason_codes": [
+        "perimeter_not_uniform",
+        "foreground_components_not_one",
+        "uncertain_region_exceeds_limit",
+        "input_boundary_ambiguous"
+      ]
+    }
+  },
+  {
+    "calibration_id": "0_9_9837",
+    "source_member": "MSRA-B/0_9_9837.jpg",
+    "source_order_one_based": 497,
+    "source_sha256": "9093c5e00b3fd45a2b0902d7acaabb8d18da30ec2e02357c53b8ddb5c3aca6e9",
+    "input_sha256": "d296f99c02fbe5f498ded5530eef02ef507830282073fb518caf62118ad09ace",
+    "width": 400,
+    "height": 300,
+    "independent_support": "unsupported",
+    "label_reason": "The cube casts a visible shadow on a textured purple surface.",
+    "checker_result": {
+      "status": "unsupported",
+      "input_sha256": "d296f99c02fbe5f498ded5530eef02ef507830282073fb518caf62118ad09ace",
+      "width": 400,
+      "height": 300,
+      "rule_id": "g2-v2",
+      "region_counts": {
+        "total": 120000,
+        "background": 4911,
+        "foreground_candidate": 78990,
+        "foreground": 72956,
+        "uncertain": 42133,
+        "foreground_components": 193
+      },
+      "reason_codes": [
+        "perimeter_not_uniform",
+        "foreground_components_not_one",
+        "uncertain_region_exceeds_limit",
+        "input_boundary_ambiguous"
+      ]
+    }
+  }
+]

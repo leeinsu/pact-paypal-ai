@@ -1,0 +1,271 @@
+{
+  "cases": [
+    {
+      "case": "overlapping_policies",
+      "download_sha256": "f843468357c4ddb9d27a2b3134a70f9b73ad52a92fe8d9b75527424e5dc3b516",
+      "elapsed_seconds": 19.138,
+      "image_exchange": {
+        "report": {
+          "image_terms": {
+            "background_pixels": 7400,
+            "height": 100,
+            "input_sha256": "69f7009be491e08e57a19bbe0700c44de7423ec32ecedf247e66ff8c1c5e4c77",
+            "preserved_pixels": 2600,
+            "request_sha256": "ffeee1a12a98b942db3c532c04e1381b6917a620cf34fa2ebe10b5f4a791db2d",
+            "rule_id": "pact-raster-v1",
+            "rule_sha256": "977abebe990c4396691be86c5200986589bcbd65444679b587cc8f71792d19f9",
+            "width": 100
+          },
+          "reason_codes": [],
+          "status": "ready_to_sign",
+          "submission_number": 2,
+          "submissions_remaining": 1
+        },
+        "status": "ready_to_sign",
+        "submissions": [
+          {
+            "candidate": 0,
+            "report": {
+              "reason_codes": [
+                "invalid_png"
+              ],
+              "status": "resubmit",
+              "submission_number": 1,
+              "submissions_remaining": 2
+            }
+          },
+          {
+            "candidate": 1,
+            "report": {
+              "image_terms": {
+                "background_pixels": 7400,
+                "height": 100,
+                "input_sha256": "69f7009be491e08e57a19bbe0700c44de7423ec32ecedf247e66ff8c1c5e4c77",
+                "preserved_pixels": 2600,
+                "request_sha256": "ffeee1a12a98b942db3c532c04e1381b6917a620cf34fa2ebe10b5f4a791db2d",
+                "rule_id": "pact-raster-v1",
+                "rule_sha256": "977abebe990c4396691be86c5200986589bcbd65444679b587cc8f71792d19f9",
+                "width": 100
+              },
+              "reason_codes": [],
+              "status": "ready_to_sign",
+              "submission_number": 2,
+              "submissions_remaining": 1
+            }
+          }
+        ]
+      },
+      "live_paypal_requests": 0,
+      "model_calls": [
+        {
+          "decision": {
+            "action": "propose",
+            "candidate": 1
+          },
+          "model_version": "gemini-3.1-flash-lite",
+          "role": "buyer",
+          "usage": {
+            "candidatesTokenCount": 13,
+            "promptTokenCount": 2173,
+            "totalTokenCount": 2186
+          }
+        },
+        {
+          "decision": {
+            "action": "accept",
+            "candidate": 0
+          },
+          "model_version": "gemini-3.1-flash-lite",
+          "role": "buyer",
+          "usage": {
+            "candidatesTokenCount": 18,
+            "promptTokenCount": 2338,
+            "totalTokenCount": 2356
+          }
+        },
+        {
+          "decision": {
+            "action": "propose",
+            "candidate": 1
+          },
+          "model_version": "gemini-3.1-flash-lite",
+          "role": "provider",
+          "usage": {
+            "candidatesTokenCount": 19,
+            "promptTokenCount": 896,
+            "totalTokenCount": 915
+          }
+        },
+        {
+          "decision": {
+            "action": "propose",
+            "candidate": 0
+          },
+          "model_version": "gemini-3.1-flash-lite",
+          "role": "provider",
+          "usage": {
+            "candidatesTokenCount": 19,
+            "promptTokenCount": 2255,
+            "totalTokenCount": 2274
+          }
+        }
+      ],
+      "negotiation": {
+        "proposal_head": "5c0febd1d3925ecc506a0139301762dccf7373d94b386cf567386f070bd8922d",
+        "result": {
+          "amount": 6,
+          "canonical": "{\"amount_minor\":6,\"buyer\":\"015ce4cb9cea79160e309bddf6aab0e1752e47bfa71a7c729760ded2a449f3b7\",\"buyer_mandate\":\"977f28356e3b991699cef1d057b3a5f393f827e5876577546f611426c2c411ed\",\"currency\":\"JPY\",\"deadline\":400,\"provider\":\"6208ec8b5838d5755a2196b53cbed54d1fa02288a9a95bd33cb8e6bb36977af5\",\"provider_mandate\":\"403638195aff5b1c50fd138a79558b78b92ed46332911f4e417d3106478ae575\",\"terms_sha256\":\"874c087629cd1e22220641087be0c1eb7b161a659fd2fa581566a7415b4bf60a\",\"transaction_id\":\"one\"}",
+          "committed": 100,
+          "digest": "9b7eaab1dca6fd3bdcf96e143c7417a41b2d462591fb49cce1adb84329c99e6a",
+          "id": "one"
+        },
+        "status": "finalized"
+      },
+      "repeat_worker_new_mutations": 0,
+      "synthetic_paypal_mutations": 3,
+      "synthetic_worker": {
+        "action": "none",
+        "agreement": "one",
+        "authorization_id": "auth",
+        "committed": 100,
+        "order_id": "order",
+        "output_sha256": "f843468357c4ddb9d27a2b3134a70f9b73ad52a92fe8d9b75527424e5dc3b516",
+        "payload_sha256": "d8d315de136dab198298c3fc0a713edae744ea842e560b465f5ed7e0545c8c45",
+        "request_id": "e27be385f32d4ebda5e146ee4d4b31f1",
+        "status": "paid"
+      }
+    },
+    {
+      "case": "incompatible_policies",
+      "elapsed_seconds": 17.38,
+      "image_exchange": {
+        "report": {
+          "image_terms": {
+            "background_pixels": 7400,
+            "height": 100,
+            "input_sha256": "69f7009be491e08e57a19bbe0700c44de7423ec32ecedf247e66ff8c1c5e4c77",
+            "preserved_pixels": 2600,
+            "request_sha256": "ffeee1a12a98b942db3c532c04e1381b6917a620cf34fa2ebe10b5f4a791db2d",
+            "rule_id": "pact-raster-v1",
+            "rule_sha256": "977abebe990c4396691be86c5200986589bcbd65444679b587cc8f71792d19f9",
+            "width": 100
+          },
+          "reason_codes": [],
+          "status": "ready_to_sign",
+          "submission_number": 2,
+          "submissions_remaining": 1
+        },
+        "status": "ready_to_sign",
+        "submissions": [
+          {
+            "candidate": 0,
+            "report": {
+              "reason_codes": [
+                "invalid_png"
+              ],
+              "status": "resubmit",
+              "submission_number": 1,
+              "submissions_remaining": 2
+            }
+          },
+          {
+            "candidate": 1,
+            "report": {
+              "image_terms": {
+                "background_pixels": 7400,
+                "height": 100,
+                "input_sha256": "69f7009be491e08e57a19bbe0700c44de7423ec32ecedf247e66ff8c1c5e4c77",
+                "preserved_pixels": 2600,
+                "request_sha256": "ffeee1a12a98b942db3c532c04e1381b6917a620cf34fa2ebe10b5f4a791db2d",
+                "rule_id": "pact-raster-v1",
+                "rule_sha256": "977abebe990c4396691be86c5200986589bcbd65444679b587cc8f71792d19f9",
+                "width": 100
+              },
+              "reason_codes": [],
+              "status": "ready_to_sign",
+              "submission_number": 2,
+              "submissions_remaining": 1
+            }
+          }
+        ]
+      },
+      "live_paypal_requests": 0,
+      "model_calls": [
+        {
+          "decision": {
+            "action": "propose",
+            "candidate": 1
+          },
+          "model_version": "gemini-3.1-flash-lite",
+          "role": "buyer",
+          "usage": {
+            "candidatesTokenCount": 19,
+            "promptTokenCount": 2166,
+            "totalTokenCount": 2185
+          }
+        },
+        {
+          "decision": {
+            "action": "propose",
+            "candidate": 1
+          },
+          "model_version": "gemini-3.1-flash-lite",
+          "role": "buyer",
+          "usage": {
+            "candidatesTokenCount": 13,
+            "promptTokenCount": 2327,
+            "totalTokenCount": 2340
+          }
+        },
+        {
+          "decision": {
+            "action": "propose",
+            "candidate": 1
+          },
+          "model_version": "gemini-3.1-flash-lite",
+          "role": "provider",
+          "usage": {
+            "candidatesTokenCount": 19,
+            "promptTokenCount": 896,
+            "totalTokenCount": 915
+          }
+        },
+        {
+          "decision": {
+            "action": "propose",
+            "candidate": 0
+          },
+          "model_version": "gemini-3.1-flash-lite",
+          "role": "provider",
+          "usage": {
+            "candidatesTokenCount": 19,
+            "promptTokenCount": 2249,
+            "totalTokenCount": 2268
+          }
+        },
+        {
+          "decision": {
+            "action": "reject",
+            "candidate": null
+          },
+          "model_version": "gemini-3.1-flash-lite",
+          "role": "provider",
+          "usage": {
+            "candidatesTokenCount": 17,
+            "promptTokenCount": 2406,
+            "totalTokenCount": 2423
+          }
+        }
+      ],
+      "negotiation": {
+        "proposal_head": "e175752a668b4c924a07c5aa036a1d905dd5ae6a40fa82d262b5c0e93a2b2161",
+        "status": "rejected"
+      },
+      "reservations": 0
+    }
+  ],
+  "live_ai": true,
+  "live_paypal": false,
+  "sandbox_spend_jpy": 0,
+  "schema_version": 1
+}

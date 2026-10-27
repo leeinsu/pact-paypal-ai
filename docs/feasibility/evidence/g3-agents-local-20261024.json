@@ -1,0 +1,45 @@
+{
+  "scope": "Connect two Personal Agents to existing proposal and agreement services.",
+  "automated_tests": {
+    "executed": 497,
+    "skipped": [],
+    "failures": 0,
+    "failure_class": "none"
+  },
+  "test_duration_seconds": 51.556,
+  "checks": [
+    "Counterproposals can change the selected price.",
+    "Both agents sign the last accepted candidate.",
+    "Three proposals permit a final acceptance but prohibit a fourth proposal.",
+    "Invalid decisions and unsupported candidates cannot finalize an agreement.",
+    "Decision functions receive no signing keys.",
+    "Context changes cannot alter trusted candidates.",
+    "Revocation prevents finalization.",
+    "Model timeouts leave no payment operation.",
+    "Negotiated agreements reach image generation, synthetic payment, and download.",
+    "Repeated worker execution creates no replacement payment."
+  ],
+  "integrity": {
+    "g2_frozen_artifacts": 97,
+    "external_runtime_artifacts": 3,
+    "historical_g3_baselines": 21,
+    "result": "passed"
+  },
+  "language_review": {
+    "scope": "New docstrings, test text, README sentences, and evidence prose.",
+    "result": "Reviewed for direct sentences and preserved meaning.",
+    "exceptions": [],
+    "formal_asd_ste100_compliance_claimed": false
+  },
+  "limits": [
+    "Tests use decision stubs and synthetic PayPal responses.",
+    "No model provider or runtime entry point is connected.",
+    "This runner starts a new negotiation. It does not resume a partially completed negotiation.",
+    "No actual PayPal request or payment ran."
+  ],
+  "artifacts": {
+    "pact/agents.py": "5b06aea91a1ae54f77ba8bae93f3b73085baa737fc01ddfae3c2bff364114030",
+    "acceptance/transaction/test_agents.py": "8c494647736051246387c2958b9246d5af30ef200aca6f44549cb03014592720",
+    "README.md": "a2d6f2920d4de11918ed3fec167bba2d7ffc22f37f24007e5620501267ca28cd"
+  }
+}

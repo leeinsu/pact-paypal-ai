@@ -1,0 +1,76 @@
+{
+  "artifacts": {
+    "README.md": "b1500706c240697cbcdbbbf549a88308c813974ad0cedb8e422d4078f38df425",
+    "acceptance/transaction/test_gemini.py": "4d73b8b40a7240124d98adf5fcffca7573e3fa79642149211429b9b6d1172b1a",
+    "docs/feasibility/evidence/g3-gemini-overlap-live-20261024.json": "5d329f5958b6beec339a75a5f43c5a523e7f3238d5f1df5384c2db9cf9b72302",
+    "docs/feasibility/evidence/g3-gemini-rejection-live-20261024.json": "25f45671118b778e053d2e0c1696be514a70ff90d42cc6c3e30e71d65231523a",
+    "docs/feasibility/g3-gemini-negotiation-20261024.md": "436b50af4052131d2f5d61db93fe203117e1603967b61c5771ffd53fb0400fe4",
+    "docs/feasibility/user-checklist.ko.md": "e843b6583f8bbb038a159a25727b6197b819c92fe1f7d3464071f541ae32330f",
+    "feasibility/gemini_negotiation.py": "65abf23f45263f630e47764e5826dc925abce5a323d3b06bc1cadceaad97d87e",
+    "pact/agents.py": "b643cf5244930e307d13c7d5628321b687c58564f21d83498b25c1028b5e7fe6",
+    "pact/gemini.py": "a3d9cd1dbb127473e5cfae59481f7e382f69c349a9029ad26f9fc7e44c633af7",
+    "pact/server.py": "d88cbbc72b8dfb6aea3d1e75fb10fa17bdac89747fa848458e5b3f1e11c4813c"
+  },
+  "comparison_model": "gemini-3.1-flash-lite",
+  "configuration_change": "GEMINI_MODEL only. The API key remains unchanged.",
+  "configuration_file_changed": true,
+  "configured_model": "gemini-3.1-flash-lite",
+  "configured_model_generation": "verified_with_real_calls",
+  "configured_model_listed": true,
+  "integrity": {
+    "frozen_artifacts_verified": 100,
+    "historical_baselines_verified": 21
+  },
+  "language_review": {
+    "exception": "The user requested Korean checklist prose.",
+    "formal_compliance_claimed": false,
+    "scope": "New runtime messages, model instructions, docstrings, and Gemini documentation."
+  },
+  "live_incompatible_case": "verified_rejected_without_reservations",
+  "observed_live_overlap": {
+    "amount_jpy": 6,
+    "both_agent_signatures": true,
+    "decisions": [
+      {
+        "action": "propose",
+        "candidate": 1,
+        "role": "buyer"
+      },
+      {
+        "action": "propose",
+        "candidate": 0,
+        "role": "provider"
+      },
+      {
+        "action": "accept",
+        "candidate": 0,
+        "role": "buyer"
+      }
+    ],
+    "download_digest": "verified",
+    "image_generation": "verified",
+    "payment_transport": "synthetic",
+    "repeat_worker_new_mutations": 0,
+    "status": "verified_with_saved_result"
+  },
+  "original_model": "gemini-3.8-flash",
+  "original_model_generation": "unverified_due_to_provider_unavailability",
+  "payment_allowance_increased": false,
+  "payment_limit_jpy": 2500,
+  "provider_error": {
+    "http_status": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "status": "UNAVAILABLE"
+  },
+  "sandbox_spend_jpy": 0,
+  "schema_version": 1,
+  "scope": "Gemini connection with bounded candidates. No new PayPal network requests.",
+  "secret_file_git_ignored": true,
+  "secret_file_mode": "0600",
+  "tests": {
+    "executed": 507,
+    "failure_class": "none",
+    "failures": 0,
+    "skipped": []
+  }
+}

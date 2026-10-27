@@ -1,0 +1,50 @@
+{
+  "artifacts": {
+    "README.md": "13d2ec5ea31e6fedfc6c9e36f4f3fbe2c1f93d9e7c208d90968f16f876ad1df9",
+    "acceptance/transaction/test_http_records.py": "d1061a809f2fb683d8eab71f614e8cd5c3650a0a8596f85094b98c21f5a97327",
+    "acceptance/transaction/test_http_submission.py": "a941dc18f1370bd5f7a414ff8b7a069a019b0cceec0d4312f2578405f68c1727",
+    "docs/feasibility/g3-http-records-20261024.md": "7a6b7dd7203d90b214e8a9a1baa941d008fec5cf3d3cc2af5b52ceeca67d03c9",
+    "docs/pact-revision-proposal.md": "9464abe7c6e3b1cabaa4674271ba5fa76d2eeae4d6cb45b8893f8dcb03b1bfe5",
+    "pact/http.py": "4df09c9650a58109f4d77efd430687815710246d2b5dadb28e3ade919467465e",
+    "pact/records.py": "b504dfc936aadb4c818926fbfadd520163c2772b0018b33867bd45962a3ed598",
+    "pact/users.py": "62179eaa30e6d452daf3425f97981c54a60e6f156dd65b852ba650d3e98fa1cb",
+    "pact/verify_records.py": "33815fd6e3bd1e416aabde2caebd0955a18423ef5a8dc82bdc58c01ab138e19a"
+  },
+  "command": "PATH=\"/tmp/pact-opencv-venv/bin:$PATH\" DEVFLOW_TEST_RESULT=/tmp/pact-g3-http-records-tests.json ./verify.sh",
+  "credential_access": false,
+  "exit_code": 0,
+  "external_requests": 0,
+  "g2_freeze_sha256": "d6698d24443725123ec9363bb782193442371904746fdc7fd36bace882715c29",
+  "language_review": "Reviewed changed English prose and glossary terms. No additional exceptions. No formal ASD-STE100 compliance claim.",
+  "local_tests": {
+    "executed": 426,
+    "failure_class": "none",
+    "failures": 0,
+    "skipped": []
+  },
+  "new_tests": {
+    "http_evidence_and_cli": 9
+  },
+  "payment_requests": 0,
+  "recorded_at_utc": "2026-10-24T07:57:36.905584+00:00",
+  "scope": "Atomic HTTP evidence export, direct offline package verification, and signature checks before input reads. G3 remains open.",
+  "test_log_sha256": "25a786cb387a95f911b4830bc31e1e609bcdd0a8e6012e915a9156c1ea07b49a",
+  "unchanged_g2_repository_artifacts": 97,
+  "unchanged_g2_runtime_binaries": 3,
+  "verified_baselines": {
+    "authentication": 8,
+    "conditions": 13,
+    "detail": 6,
+    "http": 6,
+    "notifications": 6,
+    "offline-records": 6,
+    "operations": 12,
+    "payments": 10,
+    "readback": 5,
+    "records": 6,
+    "reservations": 6,
+    "signed-flow": 11,
+    "submission": 9,
+    "transport": 18
+  }
+}

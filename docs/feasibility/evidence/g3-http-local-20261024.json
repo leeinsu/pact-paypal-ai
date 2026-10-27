@@ -1,0 +1,44 @@
+{
+  "artifacts": {
+    "README.md": "8bb08d606490079133729df8c8b93fbbfa6c8c39314b5f0b6c052039d5635630",
+    "acceptance/transaction/test_http.py": "d4a79a160b4768bd18c1416369fbc4991f41cbcbfafa53cdbcfca17d990c9b6a",
+    "docs/feasibility/g3-http-20261024.md": "bf5af7ac0ca8df6b04b8773fd19486b8e7a83e40de1d697ccb29378310da1770",
+    "docs/feasibility/g3-notifications-20261024.md": "742f6eb8c4e6cf7414e12c021e0e4bb3d293448f6087f02cec4816c85165c7b1",
+    "docs/pact-revision-proposal.md": "ced095471769300afde13f3cfbdee3a7af365967573ec2e7a1d04da65429ebba",
+    "pact/http.py": "b4d43483ed4015613dfe91b46c975676dd2d65184e1fd0a9dca976403753a9ab"
+  },
+  "command": "PATH=\"/tmp/pact-opencv-venv/bin:$PATH\" DEVFLOW_TEST_RESULT=/tmp/pact-g3-http-tests.json ./verify.sh",
+  "credential_access": false,
+  "exit_code": 0,
+  "external_http_requests": 0,
+  "g2_freeze_sha256": "d6698d24443725123ec9363bb782193442371904746fdc7fd36bace882715c29",
+  "language_review": "Reviewed changed English prose and glossary terms. No additional exceptions. No formal ASD-STE100 compliance claim.",
+  "local_tests": {
+    "executed": 404,
+    "failure_class": "none",
+    "failures": 0,
+    "skipped": []
+  },
+  "new_tests": {
+    "participant_http": 15
+  },
+  "payment_requests": 0,
+  "recorded_at_utc": "2026-10-24T07:25:19.881475+00:00",
+  "scope": "Participant HTTPS WSGI boundary. No public deployment or payment dispatch route. G3 remains open.",
+  "test_log_sha256": "d36f5847357d8e2fc56271242ca5ea62bdd462605b188233267f33663ccee6ee",
+  "unchanged_g2_repository_artifacts": 97,
+  "unchanged_g2_runtime_binaries": 3,
+  "verified_baselines": {
+    "authentication": 8,
+    "conditions": 13,
+    "detail": 6,
+    "notifications": 6,
+    "offline-records": 6,
+    "operations": 12,
+    "payments": 10,
+    "records": 6,
+    "reservations": 6,
+    "signed-flow": 11,
+    "transport": 18
+  }
+}

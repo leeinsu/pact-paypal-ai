@@ -1,0 +1,334 @@
+{
+  "status": "diagnostic_only",
+  "evidence_class": "local",
+  "gate_review_required": true,
+  "source_manifest_sha256": "5bc332ac215a4b80471f2e99f973a3b845f7e07431d0094e418794f9232e2af1",
+  "source_manifest": {
+    "purpose": "Calibration diagnostics only. Not holdout data.",
+    "selection_rule": "First view of one object per category, followed by apple2 and car2. Selection precedes checker execution.",
+    "source_url": "https://datasets.d2.mpi-inf.mpg.de/eth80/eth80-cropped-close128.tgz",
+    "source_archive_sha256": "88fc3dcc8217f556d313e1d10947159e2f7773d060f239d32ba54320e7b4ada0",
+    "transformations": "The dataset publisher cropped and resized camera photographs to 128 pixels. This agent extracted bytes without image transformations.",
+    "manual_mask_provenance": "Unverified. Supplied dataset maps are not accepted as human reference masks. No masks were extracted.",
+    "license": "No dataset license found. Original paper invites research experiments. Redistribution and commercial use remain unverified.",
+    "holdout_selection": "None. Exclude these photographs and their transformed variants from future holdout.",
+    "samples": [
+      {
+        "id": "apple1-000-000",
+        "path": ".g2-evaluator/g2-current/eth80-calibration/apple1-000-000.png",
+        "archive_member": "eth80-cropped-close128/apple1/apple1-000-000.png",
+        "sha256": "5641b1b5fa127eefbcd87b1bf0410cc0e0d8f212c15401d73de8c3d5331d7b5a",
+        "width": 128,
+        "height": 128,
+        "eligibility": "Not yet inspected. Manual-mask requirement remains unverified."
+      },
+      {
+        "id": "car1-000-000",
+        "path": ".g2-evaluator/g2-current/eth80-calibration/car1-000-000.png",
+        "archive_member": "eth80-cropped-close128/car1/car1-000-000.png",
+        "sha256": "418271436d5d76b346a097f2166dc420b0a854dc426439b9421eb8c45b5d37b9",
+        "width": 128,
+        "height": 128,
+        "eligibility": "Not yet inspected. Manual-mask requirement remains unverified."
+      },
+      {
+        "id": "cow1-000-000",
+        "path": ".g2-evaluator/g2-current/eth80-calibration/cow1-000-000.png",
+        "archive_member": "eth80-cropped-close128/cow1/cow1-000-000.png",
+        "sha256": "fe445b2843e6facbbedbba20cc651630bf62e364208197a922de9e4250d3168f",
+        "width": 128,
+        "height": 128,
+        "eligibility": "Not yet inspected. Manual-mask requirement remains unverified."
+      },
+      {
+        "id": "cup1-000-000",
+        "path": ".g2-evaluator/g2-current/eth80-calibration/cup1-000-000.png",
+        "archive_member": "eth80-cropped-close128/cup1/cup1-000-000.png",
+        "sha256": "f1bc5335f82d6f9441b92ef3b8b8059dfa8d8b1ddaf82ac080cea58b940b8a65",
+        "width": 128,
+        "height": 128,
+        "eligibility": "Not yet inspected. Manual-mask requirement remains unverified."
+      },
+      {
+        "id": "dog1-000-000",
+        "path": ".g2-evaluator/g2-current/eth80-calibration/dog1-000-000.png",
+        "archive_member": "eth80-cropped-close128/dog1/dog1-000-000.png",
+        "sha256": "3849147f0edece3d788e61c02de07607fe190f27909e58fa6e8a3a22d0b9bd47",
+        "width": 128,
+        "height": 128,
+        "eligibility": "Not yet inspected. Manual-mask requirement remains unverified."
+      },
+      {
+        "id": "horse1-000-000",
+        "path": ".g2-evaluator/g2-current/eth80-calibration/horse1-000-000.png",
+        "archive_member": "eth80-cropped-close128/horse1/horse1-000-000.png",
+        "sha256": "fcc720879edf3118b5a26c81932a2c2556485eab6d73ca39ff8c77b2fff1ca02",
+        "width": 128,
+        "height": 128,
+        "eligibility": "Not yet inspected. Manual-mask requirement remains unverified."
+      },
+      {
+        "id": "pear1-000-000",
+        "path": ".g2-evaluator/g2-current/eth80-calibration/pear1-000-000.png",
+        "archive_member": "eth80-cropped-close128/pear1/pear1-000-000.png",
+        "sha256": "0b774ef958030fae97c0a3d2cea0190c8e3e275bfa93c6b3cd54abc037d4dff8",
+        "width": 128,
+        "height": 128,
+        "eligibility": "Not yet inspected. Manual-mask requirement remains unverified."
+      },
+      {
+        "id": "tomato1-000-000",
+        "path": ".g2-evaluator/g2-current/eth80-calibration/tomato1-000-000.png",
+        "archive_member": "eth80-cropped-close128/tomato1/tomato1-000-000.png",
+        "sha256": "bab42c286cb1b30aeb11bfaf348feb46abbb1e9a8fd51edf0729cb30f46aaa83",
+        "width": 128,
+        "height": 128,
+        "eligibility": "Not yet inspected. Manual-mask requirement remains unverified."
+      },
+      {
+        "id": "apple2-000-000",
+        "path": ".g2-evaluator/g2-current/eth80-calibration/apple2-000-000.png",
+        "archive_member": "eth80-cropped-close128/apple2/apple2-000-000.png",
+        "sha256": "dc7b6b55991455d3ba9928de707ae28e4bb27980b1253f3d465d642b6cee3699",
+        "width": 128,
+        "height": 128,
+        "eligibility": "Not yet inspected. Manual-mask requirement remains unverified."
+      },
+      {
+        "id": "car2-000-000",
+        "path": ".g2-evaluator/g2-current/eth80-calibration/car2-000-000.png",
+        "archive_member": "eth80-cropped-close128/car2/car2-000-000.png",
+        "sha256": "37e5daab964631754f6d92005a6c7ea196e9c56d056a796660e12c90878f9921",
+        "width": 128,
+        "height": 128,
+        "eligibility": "Not yet inspected. Manual-mask requirement remains unverified."
+      }
+    ]
+  },
+  "checker_sha256": "51a585f7ad158768a2937b88791c304d15f4f6e8b3fc1d5cc234b84412a772a2",
+  "rule_sha256": "f4278948fc853c2f8f3ffb4f126cf216793d1621ace0926b3e5d6e6607df60f7",
+  "supported_count": 0,
+  "denominator": 10,
+  "results": [
+    {
+      "id": "apple1-000-000",
+      "input_sha256": "5641b1b5fa127eefbcd87b1bf0410cc0e0d8f212c15401d73de8c3d5331d7b5a",
+      "input_check": {
+        "status": "unsupported",
+        "input_sha256": "5641b1b5fa127eefbcd87b1bf0410cc0e0d8f212c15401d73de8c3d5331d7b5a",
+        "width": null,
+        "height": null,
+        "rule_id": "g2-v2",
+        "region_counts": {
+          "total": null,
+          "background": null,
+          "foreground_candidate": null,
+          "foreground": null,
+          "uncertain": null,
+          "foreground_components": null
+        },
+        "reason_codes": [
+          "unsupported_format"
+        ]
+      }
+    },
+    {
+      "id": "car1-000-000",
+      "input_sha256": "418271436d5d76b346a097f2166dc420b0a854dc426439b9421eb8c45b5d37b9",
+      "input_check": {
+        "status": "unsupported",
+        "input_sha256": "418271436d5d76b346a097f2166dc420b0a854dc426439b9421eb8c45b5d37b9",
+        "width": null,
+        "height": null,
+        "rule_id": "g2-v2",
+        "region_counts": {
+          "total": null,
+          "background": null,
+          "foreground_candidate": null,
+          "foreground": null,
+          "uncertain": null,
+          "foreground_components": null
+        },
+        "reason_codes": [
+          "unsupported_format"
+        ]
+      }
+    },
+    {
+      "id": "cow1-000-000",
+      "input_sha256": "fe445b2843e6facbbedbba20cc651630bf62e364208197a922de9e4250d3168f",
+      "input_check": {
+        "status": "unsupported",
+        "input_sha256": "fe445b2843e6facbbedbba20cc651630bf62e364208197a922de9e4250d3168f",
+        "width": null,
+        "height": null,
+        "rule_id": "g2-v2",
+        "region_counts": {
+          "total": null,
+          "background": null,
+          "foreground_candidate": null,
+          "foreground": null,
+          "uncertain": null,
+          "foreground_components": null
+        },
+        "reason_codes": [
+          "unsupported_format"
+        ]
+      }
+    },
+    {
+      "id": "cup1-000-000",
+      "input_sha256": "f1bc5335f82d6f9441b92ef3b8b8059dfa8d8b1ddaf82ac080cea58b940b8a65",
+      "input_check": {
+        "status": "unsupported",
+        "input_sha256": "f1bc5335f82d6f9441b92ef3b8b8059dfa8d8b1ddaf82ac080cea58b940b8a65",
+        "width": null,
+        "height": null,
+        "rule_id": "g2-v2",
+        "region_counts": {
+          "total": null,
+          "background": null,
+          "foreground_candidate": null,
+          "foreground": null,
+          "uncertain": null,
+          "foreground_components": null
+        },
+        "reason_codes": [
+          "unsupported_format"
+        ]
+      }
+    },
+    {
+      "id": "dog1-000-000",
+      "input_sha256": "3849147f0edece3d788e61c02de07607fe190f27909e58fa6e8a3a22d0b9bd47",
+      "input_check": {
+        "status": "unsupported",
+        "input_sha256": "3849147f0edece3d788e61c02de07607fe190f27909e58fa6e8a3a22d0b9bd47",
+        "width": null,
+        "height": null,
+        "rule_id": "g2-v2",
+        "region_counts": {
+          "total": null,
+          "background": null,
+          "foreground_candidate": null,
+          "foreground": null,
+          "uncertain": null,
+          "foreground_components": null
+        },
+        "reason_codes": [
+          "unsupported_format"
+        ]
+      }
+    },
+    {
+      "id": "horse1-000-000",
+      "input_sha256": "fcc720879edf3118b5a26c81932a2c2556485eab6d73ca39ff8c77b2fff1ca02",
+      "input_check": {
+        "status": "unsupported",
+        "input_sha256": "fcc720879edf3118b5a26c81932a2c2556485eab6d73ca39ff8c77b2fff1ca02",
+        "width": null,
+        "height": null,
+        "rule_id": "g2-v2",
+        "region_counts": {
+          "total": null,
+          "background": null,
+          "foreground_candidate": null,
+          "foreground": null,
+          "uncertain": null,
+          "foreground_components": null
+        },
+        "reason_codes": [
+          "unsupported_format"
+        ]
+      }
+    },
+    {
+      "id": "pear1-000-000",
+      "input_sha256": "0b774ef958030fae97c0a3d2cea0190c8e3e275bfa93c6b3cd54abc037d4dff8",
+      "input_check": {
+        "status": "unsupported",
+        "input_sha256": "0b774ef958030fae97c0a3d2cea0190c8e3e275bfa93c6b3cd54abc037d4dff8",
+        "width": null,
+        "height": null,
+        "rule_id": "g2-v2",
+        "region_counts": {
+          "total": null,
+          "background": null,
+          "foreground_candidate": null,
+          "foreground": null,
+          "uncertain": null,
+          "foreground_components": null
+        },
+        "reason_codes": [
+          "unsupported_format"
+        ]
+      }
+    },
+    {
+      "id": "tomato1-000-000",
+      "input_sha256": "bab42c286cb1b30aeb11bfaf348feb46abbb1e9a8fd51edf0729cb30f46aaa83",
+      "input_check": {
+        "status": "unsupported",
+        "input_sha256": "bab42c286cb1b30aeb11bfaf348feb46abbb1e9a8fd51edf0729cb30f46aaa83",
+        "width": null,
+        "height": null,
+        "rule_id": "g2-v2",
+        "region_counts": {
+          "total": null,
+          "background": null,
+          "foreground_candidate": null,
+          "foreground": null,
+          "uncertain": null,
+          "foreground_components": null
+        },
+        "reason_codes": [
+          "unsupported_format"
+        ]
+      }
+    },
+    {
+      "id": "apple2-000-000",
+      "input_sha256": "dc7b6b55991455d3ba9928de707ae28e4bb27980b1253f3d465d642b6cee3699",
+      "input_check": {
+        "status": "unsupported",
+        "input_sha256": "dc7b6b55991455d3ba9928de707ae28e4bb27980b1253f3d465d642b6cee3699",
+        "width": null,
+        "height": null,
+        "rule_id": "g2-v2",
+        "region_counts": {
+          "total": null,
+          "background": null,
+          "foreground_candidate": null,
+          "foreground": null,
+          "uncertain": null,
+          "foreground_components": null
+        },
+        "reason_codes": [
+          "unsupported_format"
+        ]
+      }
+    },
+    {
+      "id": "car2-000-000",
+      "input_sha256": "37e5daab964631754f6d92005a6c7ea196e9c56d056a796660e12c90878f9921",
+      "input_check": {
+        "status": "unsupported",
+        "input_sha256": "37e5daab964631754f6d92005a6c7ea196e9c56d056a796660e12c90878f9921",
+        "width": null,
+        "height": null,
+        "rule_id": "g2-v2",
+        "region_counts": {
+          "total": null,
+          "background": null,
+          "foreground_candidate": null,
+          "foreground": null,
+          "uncertain": null,
+          "foreground_components": null
+        },
+        "reason_codes": [
+          "unsupported_format"
+        ]
+      }
+    }
+  ]
+}

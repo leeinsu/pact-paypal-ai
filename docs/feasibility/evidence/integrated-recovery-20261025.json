@@ -1,0 +1,117 @@
+{
+  "date": "2026-10-25",
+  "scope": "Actual JPY 1 payment interruption and query-only recovery. G3 and G4 remain open.",
+  "tests": {
+    "executed": 536,
+    "failures": 0,
+    "skipped": [],
+    "full_suite_seconds": 47.406,
+    "regression_before_fix": "FAILED: ValueError not raised.",
+    "regression_after_fix": "Passed with the full suite."
+  },
+  "actual_dispatch": {
+    "post_operations": [
+      "order",
+      "authorization",
+      "capture"
+    ],
+    "capture_status": "COMPLETED",
+    "worker_exit_code": 75,
+    "interrupted_before_local_settlement": true
+  },
+  "before_recovery": {
+    "state": "payment_unknown",
+    "recovery": "query_only",
+    "each_participant_reserved_jpy": 1,
+    "each_participant_consumed_jpy": 0,
+    "buyer_output_http_status": 400
+  },
+  "recovery": {
+    "status": "paid",
+    "capture_request_id_unchanged": true,
+    "requests": [
+      {
+        "method": "GET",
+        "operation": "order_readback"
+      },
+      {
+        "method": "GET",
+        "operation": "capture_readback"
+      }
+    ],
+    "repeated_worker_status": "paid",
+    "repeated_worker_requests": 0,
+    "state_counts": {
+      "orders": 1,
+      "authorizations": 1,
+      "capture_intents": 1,
+      "settlements": 1,
+      "fulfillment_attempts": 1,
+      "consumptions": 2,
+      "reservations": 0
+    },
+    "output_sha256": "f843468357c4ddb9d27a2b3134a70f9b73ad52a92fe8d9b75527424e5dc3b516",
+    "payment_authorization": {
+      "cumulative_limit_jpy": 2500,
+      "prior_conservative_consumed_jpy": 10,
+      "this_increment_consumed_jpy": 1,
+      "conservative_consumed_jpy": 11,
+      "remaining_jpy": 2489
+    }
+  },
+  "actual_browser": {
+    "observation_source": "Browser observations recorded during this experiment before the browser service reset.",
+    "buyer_state": "paid",
+    "buyer_output_http_status": 200,
+    "buyer_output_sha256": "f843468357c4ddb9d27a2b3134a70f9b73ad52a92fe8d9b75527424e5dc3b516",
+    "support_actions": [
+      "request",
+      "review_started",
+      "review"
+    ],
+    "support_open": false,
+    "operator_review_source": "Existing terminal evidence. The worker performed the recovery GET requests.",
+    "after_browser_service_reset": {
+      "previous_device_keys_available": false,
+      "seller_reverification_complete": false,
+      "https_application_accessible": true,
+      "anonymous_output_http_status": 400
+    }
+  },
+  "offline_verification": {
+    "transaction_id": "sandbox-recovery-20261025-01",
+    "signatures_verified": true,
+    "record_count": 31,
+    "retained_checkpoint_verified": true,
+    "output_verified": true,
+    "server_payment_assertion": "paid",
+    "paypal_settlement_verified": false
+  },
+  "private_artifact_sha256": {
+    "dispatch-observations.json": "397c075194228c26885189c5e2e39321c9fa5987be018e3f7eb4b32739a00179",
+    "recovery-result.json": "fe90fcc16e88114ce83d475f90b966c7c56dcacea16ce6a6c30dd6c41db6b920",
+    "recovery-evidence-package.json": "009746fd316b49870ac7258a2efadd8b50a3c78d4f1bc29213af617ca34d8a62",
+    "recovery-offline-verification.json": "c0d5e25f2da1fc3bb288c0e643d2bb790657ef55663a97a6858fbcd58a197ea0"
+  },
+  "artifact_sha256": {
+    "pact/delegation.py": "242993ba765a5aee3e6cfc38c0af84b4145da1dbed72353b5c45c6f819b95135",
+    "acceptance/transaction/test_support.py": "0491e4b148610f1a5d1c4a9e0b5b411f57271d0fa5c926da8dc22bdb10464ed1",
+    "pact/auth.py": "beed224620a0ca7523dea30257d6f96720b7896f2da8e8e61aaf91e9f62e0583",
+    "pact/support.py": "a6cc656790dceff5b6f83fe1c41587310dc73b1eecd95c790847d3d674d701ba",
+    "pact/paypal.py": "224950d3e6a48ca3d55c1537c25074f5dea6dbcc992d193f000bc7cd64f7f406",
+    "pact/reservations.py": "f703da7442c1faf6bba040d184aa64c751cf251025603c2a451275c943e085ba",
+    "pact/worker.py": "8989f0d4f47a634ea6e718c82fd25f7c954593cc35899bdc0d5ac235d5658d23",
+    "pact/server.py": "017887597410aba645f1801875b90b5d129b69c9d585bf7e0345a3337b4643eb",
+    "pact/files.py": "30c42f95c79ad31ebb6d9e658dd99dc7f247bbea048988b78ed8385c3fa404a6",
+    "pact/verify_records.py": "06eb50fbc8fb11727661cc53d18897ec9c74ae0da7f449410c8514c1adf1f84a",
+    "docs/feasibility/integrated-recovery-20261025.md": "9ffc57f3f148f5afa2c84f15215e78d8d7a3aa88144665143b88f9b31928e72c",
+    "docs/feasibility/g3-g4-evidence-matrix-20261025.md": "e7089ec05bcf5e9a8a8c7b9aec0a3ad6391e65d473585e0a8b1dbbe8a2b89c86"
+  },
+  "limitations": [
+    "No host power failure or network packet loss simulation.",
+    "No new Gemini call in the recovery experiment.",
+    "No objection clearance, verified retention policy, or deletion.",
+    "No browser key recovery or seller reverification after browser reset.",
+    "No independent G3 or G4 acceptance."
+  ]
+}

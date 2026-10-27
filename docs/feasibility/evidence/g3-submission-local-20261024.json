@@ -1,0 +1,48 @@
+{
+  "artifacts": {
+    "README.md": "cd247cdfb05c76e306f6c98e039f0a43769ead4a017876ba7c33a02e7e2ee048",
+    "acceptance/transaction/test_http.py": "938be688bf73df5640f783fe92796f3276485e24c8d90efa3a78cc58813705d0",
+    "acceptance/transaction/test_http_submission.py": "572a9775d5319f554eeaab3a594328a20ab6983de079c7ededa94ced22671c03",
+    "docs/feasibility/g3-http-20261024.md": "a0f1f580b32f9d5b15c08d0816e2dc71432d034d572cfd7a82d1454aeda78aa8",
+    "docs/feasibility/g3-submission-20261024.md": "2802b810bf823ef259c2cceda2c3d2c51f2c97626634fc518ea5d3862a325999",
+    "docs/pact-revision-proposal.md": "115a92ecd3e17b0f7c930237583263552d4a2b1d1023caaddb291b8c1dcbbf06",
+    "pact/http.py": "55a3d53c6845ce7fd3d1adc0f4c43d657745a0a79cd1d2ae88b4fd5432b60d30",
+    "pact/intake.py": "881757bf1fa98c2135a1b854f58d6c57945cb474b1239aaaa32e2c300be2d133",
+    "pact/users.py": "571e770e697e64ca42b9d7978796e0b5ccdfba6f952d61a6bbc25dd57475d988"
+  },
+  "command": "PATH=\"/tmp/pact-opencv-venv/bin:$PATH\" DEVFLOW_TEST_RESULT=/tmp/pact-g3-submission-tests.json ./verify.sh",
+  "credential_access": false,
+  "exit_code": 0,
+  "external_http_requests": 0,
+  "g2_freeze_sha256": "d6698d24443725123ec9363bb782193442371904746fdc7fd36bace882715c29",
+  "language_review": "Reviewed changed English prose and glossary terms. No additional exceptions. No formal ASD-STE100 compliance claim.",
+  "local_tests": {
+    "executed": 415,
+    "failure_class": "none",
+    "failures": 0,
+    "skipped": []
+  },
+  "new_tests": {
+    "submission_http": 11
+  },
+  "payment_requests": 0,
+  "recorded_at_utc": "2026-10-24T07:45:07.290443+00:00",
+  "scope": "Authenticated image submission, signed Mandates, proposals, and finalization. G3 remains open.",
+  "test_log_sha256": "92aa8681c0bf33c869411de64bd7a17b439e36a529a726bf8d46bb8fdb9c0a1a",
+  "unchanged_g2_repository_artifacts": 97,
+  "unchanged_g2_runtime_binaries": 3,
+  "verified_baselines": {
+    "authentication": 8,
+    "conditions": 13,
+    "detail": 6,
+    "http": 6,
+    "notifications": 6,
+    "offline-records": 6,
+    "operations": 12,
+    "payments": 10,
+    "records": 6,
+    "reservations": 6,
+    "signed-flow": 11,
+    "transport": 18
+  }
+}

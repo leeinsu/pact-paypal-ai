@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-25",
+  "status": "Local browser excerpt. Not the complete adopted demonstration.",
+  "transaction_id": "sandbox-source-ai-20261025-01",
+  "private_artifact_directory": "/home/user/.local/state/pact-demo-recording-20261025",
+  "video": {
+    "filename": "pact-browser-excerpt.mp4",
+    "sha256": "c072f8b1853d4f926c32e94f04d4623c2c9c107e9723a3ac11e688624d146a57",
+    "bytes": 608300,
+    "duration_seconds": 36.12,
+    "codec": "h264",
+    "width": 1280,
+    "height": 900,
+    "screen_frames": 145,
+    "audio": false,
+    "captions": true,
+    "retained_completed_transaction": true
+  },
+  "actions": [
+    "Load retained source conditions",
+    "Inspect complete fixed conditions",
+    "Inspect second submission preflight",
+    "Reload actual completed JPY 1 transaction",
+    "Inspect accepted output check",
+    "Download output",
+    "Download evidence"
+  ],
+  "download_verification": {
+    "transaction_id": "sandbox-source-ai-20261025-01",
+    "signatures_verified": true,
+    "record_count": 45,
+    "retained_checkpoint_verified": true,
+    "output_verified": true,
+    "server_payment_assertion": "paid",
+    "paypal_settlement_verified": false
+  },
+  "output_sha256": "f843468357c4ddb9d27a2b3134a70f9b73ad52a92fe8d9b75527424e5dc3b516",
+  "buyer_session_signed_out": true,
+  "browser_contexts_retained": true,
+  "new_payments": 0,
+  "cumulative_authorization_jpy": 2500,
+  "conservative_consumption_jpy": 12,
+  "remaining_authorization_jpy": 2488,
+  "missing_segments": [
+    "Prior account consent",
+    "Live AI decisions",
+    "Original rejected submission",
+    "Damaged-output rejection",
+    "Interrupted payment recovery",
+    "Offline verification on screen"
+  ],
+  "publication_performed": false
+}

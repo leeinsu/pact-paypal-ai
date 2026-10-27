@@ -1,0 +1,41 @@
+{
+  "artifacts": {
+    "README.md": "e913507e9fcb5c5a967fd55196a50d9ccef0085a0ecfec66f3020b5ce4f6d752",
+    "acceptance/transaction/test_verify_records.py": "b6358ece3390d5934388a27609851612bd5ab7e3e36efb2c4a6c64df895ef917",
+    "docs/feasibility/g3-offline-records-20261024.md": "ef6d6fe7cc159e527245df152426616960322d0806300aa4bf04bb1fbec00325",
+    "docs/feasibility/g3-records-20261024.md": "570ab3f1f8292f1dfe8d151c35319cebf06ce3319ec27b2ed042ae8bd0e0033b",
+    "docs/pact-revision-proposal.md": "d8fb448856a28f17399cddf65c9f2bb33e8f10d4372e1adcc1ee1a0af9b5d7a7",
+    "pact/verify_records.py": "e1865aa0dfc3f7665563c8c28b01c8db69b276135959f49dad1d4037a860f228"
+  },
+  "command": "PATH=\"/tmp/pact-opencv-venv/bin:$PATH\" DEVFLOW_TEST_RESULT=/tmp/pact-g3-offline-records-tests.json ./verify.sh",
+  "credential_access": false,
+  "exit_code": 0,
+  "external_http_requests": 0,
+  "g2_freeze_sha256": "d6698d24443725123ec9363bb782193442371904746fdc7fd36bace882715c29",
+  "language_review": "Reviewed changed English prose and glossary terms. No additional exceptions. No formal ASD-STE100 compliance claim.",
+  "local_tests": {
+    "executed": 359,
+    "failure_class": "none",
+    "failures": 0,
+    "skipped": []
+  },
+  "new_tests": {
+    "offline_records": 15
+  },
+  "payment_requests": 0,
+  "recorded_at_utc": "2026-10-24T07:09:30.412221+00:00",
+  "scope": "Offline signature and retained record continuity verification. No independent PayPal settlement claim. G3 remains open.",
+  "test_log_sha256": "4511d397a388b8877708469c643cf2f38e3b9bab0a91cdc318c6a4d0fc71e029",
+  "unchanged_g2_repository_artifacts": 97,
+  "unchanged_g2_runtime_binaries": 3,
+  "verified_baselines": {
+    "authentication": 8,
+    "conditions": 13,
+    "operations": 12,
+    "payments": 10,
+    "records": 6,
+    "reservations": 6,
+    "signed-flow": 11,
+    "transport": 18
+  }
+}

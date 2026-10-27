@@ -1,0 +1,111 @@
+{
+  "date": "2026-10-25",
+  "scope": "Support requests and restricted operator recovery. G3 and G4 remain open.",
+  "tests": {
+    "executed": 535,
+    "skipped": [],
+    "failures": 0,
+    "failure_class": "none"
+  },
+  "full_suite_seconds": 47.375,
+  "actual_browser": {
+    "participant_request_and_reply": true,
+    "operator_registered_locally": true,
+    "operator_protected_endpoints_status": [
+      403,
+      403,
+      403,
+      403
+    ],
+    "actions": [
+      "request",
+      "reply",
+      "acknowledge",
+      "review_started",
+      "review"
+    ],
+    "review_source": "Existing terminal evidence. No new PayPal readback request.",
+    "restart_checks": [
+      {
+        "context": 0,
+        "detailStatus": 200,
+        "outputStatus": 200,
+        "hash": "f843468357c4ddb9d27a2b3134a70f9b73ad52a92fe8d9b75527424e5dc3b516",
+        "operatorVisible": null
+      },
+      {
+        "context": 1,
+        "detailStatus": 200,
+        "outputStatus": 200,
+        "hash": "f843468357c4ddb9d27a2b3134a70f9b73ad52a92fe8d9b75527424e5dc3b516",
+        "operatorVisible": null
+      },
+      {
+        "context": 2,
+        "detailStatus": 200,
+        "outputStatus": 403,
+        "hash": null,
+        "operatorVisible": true
+      }
+    ]
+  },
+  "offline_verification": {
+    "transaction_id": "sandbox-ai-20261025-01",
+    "signatures_verified": true,
+    "record_count": 19,
+    "retained_checkpoint_verified": true,
+    "output_verified": true,
+    "server_payment_assertion": "paid",
+    "paypal_settlement_verified": false,
+    "state_counts": {
+      "orders": 1,
+      "authorizations": 1,
+      "capture_intents": 1,
+      "settlements": 1,
+      "fulfillment_attempts": 1,
+      "consumptions": 2,
+      "reservations": 0,
+      "retention_actions": 4,
+      "support_actions": 5
+    }
+  },
+  "payment_authorization": {
+    "cumulative_limit_jpy": 2500,
+    "this_increment_consumed_jpy": 0,
+    "conservative_consumed_jpy": 10,
+    "remaining_jpy": 2490
+  },
+  "limitations": [
+    "No objection clearance or complete external evidence review.",
+    "No verified retention policy or deletion.",
+    "No actual interruption of an outstanding payment.",
+    "No host power failure simulation.",
+    "No independent G3 or G4 acceptance."
+  ],
+  "artifact_sha256": {
+    "pact/support.py": "a6cc656790dceff5b6f83fe1c41587310dc73b1eecd95c790847d3d674d701ba",
+    "pact/auth.py": "beed224620a0ca7523dea30257d6f96720b7896f2da8e8e61aaf91e9f62e0583",
+    "pact/reservations.py": "f703da7442c1faf6bba040d184aa64c751cf251025603c2a451275c943e085ba",
+    "pact/paypal.py": "224950d3e6a48ca3d55c1537c25074f5dea6dbcc992d193f000bc7cd64f7f406",
+    "pact/worker.py": "8989f0d4f47a634ea6e718c82fd25f7c954593cc35899bdc0d5ac235d5658d23",
+    "pact/users.py": "53f16f69c10e267512b465f91fc714b088f620c591601ec76b7d12f9f00995aa",
+    "pact/http.py": "4787f1d24546cfcdaa0c4309fbd0a2521380031cbc342b6431fde7a5af38c54e",
+    "pact/server.py": "017887597410aba645f1801875b90b5d129b69c9d585bf7e0345a3337b4643eb",
+    "pact/records.py": "b0a3dfa365cafacec53c9864b16ca959c995cb748acfc4bdcc1a36fd6e024412",
+    "pact/verify_records.py": "06eb50fbc8fb11727661cc53d18897ec9c74ae0da7f449410c8514c1adf1f84a",
+    "pact/web/app.js": "c73b7b2e388737b02a916db3689ff3543da0137cf1e121ec943d25aad43086fb",
+    "pact/web/index.html": "4cbf401cbb3d319f6f5983185a57b2df6b3171334f87705fb33629b85dc17d2f",
+    "acceptance/transaction/test_support.py": "38cb0e3fca4ed25ca156c4ddead5b4e584514bef214d12c0e538acf30ae1e5d4",
+    "docs/feasibility/support-recovery-20261025.md": "cf2c850b5aa09f455184231eb45ed5a5b8eb35de44681b29b5933e8ea70f0818",
+    "README.md": "708b2c456dc5b994830d687a954de43ecc931ba677865165d54f53cad74ffada",
+    "docs/feasibility/user-checklist.ko.md": "ffdbf1acf5ab86cc406d50ad730b795ff73714de599247ed1842da597dc1fbbd"
+  },
+  "language_review": {
+    "scope": "Changed English prose, interface text, glossary terms, conditions, quantities, and uncertainty.",
+    "exceptions": [
+      "The Korean checklist uses the existing user language exception.",
+      "Exact identifiers, commands, paths, API names, and hashes retain their required forms."
+    ],
+    "formal_asd_ste100_compliance_claimed": false
+  }
+}

@@ -1,3 +1,10 @@
-# 위임 취소는 이미 확정된 거래를 없애지 않는다
+# Order revocation against the finalization commit
 
-사용자가 위임을 취소하면 해당 위임으로 새로운 거래를 확정할 수 없다. 취소 전에 양쪽이 서명한 최종 거래 합의서는 계속 유효하다. 이미 확정된 거래의 중단과 환불은 그 합의서에 적힌 조건에 따라 처리한다.
+Revocation and agreement finalization use the same database write order.
+Revocation committed first prevents a new agreement under that Mandate.
+A finalization commit recorded first preserves that existing agreement despite later revocation.
+Two signatures without a finalization commit do not authorize work or payment.
+Existing agreement conditions govern cancellation and refunds.
+
+GD amendment adopted on 2026-10-24.
+See the [adoption record](../feasibility/gd-reconciliation-20261024.md) and [glossary](../../GLOSSARY.md).

@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-25",
+  "scope": "Actual HTTPS objection and read-only Sandbox payment review",
+  "review_source": "authenticated_api_readback",
+  "binding_result": "matched",
+  "observations": {
+    "order": "COMPLETED",
+    "authorization": "CAPTURED",
+    "capture": "COMPLETED"
+  },
+  "objection_active": true,
+  "case_open": true,
+  "support_hold": true,
+  "deletion_permitted": false,
+  "financial_tables_unchanged": {
+    "agreement_terms": {
+      "rows": 2,
+      "sha256": "09f0902f470591650512f95412237500fcc762dcf45301d5f6fe3618f7c046ca"
+    },
+    "agreements": {
+      "rows": 2,
+      "sha256": "1297c28b65397299b6717e0c1b4e430e69680f6c76df184cb8cfbe9a569663ad"
+    },
+    "authorizations": {
+      "rows": 2,
+      "sha256": "72301345232d34cdcfd2d0acf47b3efa05f0a2fa961df33a2dcd15281c5ae329"
+    },
+    "capture_intents": {
+      "rows": 2,
+      "sha256": "784a97ac71e061f213b5f7a9a678b2e604548d502bc447d3e7d5fa6f4bb79b9a"
+    },
+    "closures": {
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "consumptions": {
+      "rows": 4,
+      "sha256": "958b361b3ce6f5ae9fd37d33fe6727c991ea25b6ba6e8a6a429160e2f9c3149c"
+    },
+    "fulfillment_attempts": {
+      "rows": 2,
+      "sha256": "4d1c2137124ba46100cc304cf608ed960df7f3788c221be0a1bfa9e9d30a6fd0"
+    },
+    "orders": {
+      "rows": 2,
+      "sha256": "dbb6fc09895227e27068dfb5372397e341aa9159e16b12b988b946769ca75a06"
+    },
+    "payment_operations": {
+      "rows": 4,
+      "sha256": "910fe5ac9bfad4bf17fb07500d5c11c073bf79e68563287b2c7b2d96a9886e52"
+    },
+    "reservations": {
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "settlements": {
+      "rows": 2,
+      "sha256": "75631e504aeadca25b102201b7369b63885cf97353e7dcb54bfe670b43a27f05"
+    },
+    "signed_agreements": {
+      "rows": 2,
+      "sha256": "5e02ac4dfb96cbaa1a0b8ecea409f60c13f207f5636278817484bd8fc623a8c4"
+    }
+  },
+  "offline_verification": {
+    "signatures_verified": true,
+    "record_count": 36,
+    "retained_checkpoint_verified": true,
+    "output_verified": true,
+    "server_payment_assertion": "paid",
+    "paypal_settlement_verified": false
+  },
+  "actual_payment_requests": 0,
+  "cumulative_jpy_consumed": 11,
+  "cumulative_jpy_remaining": 2489,
+  "retained_initial_false_conflict": true,
+  "operator_download_statuses": {
+    "input": 403,
+    "output": 403,
+    "evidence": 403
+  },
+  "browser_sessions_signed_out": true,
+  "support_tests_passed": 21,
+  "acceptance_tests_passed": 550,
+  "acceptance_failures": 0,
+  "acceptance_skips": 0
+}

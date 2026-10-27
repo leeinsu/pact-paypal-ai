@@ -1,0 +1,59 @@
+{
+  "account_tests_passed": 17,
+  "artifacts": {
+    "acceptance/transaction/test_accounts.py": "9dff2ac4fd5c5df8c3b298bc13565c91d3695e34071792ec073373b6e84c9082",
+    "docs/feasibility/merchant-login-check-20261024.md": "5d47df1d88a8752712775ea0a9c266df487dc029e1baa863da0cbe24d3828155",
+    "docs/feasibility/user-checklist.ko.md": "88d19007e1cf361bb3607cedf848008f7fab6f07bb48c58f527714ac783c6bb8",
+    "pact/http.py": "215ff73a76ead23ed87f32db86b2dcb4f928a77784d40c3e78aef283e8c56391"
+  },
+  "browser_checks": {
+    "callback_scope_field_received": true,
+    "consent": true,
+    "full_scope_login_form": true,
+    "https_return": true,
+    "normal_server_callback_status": 500,
+    "registration_confirmation_visible": false,
+    "seller_login": true,
+    "session_retained_after_restart": true
+  },
+  "budget": {
+    "authorization_increased": false,
+    "authorization_reset": false,
+    "payment_mutations": 0,
+    "payment_token_mutations": 0,
+    "sandbox_spend_jpy": 0,
+    "user_authorization_jpy": 2500
+  },
+  "date": "2026-10-24",
+  "integrity": {
+    "frozen_artifacts_verified": 100,
+    "historical_baselines_verified": 21
+  },
+  "language_review": {
+    "formal_compliance_claimed": false,
+    "scope": "New report and changed code comment. Korean checklist uses the user exception."
+  },
+  "private_state_counts": {
+    "merchant_registration_challenges": 0,
+    "merchants": 0
+  },
+  "profile_checks": {
+    "authorization_code_exchange_succeeded": true,
+    "cause_established": false,
+    "oauth_profile_error": "invalid_request",
+    "oauth_profile_http_status": 400,
+    "openid_profile_after_refresh_http_status": 401,
+    "openid_profile_http_status": 401,
+    "production_token_validation_relaxed": false,
+    "required_scopes_present": true
+  },
+  "regression_failed_before_fix": true,
+  "scope": "Actual merchant login and optional callback scope correction",
+  "status": "merchant_profile_unconfirmed",
+  "tests": {
+    "executed": 513,
+    "failure_class": "none",
+    "failures": 0,
+    "skipped": []
+  }
+}

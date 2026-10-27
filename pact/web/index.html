@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PACT · Transaction workspace</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/app.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <header><span class="brand">PACT</span><span>Sandbox workspace</span></header>
+  <main>
+    <h1>Your agent transactions</h1>
+    <p>Review recorded agreements, delivery checks, and payment status.</p>
+    <p class="notice">Sandbox development. Retention controls remain incomplete. Production eligibility remains unverified.</p>
+    <p id="status" role="status" aria-live="polite">Ready to sign in.</p>
+    <section aria-labelledby="identity-title">
+      <h2 id="identity-title">Device identity</h2>
+      <p>The browser keeps your private signing key. Clearing browser data can remove this identity.</p>
+      <p id="principal">Signed out.</p>
+      <button id="login" type="button">Sign in with this device</button>
+      <button id="logout" type="button" disabled>Sign out</button>
+    </section>
+    <section id="operator" aria-labelledby="operator-title" hidden>
+      <h2 id="operator-title">Support cases</h2>
+      <p>This role can inspect support records and query existing payment paths. It cannot submit new payments or download files.</p>
+      <p>Aim to acknowledge cases within one business day. This target does not guarantee PayPal resolution.</p>
+      <button id="support-refresh" type="button">Refresh cases</button>
+      <pre id="support-cases"></pre>
+      <form id="support-review-form">
+        <label for="support-transaction">Transaction ID</label>
+        <input id="support-transaction" required maxlength="128" autocomplete="off">
+        <label for="support-next-check">Next check in your local time</label>
+        <input id="support-next-check" type="datetime-local" required>
+        <label for="support-operator-action">Action</label>
+        <select id="support-operator-action"><option value="acknowledge">Acknowledge</option><option value="review">Query existing payment</option></select>
+        <div class="row"><button type="submit">Record support action</button></div>
+      </form>
+      <p>Missing or conflicting evidence keeps reservations active. Objections require evidence review before further state changes.</p>
+    </section>
+    <section id="accounts" aria-labelledby="accounts-title" hidden>
+      <h2 id="accounts-title">PayPal Sandbox accounts</h2>
+      <p>Connect accounts before creating a Mandate. Connecting an account does not authorize a PACT transaction.</p>
+      <p>Buyer consent saves a payment method for later delegated payments. Continue only with your intended Sandbox account.</p>
+      <button id="buyer-connect" type="button">Connect buyer account</button>
+      <button id="merchant-connect" type="button">Connect PayPal seller account</button>
+      <button id="account-return" type="button" hidden>Review returned account</button>
+      <pre id="account-target" hidden></pre>
+      <button id="account-confirm" type="button" hidden>Sign this account connection</button>
+      <p id="account-state">No account connection recorded in this view.</p>
+    </section>
+    <section id="mandates" aria-labelledby="mandates-title" hidden>
+      <h2 id="mandates-title">Bounded agent Mandate</h2>
+      <p>A Mandate authorizes the named agent to transact within these limits without approval for each transaction.</p>
+      <p>Use the public key from your agent. Keep its private key separate from your device signing key.</p>
+      <form id="mandate-form">
+        <label for="mandate-role">Your role</label>
+        <select id="mandate-role" required><option value="buyer">Buyer</option><option value="provider">Provider</option></select>
+        <label for="agent-key">Agent public key</label>
+        <input id="agent-key" required minlength="44" maxlength="44" autocomplete="off" spellcheck="false">
+        <label for="counterparty">Permitted counterparty Principal</label>
+        <input id="counterparty" required maxlength="128" pattern="[A-Za-z0-9_\-]{1,128}" autocomplete="off">
+        <label for="transaction-limit">Limit per transaction (JPY)</label>
+        <input id="transaction-limit" type="number" required min="1" max="1000000000000" step="1">
+        <label for="period-limit">Total limit until expiry (JPY)</label>
+        <input id="period-limit" type="number" required min="1" max="1000000000000" step="1">
+        <label for="mandate-expiry">Expiry in your local time</label>
+        <input id="mandate-expiry" type="datetime-local" required>
+        <div class="row"><button type="submit">Review Mandate</button></div>
+      </form>
+      <pre id="mandate-document" hidden></pre>
+      <button id="mandate-confirm" type="button" hidden>Sign this Mandate</button>
+      <p id="mandate-state">No Mandate submitted from this view.</p>
+      <form id="revoke-form">
+        <label for="revoke-id">Mandate ID to revoke</label>
+        <input id="revoke-id" required minlength="64" maxlength="64" pattern="[a-f0-9]{64}" autocomplete="off">
+        <div class="row"><button type="submit">Sign Mandate revocation</button></div>
+      </form>
+      <p>Revocation prevents new agreements. Use emergency stop to stop new actions on existing transactions.</p>
+      <p>A payment already submitted can still complete.</p>
+    </section>
+    <section id="image-exchange" aria-labelledby="image-title" hidden>
+      <h2 id="image-title">Image request</h2>
+      <p>The buyer sends the fixed raster rule. The named provider submits a PNG or a replacement before agreement.</p>
+      <p>This operation removes explicit padding. It preserves the photograph background and shadows.</p>
+      <details><summary>Create a request as buyer</summary>
+        <form id="image-request-form">
+          <label for="image-transaction">Transaction ID</label>
+          <input id="image-transaction" required maxlength="128" pattern="[A-Za-z0-9_-]{1,128}">
+          <label for="image-request-id">Request ID</label>
+          <input id="image-request-id" required maxlength="128" pattern="[A-Za-z0-9_-]{1,128}">
+          <label for="image-provider">Provider Principal</label>
+          <input id="image-provider" required maxlength="128" pattern="[A-Za-z0-9_-]{1,128}">
+          <label for="image-width">Width in pixels</label>
+          <input id="image-width" required type="number" min="64" max="1024" step="1">
+          <label for="image-height">Height in pixels</label>
+          <input id="image-height" required type="number" min="64" max="1024" step="1">
+          <label for="image-background">Padding color</label>
+          <input id="image-background" required type="color" value="#f0f0f0">
+          <div class="row"><button type="submit">Send fixed conditions</button></div>
+        </form>
+      </details>
+      <form id="image-load-form">
+        <label for="image-load-id">Request ID from your counterparty</label>
+        <div class="row"><input id="image-load-id" required maxlength="128" autocomplete="off">
+        <button type="submit">Load conditions and status</button></div>
+      </form>
+      <p id="image-state" role="status" aria-live="polite">No image request loaded.</p>
+      <details><summary>Complete fixed conditions</summary><pre id="image-conditions"></pre></details>
+      <details><summary>Preflight report</summary><pre id="image-report"></pre></details>
+      <form id="image-upload-form" hidden>
+        <label for="image-source">Source PNG or replacement PNG</label>
+        <input id="image-source" type="file" accept="image/png" required>
+        <div class="row"><button type="submit">Submit source for preflight</button></div>
+      </form>
+      <p>All request revisions share three submissions per transaction. Image submission does not authorize payment.</p>
+    </section>
+    <section id="workspace" aria-labelledby="transaction-title" hidden>
+      <h2 id="transaction-title">Transaction</h2>
+      <form id="lookup">
+        <label for="transaction-id">Transaction ID</label>
+        <div class="row"><input id="transaction-id" name="transaction" required maxlength="128" autocomplete="off">
+        <button type="submit">Load transaction</button></div>
+      </form>
+      <article id="transaction" hidden>
+        <h3 id="transaction-heading"></h3>
+        <dl id="facts"></dl>
+        <p id="next-action"></p>
+        <div class="row">
+          <button id="input-download" type="button">Download input</button>
+          <button id="output-download" type="button">Download output</button>
+          <button id="evidence-download" type="button">Download evidence</button>
+        </div>
+        <details><summary>Signed agreement</summary><pre id="agreement"></pre></details>
+        <details><summary>Delivery checks</summary><pre id="checks"></pre></details>
+        <details><summary>Payment evidence</summary><pre id="payment"></pre></details>
+        <details><summary>Support case</summary>
+          <p>Use this case for payment uncertainty, download failures, or objections. Do not pay again to recover a download.</p>
+          <p>Do not include passwords, tokens, payment credentials, or private signing keys.</p>
+          <pre id="support"></pre>
+          <form id="support-form">
+            <label for="support-action">Action</label>
+            <select id="support-action"><option value="request">Request support</option><option value="reply">Reply</option><option value="objection">Object</option></select>
+            <label for="support-message">Message</label>
+            <textarea id="support-message" required maxlength="2000" rows="3"></textarea>
+            <div class="row"><button type="submit">Send to this case</button></div>
+          </form>
+          <p>Unconfirmed payments and objections retain evidence. A support request does not authorize another payment.</p>
+        </details>
+        <p>Recorded checks establish only the agreed raster conditions. They do not guarantee product quality or dispute outcomes.</p>
+        <details><summary>Evidence retention</summary>
+          <p>Register a hold for a dispute or objection. You can release only your own hold.</p>
+          <p>Automatic deletion remains disabled until the retention policy is verified.</p>
+          <pre id="retention"></pre>
+          <label for="retention-until">Retain evidence until (UTC date)</label>
+          <input id="retention-until" type="date" required>
+          <div class="row">
+            <button id="retention-hold" type="button">Hold evidence</button>
+            <button id="retention-release" type="button">Release my hold</button>
+          </div>
+        </details>
+      </article>
+    </section>
+    <section id="activity" aria-labelledby="activity-title" hidden>
+      <h2 id="activity-title">Activity</h2>
+      <button id="refresh" type="button">Refresh activity</button>
+      <p id="activity-state">No activity loaded.</p>
+      <ol id="notices"></ol>
+    </section>
+    <section id="safety" aria-labelledby="safety-title" hidden>
+      <h2 id="safety-title">Emergency stop</h2>
+      <p>Stop new transaction actions for your Principal. A stop cannot guarantee cancellation of a payment already submitted.</p>
+      <button id="stop" type="button" class="danger">Stop my agent</button>
+    </section>
+    <noscript>Enable JavaScript to use device signing and authenticated transaction routes.</noscript>
+  </main>
+</body>
+</html>

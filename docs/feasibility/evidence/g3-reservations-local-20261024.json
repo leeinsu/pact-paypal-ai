@@ -1,0 +1,36 @@
+{
+  "artifacts": {
+    "acceptance/transaction/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "acceptance/transaction/test_reservations.py": "bbc77821371c0c1241ebbcbc7e6d3ac08d0ad149d8b9d1f6f4393f0650d4d0b7",
+    "docs/feasibility/g3-reservations-20261024.md": "f4ae86ad9915d116dd162f431da4a31b10b0203170fee3fb3c233eb3e063cd7f",
+    "pact/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pact/reservations.py": "bc8b6e4d7a382cdaca50465b6efa5d9d1de25addbab2618de185fbfe71774803",
+    "verify.sh": "79766002f29bcef71f84987d49dc581c0883a8d3c16d15a95e266aa5c6c42048"
+  },
+  "command": "PATH=\"/tmp/pact-opencv-venv/bin:$PATH\" DEVFLOW_TEST_RESULT=/tmp/pact-g3-reservations-tests.json ./verify.sh",
+  "credential_access": false,
+  "exit_code": 0,
+  "language_review": "Checked glossary terms, direct sentences, quantities, and scope. No formal ASD-STE100 compliance claim.",
+  "local_tests": {
+    "executed": 168,
+    "failure_class": "none",
+    "failures": 0,
+    "skipped": []
+  },
+  "new_reservation_tests": 23,
+  "payment_requests": 0,
+  "recorded_at_utc": "2026-10-24T04:53:57.331509+00:00",
+  "remaining": [
+    "Authentication and signatures",
+    "Account ownership bindings",
+    "Persistent image intake and encrypted files",
+    "Payment submission and dispatch",
+    "Authenticated settlement and reservation release",
+    "Real Sandbox response-loss evidence"
+  ],
+  "scope": "Local reservation storage only. This record does not establish G3 acceptance.",
+  "sqlite_version": "3.46.1",
+  "test_log_sha256": "37710d6f0d399298e674623a94e8e05051fa5cc5c1c51fcdedb4061db6c30d80",
+  "unchanged_g2_repository_artifacts": 97,
+  "unchanged_g2_runtime_binaries": 3
+}

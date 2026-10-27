@@ -1,0 +1,215 @@
+{
+  "experiment": "g1-fresh-consent-payment-20261024",
+  "local_test_date": "2026-10-24",
+  "local_timezone": "Asia/Seoul",
+  "scope": "Recorded initial consent for a distinct Sandbox Wallet token, unattended authorization, separate capture, and readback",
+  "api_host": "api-m.sandbox.paypal.com",
+  "integration_test_passed": true,
+  "gate_review_status": "Final independent evidence review pending",
+  "amount": {
+    "currency": "JPY",
+    "authorized_limit": 1,
+    "captured": 1,
+    "additional_budget_total": 2500,
+    "additional_budget_used_conservatively": 4,
+    "additional_budget_remaining": 2496
+  },
+  "counts": {
+    "orders_created": 1,
+    "authorizations_created": 1,
+    "captures_created": 1,
+    "voids": 0,
+    "refunds": 0
+  },
+  "storage": {
+    "setup_status_before_consent": "PAYER_ACTION_REQUIRED",
+    "setup_status_after_consent": "APPROVED",
+    "permit_multiple_payment_tokens": true,
+    "exchange_http_status": 201,
+    "distinct_new_token_verified": true,
+    "payment_token_readback_verified": true,
+    "buyer_binding_verified": true,
+    "prior_payer_binding_verified": true,
+    "setup_customer_binding_verified": true,
+    "usage_pattern": "DEFERRED",
+    "usage_type": "MERCHANT",
+    "customer_type": "CONSUMER"
+  },
+  "consent": {
+    "started_at": "2026-10-23T16:13:49.357Z",
+    "consent_clicked_at": "2026-10-23T16:16:30.230Z",
+    "returned_at": "2026-10-23T16:16:31.453Z",
+    "context_closed_at": "2026-10-23T16:16:32.683Z",
+    "cookies_cleared": true,
+    "left_consent_flow": true,
+    "followup_browser_interactions": 0,
+    "video_sha256": "597a0c03c21d242353b256fd6c92a5bcfdfeb18643ac07a372563f544a07aef3",
+    "video_bytes": 1583583,
+    "video_duration_seconds": 51.32,
+    "video_full_decode_passed": true,
+    "actor": "Agent using the user-authorized Sandbox buyer",
+    "button_label": "同意して続行",
+    "future_payment_wording_independently_inspected": true,
+    "recording_context_closed_before_payment": true,
+    "encoded_duration_is_not_context_lifetime": true
+  },
+  "payment": {
+    "intent": "AUTHORIZE",
+    "saved_source_placement": "payment_source.paypal.vault_id on order authorization",
+    "authorization_status_before_capture": "CREATED",
+    "capture_status": "COMPLETED",
+    "capture_readback_status": "COMPLETED",
+    "buyer_binding_verified": true,
+    "merchant_binding_verified": true,
+    "order_authorization_capture_linked": true,
+    "followup_browser_interactions": 0
+  },
+  "procedure_review": {
+    "review_type": "Independent agent prospective procedure approval",
+    "reviewer": "/root/restart_review",
+    "approved_at_before_execution": true,
+    "runner_sha256": "46c570ca836deaf9cbdf4a926f332c29291961ba4f42ec758f345b86f64e9e43",
+    "procedure_sha256": "ebf3d5b75dc7cb26fc6d2037db729f06c6c62d6f111cd59c2d0818ff11aac742",
+    "approved_scope": "One fresh setup/token exchange and one JPY 1 authorization with separate capture",
+    "human_approval": false,
+    "required_pre_payment_checks": [
+      "Recorded future-payment consent",
+      "Prior payer equality",
+      "Distinct new token with HTTP 201",
+      "Verified buyer and setup customer",
+      "Closed browser context and cleared cookies",
+      "Zero follow-up browser interactions"
+    ]
+  },
+  "recovery": {
+    "automatic_mutation_retry": false,
+    "unique_mutation_request_ids": true,
+    "order_create_retention_seconds": 21600,
+    "order_authorize_retention_seconds": 21600,
+    "capture_retention_seconds": null,
+    "void_retention_seconds": null,
+    "unknown_result_policy": "Known-identifier queries only. Keep unresolved outcomes unknown. Do not create replacement payments."
+  },
+  "cleanup": {
+    "loopback_bridge_stopped": true,
+    "temporary_oauth_and_callback_capabilities_removed": true,
+    "browser_context_closed": true,
+    "restricted_evidence_retained": true,
+    "existing_tokens_retained": true
+  },
+  "limitations": [
+    "Independent final evidence review remains pending.",
+    "The original experiment still lacks its initial consent recording.",
+    "This recording establishes consent for this distinct token, not the buyer first-ever consent.",
+    "The encoded video duration does not establish the complete browser context lifetime.",
+    "Production eligibility and the reported merchant country remain unverified.",
+    "Capture and void idempotency retention durations remain unverified.",
+    "G2 evaluation and G3 transaction safety implementation remain separate gates."
+  ],
+  "events": [
+    {
+      "operation": "oauth",
+      "method": "POST",
+      "http_status": 200,
+      "status": null,
+      "recorded_at": "2026-10-23T16:15:28.250203+00:00",
+      "endpoint_template": "/v1/oauth2/token"
+    },
+    {
+      "operation": "setup",
+      "method": "POST",
+      "http_status": 201,
+      "status": "PAYER_ACTION_REQUIRED",
+      "recorded_at": "2026-10-23T16:15:28.997327+00:00",
+      "endpoint_template": "/v3/vault/setup-tokens"
+    },
+    {
+      "operation": "setup_readback",
+      "method": "GET",
+      "http_status": 200,
+      "status": "APPROVED",
+      "recorded_at": "2026-10-23T16:16:34.933805+00:00",
+      "endpoint_template": "/v3/vault/setup-tokens/{setup_token_id}"
+    },
+    {
+      "operation": "setup_before_exchange",
+      "method": "GET",
+      "http_status": 200,
+      "status": "APPROVED",
+      "recorded_at": "2026-10-23T16:16:58.592536+00:00",
+      "endpoint_template": "/v3/vault/setup-tokens/{setup_token_id}"
+    },
+    {
+      "operation": "exchange",
+      "method": "POST",
+      "http_status": 201,
+      "status": null,
+      "recorded_at": "2026-10-23T16:17:00.257088+00:00",
+      "endpoint_template": "/v3/vault/payment-tokens"
+    },
+    {
+      "operation": "payment_token_readback",
+      "method": "GET",
+      "http_status": 200,
+      "status": null,
+      "recorded_at": "2026-10-23T16:17:01.107165+00:00",
+      "endpoint_template": "/v3/vault/payment-tokens/{payment_token_id}"
+    },
+    {
+      "operation": "order_create",
+      "method": "POST",
+      "http_status": 201,
+      "status": "CREATED",
+      "recorded_at": "2026-10-23T16:17:36.391306+00:00",
+      "endpoint_template": "/v2/checkout/orders"
+    },
+    {
+      "operation": "order_before_authorize",
+      "method": "GET",
+      "http_status": 200,
+      "status": "CREATED",
+      "recorded_at": "2026-10-23T16:17:37.339602+00:00",
+      "endpoint_template": "/v2/checkout/orders/{order_id}"
+    },
+    {
+      "operation": "order_authorize",
+      "method": "POST",
+      "http_status": 201,
+      "status": "COMPLETED",
+      "recorded_at": "2026-10-23T16:17:39.590785+00:00",
+      "endpoint_template": "/v2/checkout/orders/{order_id}/authorize"
+    },
+    {
+      "operation": "order_after_authorize",
+      "method": "GET",
+      "http_status": 200,
+      "status": "COMPLETED",
+      "recorded_at": "2026-10-23T16:17:40.348574+00:00",
+      "endpoint_template": "/v2/checkout/orders/{order_id}"
+    },
+    {
+      "operation": "authorization_readback",
+      "method": "GET",
+      "http_status": 200,
+      "status": "CREATED",
+      "recorded_at": "2026-10-23T16:17:41.212394+00:00",
+      "endpoint_template": "/v2/payments/authorizations/{authorization_id}"
+    },
+    {
+      "operation": "authorization_capture",
+      "method": "POST",
+      "http_status": 201,
+      "status": "COMPLETED",
+      "recorded_at": "2026-10-23T16:17:43.264138+00:00",
+      "endpoint_template": "/v2/payments/authorizations/{authorization_id}/capture"
+    },
+    {
+      "operation": "capture_readback",
+      "method": "GET",
+      "http_status": 200,
+      "status": "COMPLETED",
+      "recorded_at": "2026-10-23T16:17:44.508766+00:00",
+      "endpoint_template": "/v2/payments/captures/{capture_id}"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "video": "/home/user/.local/state/pact-demo-recording-20261025/pact-review-v2-165s.mp4",
+  "sha256": "ed35a20b0afee4daabd0cb0d53a68fe7530c1ed92401e6f3b2f2ea0dd928bbda",
+  "bytes": 2340772,
+  "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 900,
+        "r_frame_rate": "25/1"
+      }
+    ],
+    "format": {
+      "duration": "165.000000"
+    }
+  },
+  "complete_decode_passed": true,
+  "segments": [
+    {
+      "name": "01-intro",
+      "seconds": 18
+    },
+    {
+      "name": "02-consent",
+      "seconds": 20
+    },
+    {
+      "name": "03-retained-ai",
+      "seconds": 14
+    },
+    {
+      "name": "04-live-ai",
+      "seconds": 14
+    },
+    {
+      "name": "05-browser",
+      "seconds": 36.12
+    },
+    {
+      "name": "06-safety",
+      "seconds": 12
+    },
+    {
+      "name": "07-recovery",
+      "seconds": 13
+    },
+    {
+      "name": "08-offline",
+      "seconds": 22
+    },
+    {
+      "name": "09-limits",
+      "seconds": 15.88
+    }
+  ],
+  "date": "2026-10-25",
+  "status": "Private review draft. Adopted demonstration acceptance remains open.",
+  "actual_paypal_requests_during_preparation": 0,
+  "actual_payment_jpy_during_preparation": 0,
+  "actual_gemini_calls": 3,
+  "actual_gemini_tokens": 3392,
+  "visual_review_seconds": [
+    58,
+    110,
+    140,
+    157
+  ],
+  "visual_review_result": "Execution results and scope labels were readable. No configured credentials appeared in these inspected frames.",
+  "limits": [
+    "Consent screens and actual payment interruption use retained records.",
+    "Recorded local commands use a temporary browser process viewer, not an operating system terminal.",
+    "The actual Gemini command uses synthetic PayPal responses and transaction one.",
+    "Browser access uses sandbox-source-ai-20261025-01. Recovery uses sandbox-recovery-20261025-01.",
+    "Offline signatures do not independently verify PayPal settlement.",
+    "No public upload, independent video acceptance, or customer savings measurement occurred."
+  ],
+  "language_review": {
+    "scope": "Evidence descriptions, limits, quantities, and uncertainty.",
+    "exceptions": [],
+    "formal_asd_ste100_compliance_claimed": false
+  },
+  "native_recordings": [
+    {
+      "path": "private command recording",
+      "sha256": "5693314928abfc19e0c6e2df5bceee3b86c348cefdbf427d3c13fc728932aefd",
+      "used_initial_seconds": 14
+    },
+    {
+      "path": "private safety recording",
+      "sha256": "6fd0c2e2b71ea209657395db0b2bbfbeecc4a3b729d741e0a7bfc89888059f6e",
+      "used_initial_seconds": 12
+    },
+    {
+      "path": "private offline-verification recording",
+      "sha256": "1d7bfedd3c1804e05627303c8ea8af01947ee4447045bada5c022e620506ca99",
+      "used_initial_seconds": 22
+    }
+  ],
+  "recorded_command_results": {
+    "live": {
+      "command": [
+        "/tmp/pact-opencv-venv/bin/python",
+        "/tmp/pact-demo-live-trade-20261025.py"
+      ],
+      "returncode": 0,
+      "output": "Actual Gemini. Synthetic PayPal. Transaction: one.\nSources: resubmit -> ready_to_sign. Agreement: finalized.\nModel decision 1: {\"action\": \"propose\", \"candidate\": 0}\nModel decision 2: {\"action\": \"propose\", \"candidate\": 1}\nModel decision 3: {\"action\": \"accept\", \"candidate\": 0}\nWorker: paid. Synthetic financial mutations: 3\nBuyer and provider downloads match: true.\nCompleted worker replay additional transport calls: 0.\nActual PayPal requests: 0. Actual payment: JPY 0.\nElapsed seconds: 4.618\n"
+    },
+    "safety": {
+      "command": [
+        "/tmp/pact-opencv-venv/bin/python",
+        "/tmp/pact-demo-safety-check-20261025.py"
+      ],
+      "returncode": 0,
+      "output": "{\n  \"scope\": \"Local failure injection with synthetic PayPal responses.\",\n  \"injection\": \"The generator returns the unchanged opaque input instead of the agreed transparent output.\",\n  \"transaction_id\": \"one\",\n  \"worker_status\": \"closed\",\n  \"capture_intents\": 0,\n  \"consumptions\": 0,\n  \"synthetic_payment_completed\": false,\n  \"synthetic_authorization_voided\": true,\n  \"synthetic_mutations\": [\n    \"orders\",\n    \"authorize\",\n    \"void\"\n  ],\n  \"actual_paypal_requests\": 0\n}\n"
+    },
+    "offline": {
+      "command": [
+        "/tmp/pact-opencv-venv/bin/python",
+        "/tmp/pact-demo-offline-command-20261025.py"
+      ],
+      "returncode": 0,
+      "output": "{\n  \"transaction_id\": \"sandbox-source-ai-20261025-01\",\n  \"signatures_verified\": true,\n  \"record_count\": 45,\n  \"retained_checkpoint_verified\": true,\n  \"output_verified\": true,\n  \"server_payment_assertion\": \"paid\",\n  \"paypal_settlement_verified\": false\n}\nOffline signatures do not independently verify PayPal settlement.\nActual PayPal requests: 0. Actual Gemini requests: 0.\n"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "account_identifiers_recorded": false,
+  "credential_values_recorded": false,
+  "new_authorizations": 0,
+  "new_budget_consumption_jpy": 0,
+  "new_captures": 0,
+  "new_orders": 0,
+  "new_payment_tokens": 0,
+  "new_voids": 0,
+  "oauth_requests": 1,
+  "passed": true,
+  "previously_recorded_budget_remaining_jpy": 2496,
+  "readbacks": {
+    "payment_token": {
+      "customer_and_buyer_match": true,
+      "verified": true
+    },
+    "settlement": {
+      "amount_minor": 1,
+      "authorization_status": "CAPTURED",
+      "buyer_merchant_and_linked_ids_match": true,
+      "capture_status": "COMPLETED",
+      "currency": "JPY",
+      "verified": true
+    },
+    "setup_token": {
+      "customer_and_buyer_match": true,
+      "status": "VAULTED",
+      "verified": true
+    }
+  },
+  "recorded_at_utc": "2026-10-24T07:47:18.682039+00:00",
+  "resource_get_requests": 5,
+  "scope": "Current application transport reads existing G1 Sandbox records. This probe creates no transactions or consent.",
+  "source_state_sha256": "67d1aaaaeb2aa3139bdb1c35bc6572d76bfd16a34102980698dfa9f7517961cf",
+  "source_state_unchanged": true
+}

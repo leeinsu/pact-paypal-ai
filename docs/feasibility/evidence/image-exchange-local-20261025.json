@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "command": "PATH=/tmp/pact-opencv-venv/bin:$PATH ./verify.sh",
+  "tests_run": 549,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "exit_code": 0,
+  "elapsed_seconds": 49.673,
+  "javascript_syntax_exit_code": 0,
+  "tracked_diff_whitespace_exit_code": 0,
+  "live_ai": false,
+  "live_paypal": false,
+  "sandbox_spend_jpy": 0
+}

@@ -1,3 +1,11 @@
-# 최종 합의 직전에 양쪽 위임의 최신 상태를 확인한다
+# Recheck Mandates inside finalization
 
-사용자는 서명된 위임 취소 기록을 공개할 수 있다. 양쪽 개인 에이전트는 최종 거래 합의서에 서명하기 직전에 상대 위임의 최신 상태를 확인한다. 최신 상태를 확인할 수 없거나 위임이 취소됐으면 새 거래를 확정하지 않는다. 위임 취소는 이미 확정된 거래를 자동으로 없애지 않는다.
+Agents check current revocation state before signing.
+The server rechecks both signatures, Mandates, revocation, expiry, emergency stop, and limits inside the finalization transaction.
+A signing-time check alone cannot authorize finalization.
+Unavailable ordering state prevents finalization.
+Revocation committed before finalization rejects the agreement.
+Later revocation does not erase an existing finalization commit.
+
+GD amendment adopted on 2026-10-24.
+See the [adoption record](../feasibility/gd-reconciliation-20261024.md) and [glossary](../../GLOSSARY.md).

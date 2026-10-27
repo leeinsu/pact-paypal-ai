@@ -1,0 +1,118 @@
+{
+  "date": "2026-10-22",
+  "method": "Actual CodexAdapter with a local deterministic model endpoint",
+  "model": "gpt-5.6-terra",
+  "sandbox": "workspace-write",
+  "schema": "implementation.2.schema.json",
+  "historical_task": "pact-jpy-v2-20261022",
+  "live_model_request": false,
+  "provider_response": "Injected functions.exec call, then deliberate HTTP 400 after capture",
+  "request_count": 2,
+  "source_hashes": {
+    "codex_adapter.py": "5d3dae61e11370a378c937c3e2fdcaf0ad99c8c17b82e103482641fb55dc4e1f",
+    "language_policy.py": "40af045a283d51f59f925da48d0c8d81e828a5847557b633eaa86d566ba97b0a",
+    "devflow.py": "ead7bdb9d519d0b1db1f6845c33de54313a2dcea6e71a463240749e5a4d55ce9",
+    "process_runner.py": "826a09fef31d0fdf0bab1e5d45216272afe9b10bd5d3a9e83246674aab251a87"
+  },
+  "successful_lsp_calls": [
+    {
+      "tool": "status",
+      "status": "completed",
+      "error": null
+    },
+    {
+      "tool": "symbols",
+      "status": "completed",
+      "error": null
+    },
+    {
+      "tool": "diagnostics",
+      "status": "completed",
+      "error": null
+    }
+  ],
+  "diagnostic_result": "No diagnostics found",
+  "historical_mcp_call_events": {
+    "1": 0,
+    "2": 0
+  },
+  "raw_evidence_directory": "/tmp/pact-lsp-request-gci3ig0i",
+  "post_repair_verification": {
+    "framework_tests": 171,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "policy_sha256": "afabdc10502460cf50f4a111ce51aa9c9a15d36e23a7e727bc5a74784d420acf",
+    "offline_replay_directory": "/tmp/pact-lsp-request-koc7jyen",
+    "successful_lsp_calls": [
+      "status",
+      "symbols",
+      "diagnostics"
+    ],
+    "diagnostic_result": "No diagnostics found",
+    "live_model_request": false,
+    "fresh_task": "pact-jpy-v3-20261022"
+  },
+  "autonomous_implementation_verification": {
+    "task": "pact-jpy-v3-20261022",
+    "stage": "implementation",
+    "outcome": "approved",
+    "log_sha256": "b1329179f4dd48eb2c5b981d0007629e1b4f0aff1941c6bd6b9f9f33815602d1",
+    "actual_mcp_calls": [
+      {
+        "tool": "status",
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "find_references",
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "symbols",
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "diagnostics",
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "diagnostics",
+        "status": "completed",
+        "error": null
+      },
+      {
+        "tool": "find_references",
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "local_tests": 85,
+    "later_interruption": "Both security review attempts failed because workspace credits were exhausted.",
+    "fresh_task": "pact-jpy-v4-20261022"
+  },
+  "completed_task_verification": {
+    "task": "pact-jpy-v6-20261022",
+    "status": "complete",
+    "report_sha256": "e2c9aafad6072e539bca2b9b98443242c25db0387dcd9be242bc71a172f2e820",
+    "implementation_log_sha256": "9f319201b119deed1c6446dc233737eb6c79196179c6217dcdb5fd1cb8f627a3",
+    "actual_lsp_calls": [
+      "status",
+      "symbols",
+      "diagnostics",
+      "find_references"
+    ],
+    "security_review": "approved",
+    "logic_test": "approved",
+    "ui_excluded_criteria": 8,
+    "project_tests": 85,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "verification_log_sha256": "9b39903847f1c7ffe6c176179c62ac4ba4bf3f9dd14d82aaad9793a77a5001f2",
+    "external_payment_calls": false
+  }
+}

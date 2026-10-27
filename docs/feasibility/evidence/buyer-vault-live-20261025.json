@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-25",
+  "scope": "Actual Sandbox buyer Vault consent, token readback, and device-signed registration. No payment execution.",
+  "tests": {
+    "executed": 515,
+    "skipped": [],
+    "failures": 0,
+    "failure_class": "none"
+  },
+  "full_suite_seconds": 44.278,
+  "focused_tests": 21,
+  "regression_failed_before_change": true,
+  "observed_callback_fields": [
+    "state",
+    "approval_token_id",
+    "approval_session_id"
+  ],
+  "live_browser": {
+    "separate_buyer_context": true,
+    "consent_completed": true,
+    "callback_resumed_after_unconsumed_state_check": true,
+    "device_signature_registration": true,
+    "status": "Account connection recorded. No PACT transaction was authorized."
+  },
+  "private_state_checks": {
+    "buyer_bindings": 1,
+    "payment_sources": 1,
+    "signed_buyer_consents": 1,
+    "shared_buyer_seller_principals": 0,
+    "encrypted_payment_sources_valid": true
+  },
+  "payment_spend_jpy": 0,
+  "cumulative_authorization_jpy": 2500,
+  "historical_conservative_consumption_jpy": 4,
+  "remaining_authorization_jpy": 2496,
+  "artifact_sha256": {
+    "pact/http.py": "f7431868236522e3013f7d8fdc7f18838327020677318562c247f4d2b4ffa899",
+    "acceptance/transaction/test_buyer_accounts.py": "d2efe4ebcae5724f83f137c8ccb317214015aeada85baa3b56d7df9a55116152",
+    "docs/feasibility/buyer-vault-live-20261025.md": "ca635a9480f883798e2b9cd55e704b304e018ccac4c0ab380d489630bb8d7198",
+    "README.md": "44e9e9640e88427f9423cd87c858e9082ebe2a1c51a809e65a36821bc3727fcf",
+    "docs/feasibility/user-checklist.ko.md": "87a79f06c49d15086bd93e50e487570a9cdc04b122b1d4321cb1125c6b5dddd1"
+  },
+  "language_review": {
+    "scope": "Changed English Markdown prose and Korean checklist under the existing user exception.",
+    "formal_compliance_claim": false
+  }
+}

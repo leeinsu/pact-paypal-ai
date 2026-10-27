@@ -1,0 +1,89 @@
+{
+  "account_mutation_requests": 0,
+  "artifacts": {
+    "README.md": "e44cd2b2b2af7d73ce81a4a09818e8aa71b8d32b2551f09b38263161d61d1982",
+    "acceptance/transaction/test_http_records.py": "c5cf832a45ffb85c498b724e314258a96fb3bfe08d091b3f0ca28ee0f307cde4",
+    "acceptance/transaction/test_verify_records.py": "6fa72c91a71c589624e8bae9124ed49e02044d6c990df7795e4adc7264d63b78",
+    "acceptance/transaction/test_web.py": "e2dddb043db5935624c40746b89e8cb3c6f114c312327a6152b4c01a08912645",
+    "docs/feasibility/g3-browser-consent-20261024.md": "6e7a581bd60ded55aa8a534fde7140ee9ebc032ecf949d930bc0277eeea12fd1",
+    "docs/feasibility/user-checklist.ko.md": "004b1712a045da2ca4abb302be4d5a4a9b6d0bacf77c52f102d3b5b9d72aad7c",
+    "pact/http.py": "4febe2cbf538e86602e78592ece9546b172ac25a97c53b4ed8b01234bdbb6926",
+    "pact/web/app.js": "b430514d7cdfe5b41dcbb3c88dc7d7777ffc79ac4df0930ae38abf2c86e4a033",
+    "pact/web/index.html": "66453cb8329a309a6a097c68043549bd47319a7a87666f80910e161df693ea76"
+  },
+  "command": "PATH=\"/tmp/pact-opencv-venv/bin:$PATH\" DEVFLOW_TEST_RESULT=/tmp/pact-g3-browser-consent-tests.json ./verify.sh",
+  "credential_access": false,
+  "exit_code": 0,
+  "g2_freeze_sha256": "d6698d24443725123ec9363bb782193442371904746fdc7fd36bace882715c29",
+  "language_review": "Reviewed changed English prose and glossary terms. The Korean checklist follows the explicit user exception. No formal ASD-STE100 compliance claim.",
+  "local_test_external_requests": 0,
+  "local_tests": {
+    "executed": 479,
+    "failure_class": "none",
+    "failures": 0,
+    "skipped": []
+  },
+  "manual_browser_checks": {
+    "buyer_cancellation": true,
+    "buyer_registration": true,
+    "callback_query_removed": true,
+    "engine": "Chromium",
+    "explicit_review_and_signature": true,
+    "external_consent_navigation_intercepted": true,
+    "malformed_target_registration_requests": 0,
+    "malformed_target_rejected": true,
+    "merchant_registration": true,
+    "real_local_account_services": true,
+    "reload_does_not_repeat_callback": true,
+    "synthetic_paypal_transport": true,
+    "temporary_browser_identity_removed": true,
+    "temporary_certificate_exception_removed": true,
+    "unapproved_redirect_rejected": true,
+    "vault_token_not_displayed": true
+  },
+  "manual_browser_loopback_https": true,
+  "new_tests": {
+    "browser_callback_boundaries": 3
+  },
+  "payment_requests": 0,
+  "recorded_at_utc": "2026-10-24T12:08:09.319642+00:00",
+  "regression_correction": {
+    "cause": "A generated public key starting with a hyphen was parsed as an option.",
+    "correction": "Both CLI test callers use --public-key=value. The HTTP fixture uses a leading-hyphen public key.",
+    "focused_failures": 0,
+    "focused_tests": 31
+  },
+  "scope": "Browser buyer and merchant consent with synthetic PayPal responses. G3 remains open.",
+  "test_log_sha256": "a0958f946f5ee232c139205a188b9f9382e5390d45a1f2c31ec239f2e7d12dd2",
+  "unchanged_g2_repository_artifacts": 97,
+  "unchanged_g2_runtime_binaries": 3,
+  "unverified": [
+    "Actual PayPal account consent and eligibility",
+    "Actual callback configuration",
+    "Complete autonomous agent transaction",
+    "Other browser engines",
+    "Public deployment",
+    "Evidence retention controls"
+  ],
+  "verified_baselines": {
+    "authentication": 8,
+    "browser-workspace": 8,
+    "buyer-linkage": 7,
+    "conditions": 13,
+    "detail": 6,
+    "http": 6,
+    "http-records": 9,
+    "local-runtime": 5,
+    "merchant-linkage": 8,
+    "notifications": 6,
+    "offline-records": 6,
+    "operations": 12,
+    "payments": 10,
+    "readback": 5,
+    "records": 6,
+    "reservations": 6,
+    "signed-flow": 11,
+    "submission": 9,
+    "transport": 18
+  }
+}

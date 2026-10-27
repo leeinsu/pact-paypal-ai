@@ -1,0 +1,44 @@
+{
+  "recorded_at": "2026-10-23T16:39:27.346614+00:00",
+  "selection": "The evaluator screened all 1000 source-ordered ECSSD photographs. Three product-like cases received full-resolution visual labels before checker execution. No held-out selection occurred.",
+  "screened_total": 1000,
+  "contact_sheet_dimensions": [
+    1280,
+    960
+  ],
+  "cases": [
+    {
+      "calibration_id": "0837",
+      "source_member": "images/0837.jpg",
+      "source_order_one_based": 837,
+      "source_sha256": "3d011afead6b2b32389ff80201aecfc14e8d1c9d92976f5f2e7d458b755d3b69",
+      "input_sha256": "01ea036e236dfa177b6872ce14e801141ee3a93309fb4d9afb856e5d3bc19463",
+      "width": 400,
+      "height": 283,
+      "independent_support": "unsupported",
+      "label_reason": "The opaque cup casts a visible shadow on a textured wooden surface."
+    },
+    {
+      "calibration_id": "0590",
+      "source_member": "images/0590.jpg",
+      "source_order_one_based": 590,
+      "source_sha256": "6e99263ce8ac4db2451987c165fe2865aa06bcd9bf0572e6e4a29d8446829ed0",
+      "input_sha256": "d51b4865ae0d1c1199bc004f3f5fece8f94743d891e2a0b972751b395eb68d10",
+      "width": 400,
+      "height": 267,
+      "independent_support": "unsupported",
+      "label_reason": "Three bells overlap a graded background with shadows. Multiple objects remain visible."
+    },
+    {
+      "calibration_id": "0869",
+      "source_member": "images/0869.jpg",
+      "source_order_one_based": 869,
+      "source_sha256": "6e4c0c72069221332f4004a9d81acdab174303622f0d9713e19f36a0d668bf19",
+      "input_sha256": "a491707b85819b90aa5cc06f4a687f8b29c97e74570f86a702a4942b049ca62e",
+      "width": 400,
+      "height": 400,
+      "independent_support": "unsupported",
+      "label_reason": "The can stands on textured wood before visible room objects and shadows."
+    }
+  ]
+}

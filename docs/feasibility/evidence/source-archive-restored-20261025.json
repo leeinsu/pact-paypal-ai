@@ -1,0 +1,21 @@
+{
+  "archive_sha256": "6c641dcde9ac8a0cb41211e2b7027792dd13b8547398795b792534e20ecc6be9",
+  "source_files_verified": 492,
+  "returncode": 0,
+  "tests": {
+    "executed": 562,
+    "skipped": [],
+    "failures": 0,
+    "failure_class": "none"
+  },
+  "fresh_dependencies": false,
+  "actual_model_requests": 0,
+  "actual_paypal_requests": 0,
+  "date": "2026-10-25",
+  "seconds": 52.721,
+  "scope": "Restore the private source archive and run its full suite without local environment files.",
+  "limits": [
+    "The restored source reused installed dependencies. This check does not establish a fresh dependency installation.",
+    "Later documentation changes do not change the tested runtime source."
+  ]
+}

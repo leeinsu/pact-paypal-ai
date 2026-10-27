@@ -1,0 +1,55 @@
+{
+  "artifacts": {
+    "docs/feasibility/merchant-profile-401-analysis-20261024.md": "716d2353f19000c3fcc8386d563cfe85076f994088dd4b0e51f33f67ea237d52"
+  },
+  "budget": {
+    "authorization_increased": false,
+    "authorization_reset": false,
+    "payment_mutations": 0,
+    "payment_token_mutations": 0,
+    "sandbox_spend_jpy": 0,
+    "user_authorization_jpy": 2500
+  },
+  "buyer_account_type_present": false,
+  "buyer_explicit_schema_profile_succeeded": true,
+  "buyer_profile_fields": [
+    "payer_id",
+    "sub",
+    "user_id",
+    "verified_account"
+  ],
+  "buyer_refresh_preserved_success": true,
+  "buyer_verified_account_type": "str",
+  "date": "2026-10-24",
+  "explicit_schema": "openid",
+  "language_review": {
+    "formal_compliance_claimed": false,
+    "scope": "New analysis report and evidence labels"
+  },
+  "private_state_counts": {
+    "merchant_registration_challenges": 0,
+    "merchants": 0
+  },
+  "product_source_changed": false,
+  "production_authentication_error": "invalid_schema",
+  "production_schema_omitted": true,
+  "production_server_restored": true,
+  "refresh_endpoints_compared": [
+    "/v1/oauth2/token",
+    "/v1/identity/openidconnect/tokenservice"
+  ],
+  "schema_defect_established": true,
+  "scope": "Read-only profile HTTP 401 diagnosis",
+  "seller_authentication_description": "Unable to fetch details to serve the request",
+  "seller_explicit_schema_http_status": 401,
+  "seller_profile_failure_cause_established": false,
+  "seller_refresh_resolved_failure": false,
+  "service_check": {
+    "html": true,
+    "http_status": 200
+  },
+  "tests": {
+    "new_test_run": false,
+    "reason": "Diagnosis changed no product source."
+  }
+}

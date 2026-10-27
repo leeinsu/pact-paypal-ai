@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-25",
+  "scope": "Handle malformed Gemini usage metadata before recording a decision or starting payment.",
+  "reproduction": "Four malformed usage values raised uncaught AttributeError before the patch.",
+  "change": "Parse usage metadata inside the existing guarded response parser.",
+  "focused_tests": {
+    "executed": 24,
+    "failures": 0,
+    "seconds": 1.795
+  },
+  "command": "PATH=\"/tmp/pact-opencv-venv/bin:$PATH\" DEVFLOW_TEST_RESULT=/tmp/pact-gemini-metadata-regression-20261025.json ./verify.sh",
+  "tests": {
+    "executed": 562,
+    "skipped": [],
+    "failures": 0,
+    "failure_class": "none"
+  },
+  "seconds": 51.037,
+  "checks": [
+    "Null, list, string, and numeric usage values return gemini_invalid_response without recording decisions.",
+    "Missing optional metadata remains valid. Usage records retain integer values and exclude booleans.",
+    "The trade command returns an error without constructing the worker or making payment requests."
+  ],
+  "source_sha256": {
+    "pact/gemini.py": "28f2ba369b6d3ce15119d1b72b8fa449e84d786d2d26dd3cf69e9435ba044f10",
+    "acceptance/transaction/test_gemini.py": "bf3063774e96b59e0521cd48ce11667918a3e9afbbccae9bc1ff4987d8d76001"
+  },
+  "actual_model_requests": 0,
+  "actual_paypal_requests": 0,
+  "payment_authorization_jpy": 2500,
+  "conservative_consumption_jpy": 12,
+  "remaining_authorization_jpy": 2488,
+  "limits": [
+    "Synthetic responses exercise malformed metadata. No actual provider response was changed.",
+    "This check does not grant independent review acceptance, G4 acceptance, G5 acceptance, or production eligibility."
+  ],
+  "language_review": {
+    "scope": "Changed status prose and evidence descriptions.",
+    "exceptions": [],
+    "formal_asd_ste100_compliance_checked": false
+  }
+}

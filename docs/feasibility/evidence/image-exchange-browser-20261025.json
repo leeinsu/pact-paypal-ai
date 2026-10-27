@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "method": "manual_browser_automation",
+  "origin": "https://server-debian-dev.tailffdbc2.ts.net",
+  "separate_participant_sessions": true,
+  "buyer_upload_hidden": true,
+  "first_submission_status": "resubmit",
+  "first_submission_reason": "invalid_png",
+  "second_submission_status": "ready_to_sign",
+  "submission_number": 2,
+  "submissions_remaining": 1,
+  "both_participants_see_accepted": true,
+  "provider_upload_hidden_after_acceptance": true,
+  "page_errors": [],
+  "payment_initiated": false,
+  "sessions_signed_out": true
+}

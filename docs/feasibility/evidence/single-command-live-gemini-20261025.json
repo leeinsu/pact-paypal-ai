@@ -1,0 +1,83 @@
+{
+  "date": "2026-10-25",
+  "scope": "Actual Gemini with synthetic identities and PayPal responses.",
+  "status": "verified",
+  "command": "pact.server trade",
+  "actual_gemini": true,
+  "actual_paypal_requests": 0,
+  "source_statuses": [
+    "resubmit",
+    "ready_to_sign"
+  ],
+  "negotiation_status": "finalized",
+  "worker_status": "paid",
+  "model_calls": [
+    {
+      "decision": {
+        "action": "propose",
+        "candidate": 0
+      },
+      "model_version": "gemini-3.1-flash-lite",
+      "role": "buyer",
+      "usage": {
+        "candidatesTokenCount": 13,
+        "promptTokenCount": 1183,
+        "totalTokenCount": 1196
+      }
+    },
+    {
+      "decision": {
+        "action": "propose",
+        "candidate": 1
+      },
+      "model_version": "gemini-3.1-flash-lite",
+      "role": "provider",
+      "usage": {
+        "candidatesTokenCount": 19,
+        "promptTokenCount": 896,
+        "totalTokenCount": 915
+      }
+    },
+    {
+      "decision": {
+        "action": "accept",
+        "candidate": 0
+      },
+      "model_version": "gemini-3.1-flash-lite",
+      "role": "provider",
+      "usage": {
+        "candidatesTokenCount": 18,
+        "promptTokenCount": 1263,
+        "totalTokenCount": 1281
+      }
+    }
+  ],
+  "synthetic_financial_mutations": 3,
+  "both_downloads_equal": true,
+  "output_sha256": "f843468357c4ddb9d27a2b3134a70f9b73ad52a92fe8d9b75527424e5dc3b516",
+  "repeat_worker_new_transport_calls": 0,
+  "elapsed_seconds": 4.618,
+  "actual_payment_jpy": 0,
+  "limits": [
+    "One fixed-price candidate. No price bargaining claim.",
+    "Synthetic account bindings, signed Mandates, and payment responses replace actual PayPal setup.",
+    "The operator prepares the job and starts the command."
+  ],
+  "source_sha256": {
+    "pact/server.py": "f6a35fb361e9efb3072f1a1f95464d28b4b3fdd224e8b2ec7fc2827f17a50c63",
+    "pact/gemini.py": "1073f314aefc7ed505201babacb7879c994a436dd8b0ca3fe8d53285acbad22e",
+    "pact/worker.py": "8989f0d4f47a634ea6e718c82fd25f7c954593cc35899bdc0d5ac235d5658d23"
+  },
+  "model_call_order": "Grouped by agent. This array does not establish chronological execution order.",
+  "total_model_tokens": 3392,
+  "payment_authorization": {
+    "cumulative_limit_jpy": 2500,
+    "conservative_consumption_jpy": 12,
+    "remaining_jpy": 2488
+  },
+  "language_review": {
+    "scope": "Evidence descriptions, limits, quantities, and uncertainty.",
+    "exceptions": [],
+    "formal_asd_ste100_compliance_claimed": false
+  }
+}

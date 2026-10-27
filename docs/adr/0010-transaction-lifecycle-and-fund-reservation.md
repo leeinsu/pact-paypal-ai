@@ -1,3 +1,15 @@
-# 이행 전에 결제 승인을 받고 자동 확인 뒤 지급한다
+# Reserve limits before authorization and work
 
-거래는 협상, 합의, 결제 승인, 이행, 자동 확인과 결제 완료 순서로 진행한다. 결제 승인에 실패하면 이행을 시작하지 않는다. 승인은 실제 지급이나 지급 성공을 보장하지 않는다. 확인 실패, 거절, 취소, 기한 만료, 결제 실패와 결제 후 분쟁도 명시적인 상태로 기록한다. 승인 유효기간보다 이행 기간이 긴 거래에는 거래 규칙서가 별도 처리 방법을 정해야 한다.
+The flow is negotiation, finalization commit, authorization, work, checker acceptance, payment submission commit, payment confirmation, and output access.
+One SQLite write transaction validates both Mandates, reserves both period limits, and records the agreement and sequence.
+If either side fails, neither reservation remains.
+Authorization failure prevents work.
+PayPal authorization does not guarantee capture or payment success.
+Confirmed payment moves each reservation to consumption exactly once.
+Unknown payment results retain reservations.
+Release requires confirmed nonpayment and impossibility of payment through the existing path.
+Local timeout or deadline expiry alone does not permit release.
+Failure, cancellation, stop, unknown payment, and delivery retry remain explicit states.
+
+GD amendment adopted on 2026-10-24.
+See the [adoption record](../feasibility/gd-reconciliation-20261024.md) and [glossary](../../GLOSSARY.md).

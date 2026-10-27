@@ -1,3 +1,12 @@
-# 위임과 거래의 순서를 변경 감지형 공개 기록판으로 확인한다
+# Use database commit order and minimal public records
 
-위임 발급, 위임 취소와 최종 거래 확정은 공개 기록판에 확인값, 기록 종류, 서명자, 순서와 시각을 남긴다. 거래 원문은 공개하지 않는다. 위임 취소가 먼저 기록되면 새 거래는 무효이며 최종 거래 확정이 먼저 기록되면 기존 거래로 유지한다. 순서를 확인할 수 없으면 거래를 확정하지 않는다.
+One SQLite write order determines Mandate issuance, revocation, and agreement finalization.
+Public records expose hashes, record types, signer references, sequence, and timestamps without original documents or payment secrets.
+Revocation committed first prevents finalization.
+Finalization committed first preserves the existing agreement.
+The server issues signed receipts to both parties.
+Unavailable ordering state prevents finalization.
+This single-server record does not provide distributed consensus, availability guarantees, or collusion resistance.
+
+GD amendment adopted on 2026-10-24.
+See the [adoption record](../feasibility/gd-reconciliation-20261024.md) and [glossary](../../GLOSSARY.md).

@@ -1,0 +1,913 @@
+{
+  "status": "diagnostic_only",
+  "qualification": "Not a freeze or independent G2 evaluation. Known disclosed diagnostic inputs only.",
+  "python": "3.13.5",
+  "cases": [
+    {
+      "status": "diagnostic_only",
+      "gate_review_required": true,
+      "generation": {
+        "status": "generated",
+        "experiment": "opencv-grabcut-v1",
+        "input_sha256": "69f7009be491e08e57a19bbe0700c44de7423ec32ecedf247e66ff8c1c5e4c77",
+        "output_sha256": "f843468357c4ddb9d27a2b3134a70f9b73ad52a92fe8d9b75527424e5dc3b516",
+        "width": 100,
+        "height": 100,
+        "foreground_pixels": 2600,
+        "foreground_components": 1,
+        "opencv": "4.13.0",
+        "numpy": "2.5.4",
+        "iterations": 5,
+        "rng_seed": 0
+      },
+      "input_check": {
+        "status": "supported",
+        "input_sha256": "69f7009be491e08e57a19bbe0700c44de7423ec32ecedf247e66ff8c1c5e4c77",
+        "width": 100,
+        "height": 100,
+        "rule_id": "g2-v2",
+        "region_counts": {
+          "total": 10000,
+          "background": 7400,
+          "foreground_candidate": 2600,
+          "foreground": 2400,
+          "uncertain": 200,
+          "foreground_components": 1
+        },
+        "reason_codes": []
+      },
+      "results": {
+        "normal": {
+          "status": "accepted",
+          "input_sha256": "69f7009be491e08e57a19bbe0700c44de7423ec32ecedf247e66ff8c1c5e4c77",
+          "output_sha256": "f843468357c4ddb9d27a2b3134a70f9b73ad52a92fe8d9b75527424e5dc3b516",
+          "dimensions": {
+            "input": {
+              "width": 100,
+              "height": 100
+            },
+            "output": {
+              "width": 100,
+              "height": 100
+            }
+          },
+          "rule_id": "g2-v2",
+          "metrics": {
+            "background_alpha": {
+              "numerator": 7400,
+              "denominator": 7400
+            },
+            "foreground_alpha": {
+              "numerator": 2400,
+              "denominator": 2400
+            },
+            "foreground_rgb_error": {
+              "numerator": 0,
+              "denominator": 7200,
+              "pixel_denominator": 2400
+            }
+          },
+          "reason_codes": []
+        },
+        "unchanged": {
+          "status": "rejected",
+          "input_sha256": "69f7009be491e08e57a19bbe0700c44de7423ec32ecedf247e66ff8c1c5e4c77",
+          "output_sha256": "69f7009be491e08e57a19bbe0700c44de7423ec32ecedf247e66ff8c1c5e4c77",
+          "dimensions": {
+            "input": {
+              "width": 100,
+              "height": 100
+            },
+            "output": {
+              "width": 100,
+              "height": 100
+            }
+          },
+          "rule_id": "g2-v2",
+          "metrics": {
+            "background_alpha": {
+              "numerator": 0,
+              "denominator": 7400
+            },
+            "foreground_alpha": {
+              "numerator": 2400,
+              "denominator": 2400
+            },
+            "foreground_rgb_error": {
+              "numerator": 0,
+              "denominator": 7200,
+              "pixel_denominator": 2400
+            }
+          },
+          "reason_codes": [
+            "background_alpha_threshold_failed"
+          ]
+        },
+        "transparent": {
+          "status": "rejected",
+          "input_sha256": "69f7009be491e08e57a19bbe0700c44de7423ec32ecedf247e66ff8c1c5e4c77",
+          "output_sha256": "1540be6021c8bc4948e3536ba610800a26091f2829eeac24b542f9e4a82efc24",
+          "dimensions": {
+            "input": {
+              "width": 100,
+              "height": 100
+            },
+            "output": {
+              "width": 100,
+              "height": 100
+            }
+          },
+          "rule_id": "g2-v2",
+          "metrics": {
+            "background_alpha": {
+              "numerator": 7400,
+              "denominator": 7400
+            },
+            "foreground_alpha": {
+              "numerator": 0,
+              "denominator": 2400
+            },
+            "foreground_rgb_error": {
+              "numerator": 0,
+              "denominator": 7200,
+              "pixel_denominator": 2400
+            }
+          },
+          "reason_codes": [
+            "foreground_alpha_threshold_failed",
+            "boundary_alpha_threshold_failed"
+          ]
+        },
+        "deleted_foreground": {
+          "status": "rejected",
+          "input_sha256": "69f7009be491e08e57a19bbe0700c44de7423ec32ecedf247e66ff8c1c5e4c77",
+          "output_sha256": "4d362bcb58090e6b02691f03e4d839aa5c1d268d3894147d3886b8907cfbf730",
+          "dimensions": {
+            "input": {
+              "width": 100,
+              "height": 100
+            },
+            "output": {
+              "width": 100,
+              "height": 100
+            }
+          },
+          "rule_id": "g2-v2",
+          "metrics": {
+            "background_alpha": {
+              "numerator": 7400,
+              "denominator": 7400
+            },
+            "foreground_alpha": {
+              "numerator": 1200,
+              "denominator": 2400
+            },
+            "foreground_rgb_error": {
+              "numerator": 0,
+              "denominator": 7200,
+              "pixel_denominator": 2400
+            }
+          },
+          "reason_codes": [
+            "foreground_alpha_threshold_failed",
+            "boundary_alpha_threshold_failed"
+          ]
+        },
+        "residual_background": {
+          "status": "rejected",
+          "input_sha256": "69f7009be491e08e57a19bbe0700c44de7423ec32ecedf247e66ff8c1c5e4c77",
+          "output_sha256": "40fc1acf34c406c5c87299d412ba6de6a1e5417f7fca759d0d452807e7202faf",
+          "dimensions": {
+            "input": {
+              "width": 100,
+              "height": 100
+            },
+            "output": {
+              "width": 100,
+              "height": 100
+            }
+          },
+          "rule_id": "g2-v2",
+          "metrics": {
+            "background_alpha": {
+              "numerator": 3700,
+              "denominator": 7400
+            },
+            "foreground_alpha": {
+              "numerator": 2400,
+              "denominator": 2400
+            },
+            "foreground_rgb_error": {
+              "numerator": 0,
+              "denominator": 7200,
+              "pixel_denominator": 2400
+            }
+          },
+          "reason_codes": [
+            "background_alpha_threshold_failed"
+          ]
+        },
+        "replacement_object": {
+          "status": "rejected",
+          "input_sha256": "69f7009be491e08e57a19bbe0700c44de7423ec32ecedf247e66ff8c1c5e4c77",
+          "output_sha256": "3929c7e54534d375b29f5d1bcfe0adc564fe1b00b501a118c78d6a9dc40712e0",
+          "dimensions": {
+            "input": {
+              "width": 100,
+              "height": 100
+            },
+            "output": {
+              "width": 100,
+              "height": 100
+            }
+          },
+          "rule_id": "g2-v2",
+          "metrics": {
+            "background_alpha": {
+              "numerator": 7400,
+              "denominator": 7400
+            },
+            "foreground_alpha": {
+              "numerator": 2400,
+              "denominator": 2400
+            },
+            "foreground_rgb_error": {
+              "numerator": 921600,
+              "denominator": 7200,
+              "pixel_denominator": 2400
+            }
+          },
+          "reason_codes": [
+            "foreground_rgb_threshold_failed",
+            "boundary_rgb_threshold_failed"
+          ]
+        },
+        "resized": {
+          "status": "rejected",
+          "input_sha256": "69f7009be491e08e57a19bbe0700c44de7423ec32ecedf247e66ff8c1c5e4c77",
+          "output_sha256": "7cda5f87aa255887adb2238ceb70a041b0e7073c6dd364c63857a1ed6db0d159",
+          "dimensions": {
+            "input": {
+              "width": 100,
+              "height": 100
+            },
+            "output": {
+              "width": 99,
+              "height": 100
+            }
+          },
+          "rule_id": "g2-v2",
+          "metrics": {
+            "background_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_rgb_error": {
+              "numerator": null,
+              "denominator": null,
+              "pixel_denominator": null
+            }
+          },
+          "reason_codes": [
+            "dimension_mismatch"
+          ]
+        },
+        "boundary_damaged": {
+          "status": "rejected",
+          "input_sha256": "69f7009be491e08e57a19bbe0700c44de7423ec32ecedf247e66ff8c1c5e4c77",
+          "output_sha256": "c6697ce79169b35c7573b1abd968e5edea78b264fe9e5fa853cc1b0a98c34572",
+          "dimensions": {
+            "input": {
+              "width": 100,
+              "height": 100
+            },
+            "output": {
+              "width": 100,
+              "height": 100
+            }
+          },
+          "rule_id": "g2-v2",
+          "metrics": {
+            "background_alpha": {
+              "numerator": 7400,
+              "denominator": 7400
+            },
+            "foreground_alpha": {
+              "numerator": 2400,
+              "denominator": 2400
+            },
+            "foreground_rgb_error": {
+              "numerator": 0,
+              "denominator": 7200,
+              "pixel_denominator": 2400
+            }
+          },
+          "reason_codes": [
+            "boundary_alpha_threshold_failed"
+          ]
+        }
+      },
+      "case_id": "synthetic",
+      "elapsed_seconds": 0.274,
+      "evidence_class": "local",
+      "independent_label": "unknown"
+    },
+    {
+      "status": "diagnostic_only",
+      "gate_review_required": true,
+      "generation": {
+        "status": "generated",
+        "experiment": "opencv-grabcut-v1",
+        "input_sha256": "65caabb51389f2f9af783f471bb09bf4b3956aaa629c7f517491f82332555622",
+        "output_sha256": "f0fb31e8cffbf6f132025c762fa8f1acfd1d2ee4a3e8abc0acb4d977a747557d",
+        "width": 960,
+        "height": 960,
+        "foreground_pixels": 236683,
+        "foreground_components": 1,
+        "opencv": "4.13.0",
+        "numpy": "2.5.4",
+        "iterations": 5,
+        "rng_seed": 0
+      },
+      "input_check": {
+        "status": "unsupported",
+        "input_sha256": "65caabb51389f2f9af783f471bb09bf4b3956aaa629c7f517491f82332555622",
+        "width": 960,
+        "height": 960,
+        "rule_id": "g2-v2",
+        "region_counts": {
+          "total": 921600,
+          "background": 599539,
+          "foreground_candidate": 217750,
+          "foreground": 199089,
+          "uncertain": 122972,
+          "foreground_components": 52
+        },
+        "reason_codes": [
+          "foreground_components_not_one",
+          "uncertain_region_exceeds_limit",
+          "input_boundary_ambiguous"
+        ]
+      },
+      "results": {
+        "normal": {
+          "status": "rejected",
+          "input_sha256": "65caabb51389f2f9af783f471bb09bf4b3956aaa629c7f517491f82332555622",
+          "output_sha256": "f0fb31e8cffbf6f132025c762fa8f1acfd1d2ee4a3e8abc0acb4d977a747557d",
+          "dimensions": {
+            "input": null,
+            "output": null
+          },
+          "rule_id": "g2-v2",
+          "metrics": {
+            "background_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_rgb_error": {
+              "numerator": null,
+              "denominator": null,
+              "pixel_denominator": null
+            }
+          },
+          "reason_codes": [
+            "input_unsupported",
+            "foreground_components_not_one",
+            "uncertain_region_exceeds_limit",
+            "input_boundary_ambiguous"
+          ]
+        },
+        "unchanged": {
+          "status": "rejected",
+          "input_sha256": "65caabb51389f2f9af783f471bb09bf4b3956aaa629c7f517491f82332555622",
+          "output_sha256": "65caabb51389f2f9af783f471bb09bf4b3956aaa629c7f517491f82332555622",
+          "dimensions": {
+            "input": null,
+            "output": null
+          },
+          "rule_id": "g2-v2",
+          "metrics": {
+            "background_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_rgb_error": {
+              "numerator": null,
+              "denominator": null,
+              "pixel_denominator": null
+            }
+          },
+          "reason_codes": [
+            "input_unsupported",
+            "foreground_components_not_one",
+            "uncertain_region_exceeds_limit",
+            "input_boundary_ambiguous"
+          ]
+        },
+        "transparent": {
+          "status": "rejected",
+          "input_sha256": "65caabb51389f2f9af783f471bb09bf4b3956aaa629c7f517491f82332555622",
+          "output_sha256": "d9dea3bec8851f9e3cd78cdaee5941baae4f198378855d76b09e4e67a9b0ac09",
+          "dimensions": {
+            "input": null,
+            "output": null
+          },
+          "rule_id": "g2-v2",
+          "metrics": {
+            "background_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_rgb_error": {
+              "numerator": null,
+              "denominator": null,
+              "pixel_denominator": null
+            }
+          },
+          "reason_codes": [
+            "input_unsupported",
+            "foreground_components_not_one",
+            "uncertain_region_exceeds_limit",
+            "input_boundary_ambiguous"
+          ]
+        },
+        "deleted_foreground": {
+          "status": "rejected",
+          "input_sha256": "65caabb51389f2f9af783f471bb09bf4b3956aaa629c7f517491f82332555622",
+          "output_sha256": "aa8f2d3a108bd33aa6e7d96b8ced37ffce51ef34dcc1631b68597e062cf134f4",
+          "dimensions": {
+            "input": null,
+            "output": null
+          },
+          "rule_id": "g2-v2",
+          "metrics": {
+            "background_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_rgb_error": {
+              "numerator": null,
+              "denominator": null,
+              "pixel_denominator": null
+            }
+          },
+          "reason_codes": [
+            "input_unsupported",
+            "foreground_components_not_one",
+            "uncertain_region_exceeds_limit",
+            "input_boundary_ambiguous"
+          ]
+        },
+        "residual_background": {
+          "status": "rejected",
+          "input_sha256": "65caabb51389f2f9af783f471bb09bf4b3956aaa629c7f517491f82332555622",
+          "output_sha256": "69cfd0dbb570748009ec6e0f80b5001e9fac17df735ed93e3a23810b8e88a0d5",
+          "dimensions": {
+            "input": null,
+            "output": null
+          },
+          "rule_id": "g2-v2",
+          "metrics": {
+            "background_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_rgb_error": {
+              "numerator": null,
+              "denominator": null,
+              "pixel_denominator": null
+            }
+          },
+          "reason_codes": [
+            "input_unsupported",
+            "foreground_components_not_one",
+            "uncertain_region_exceeds_limit",
+            "input_boundary_ambiguous"
+          ]
+        },
+        "replacement_object": {
+          "status": "rejected",
+          "input_sha256": "65caabb51389f2f9af783f471bb09bf4b3956aaa629c7f517491f82332555622",
+          "output_sha256": "4ebddef509e23944ed689cf589e6a52ba725645e76bf6ccffa2d8ec4c3a6b5e8",
+          "dimensions": {
+            "input": null,
+            "output": null
+          },
+          "rule_id": "g2-v2",
+          "metrics": {
+            "background_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_rgb_error": {
+              "numerator": null,
+              "denominator": null,
+              "pixel_denominator": null
+            }
+          },
+          "reason_codes": [
+            "input_unsupported",
+            "foreground_components_not_one",
+            "uncertain_region_exceeds_limit",
+            "input_boundary_ambiguous"
+          ]
+        },
+        "resized": {
+          "status": "rejected",
+          "input_sha256": "65caabb51389f2f9af783f471bb09bf4b3956aaa629c7f517491f82332555622",
+          "output_sha256": "e8faae6937607ba146b8193e62077f76ebcb773da5c3412bea0afe1ee731a8af",
+          "dimensions": {
+            "input": null,
+            "output": null
+          },
+          "rule_id": "g2-v2",
+          "metrics": {
+            "background_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_rgb_error": {
+              "numerator": null,
+              "denominator": null,
+              "pixel_denominator": null
+            }
+          },
+          "reason_codes": [
+            "input_unsupported",
+            "foreground_components_not_one",
+            "uncertain_region_exceeds_limit",
+            "input_boundary_ambiguous"
+          ]
+        },
+        "boundary_damaged": {
+          "status": "rejected",
+          "input_sha256": "65caabb51389f2f9af783f471bb09bf4b3956aaa629c7f517491f82332555622",
+          "output_sha256": "392f76bd9ab4353dbbf2dc914877b653791e991decdf4274c18cf78018dd47b5",
+          "dimensions": {
+            "input": null,
+            "output": null
+          },
+          "rule_id": "g2-v2",
+          "metrics": {
+            "background_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_rgb_error": {
+              "numerator": null,
+              "denominator": null,
+              "pixel_denominator": null
+            }
+          },
+          "reason_codes": [
+            "input_unsupported",
+            "foreground_components_not_one",
+            "uncertain_region_exceeds_limit",
+            "input_boundary_ambiguous"
+          ]
+        }
+      },
+      "case_id": "028",
+      "elapsed_seconds": 23.839,
+      "evidence_class": "local",
+      "independent_label": "unknown"
+    },
+    {
+      "status": "diagnostic_only",
+      "gate_review_required": true,
+      "generation": {
+        "status": "generated",
+        "experiment": "opencv-grabcut-v1",
+        "input_sha256": "ed7d6183f6cb0e9ac6fe7c7d3f9e84d7d68c489881f9fb5d3c1f02b2c03b96d9",
+        "output_sha256": "ff7e4b4ec9eb4ed9c788dc8cd6ca1d6f22dc0d0ad3d32b4c1b9fbb770f54d6b4",
+        "width": 600,
+        "height": 600,
+        "foreground_pixels": 83629,
+        "foreground_components": 1,
+        "opencv": "4.13.0",
+        "numpy": "2.5.4",
+        "iterations": 5,
+        "rng_seed": 0
+      },
+      "input_check": {
+        "status": "unsupported",
+        "input_sha256": "ed7d6183f6cb0e9ac6fe7c7d3f9e84d7d68c489881f9fb5d3c1f02b2c03b96d9",
+        "width": 600,
+        "height": 600,
+        "rule_id": "g2-v2",
+        "region_counts": {
+          "total": 360000,
+          "background": 255002,
+          "foreground_candidate": 74037,
+          "foreground": 53355,
+          "uncertain": 51643,
+          "foreground_components": 377
+        },
+        "reason_codes": [
+          "foreground_components_not_one",
+          "uncertain_region_exceeds_limit",
+          "input_boundary_ambiguous"
+        ]
+      },
+      "results": {
+        "normal": {
+          "status": "rejected",
+          "input_sha256": "ed7d6183f6cb0e9ac6fe7c7d3f9e84d7d68c489881f9fb5d3c1f02b2c03b96d9",
+          "output_sha256": "ff7e4b4ec9eb4ed9c788dc8cd6ca1d6f22dc0d0ad3d32b4c1b9fbb770f54d6b4",
+          "dimensions": {
+            "input": null,
+            "output": null
+          },
+          "rule_id": "g2-v2",
+          "metrics": {
+            "background_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_rgb_error": {
+              "numerator": null,
+              "denominator": null,
+              "pixel_denominator": null
+            }
+          },
+          "reason_codes": [
+            "input_unsupported",
+            "foreground_components_not_one",
+            "uncertain_region_exceeds_limit",
+            "input_boundary_ambiguous"
+          ]
+        },
+        "unchanged": {
+          "status": "rejected",
+          "input_sha256": "ed7d6183f6cb0e9ac6fe7c7d3f9e84d7d68c489881f9fb5d3c1f02b2c03b96d9",
+          "output_sha256": "ed7d6183f6cb0e9ac6fe7c7d3f9e84d7d68c489881f9fb5d3c1f02b2c03b96d9",
+          "dimensions": {
+            "input": null,
+            "output": null
+          },
+          "rule_id": "g2-v2",
+          "metrics": {
+            "background_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_rgb_error": {
+              "numerator": null,
+              "denominator": null,
+              "pixel_denominator": null
+            }
+          },
+          "reason_codes": [
+            "input_unsupported",
+            "foreground_components_not_one",
+            "uncertain_region_exceeds_limit",
+            "input_boundary_ambiguous"
+          ]
+        },
+        "transparent": {
+          "status": "rejected",
+          "input_sha256": "ed7d6183f6cb0e9ac6fe7c7d3f9e84d7d68c489881f9fb5d3c1f02b2c03b96d9",
+          "output_sha256": "c156f153849aff3ee58f0ae48f5d9a55e8440df5cfea1f214043f7e9510d82c0",
+          "dimensions": {
+            "input": null,
+            "output": null
+          },
+          "rule_id": "g2-v2",
+          "metrics": {
+            "background_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_rgb_error": {
+              "numerator": null,
+              "denominator": null,
+              "pixel_denominator": null
+            }
+          },
+          "reason_codes": [
+            "input_unsupported",
+            "foreground_components_not_one",
+            "uncertain_region_exceeds_limit",
+            "input_boundary_ambiguous"
+          ]
+        },
+        "deleted_foreground": {
+          "status": "rejected",
+          "input_sha256": "ed7d6183f6cb0e9ac6fe7c7d3f9e84d7d68c489881f9fb5d3c1f02b2c03b96d9",
+          "output_sha256": "f166a7cd5db0fc38e6397e46f8cd42ac9cf924a4c07bf15b7d7caf0026f1b0cf",
+          "dimensions": {
+            "input": null,
+            "output": null
+          },
+          "rule_id": "g2-v2",
+          "metrics": {
+            "background_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_rgb_error": {
+              "numerator": null,
+              "denominator": null,
+              "pixel_denominator": null
+            }
+          },
+          "reason_codes": [
+            "input_unsupported",
+            "foreground_components_not_one",
+            "uncertain_region_exceeds_limit",
+            "input_boundary_ambiguous"
+          ]
+        },
+        "residual_background": {
+          "status": "rejected",
+          "input_sha256": "ed7d6183f6cb0e9ac6fe7c7d3f9e84d7d68c489881f9fb5d3c1f02b2c03b96d9",
+          "output_sha256": "9afee7ee235a9055e18dcb6a461f95b50f4e6da3d93daf180592eb66ce7ea70c",
+          "dimensions": {
+            "input": null,
+            "output": null
+          },
+          "rule_id": "g2-v2",
+          "metrics": {
+            "background_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_rgb_error": {
+              "numerator": null,
+              "denominator": null,
+              "pixel_denominator": null
+            }
+          },
+          "reason_codes": [
+            "input_unsupported",
+            "foreground_components_not_one",
+            "uncertain_region_exceeds_limit",
+            "input_boundary_ambiguous"
+          ]
+        },
+        "replacement_object": {
+          "status": "rejected",
+          "input_sha256": "ed7d6183f6cb0e9ac6fe7c7d3f9e84d7d68c489881f9fb5d3c1f02b2c03b96d9",
+          "output_sha256": "2782664cd5054de3440c5de65907d79d5db4c472ad950546200150e22a5653e4",
+          "dimensions": {
+            "input": null,
+            "output": null
+          },
+          "rule_id": "g2-v2",
+          "metrics": {
+            "background_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_rgb_error": {
+              "numerator": null,
+              "denominator": null,
+              "pixel_denominator": null
+            }
+          },
+          "reason_codes": [
+            "input_unsupported",
+            "foreground_components_not_one",
+            "uncertain_region_exceeds_limit",
+            "input_boundary_ambiguous"
+          ]
+        },
+        "resized": {
+          "status": "rejected",
+          "input_sha256": "ed7d6183f6cb0e9ac6fe7c7d3f9e84d7d68c489881f9fb5d3c1f02b2c03b96d9",
+          "output_sha256": "6116d90c3611aa5bf07afbf10ff102af95c8b4376b908679424d4a87d7b0124b",
+          "dimensions": {
+            "input": null,
+            "output": null
+          },
+          "rule_id": "g2-v2",
+          "metrics": {
+            "background_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_rgb_error": {
+              "numerator": null,
+              "denominator": null,
+              "pixel_denominator": null
+            }
+          },
+          "reason_codes": [
+            "input_unsupported",
+            "foreground_components_not_one",
+            "uncertain_region_exceeds_limit",
+            "input_boundary_ambiguous"
+          ]
+        },
+        "boundary_damaged": {
+          "status": "rejected",
+          "input_sha256": "ed7d6183f6cb0e9ac6fe7c7d3f9e84d7d68c489881f9fb5d3c1f02b2c03b96d9",
+          "output_sha256": "11db79f3d81a630986f47588a510a53319e829425bf3779afc00cf2a9ed41674",
+          "dimensions": {
+            "input": null,
+            "output": null
+          },
+          "rule_id": "g2-v2",
+          "metrics": {
+            "background_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_alpha": {
+              "numerator": null,
+              "denominator": null
+            },
+            "foreground_rgb_error": {
+              "numerator": null,
+              "denominator": null,
+              "pixel_denominator": null
+            }
+          },
+          "reason_codes": [
+            "input_unsupported",
+            "foreground_components_not_one",
+            "uncertain_region_exceeds_limit",
+            "input_boundary_ambiguous"
+          ]
+        }
+      },
+      "case_id": "029",
+      "elapsed_seconds": 9.106,
+      "evidence_class": "local",
+      "independent_label": "unknown"
+    }
+  ],
+  "artifacts": {
+    "feasibility/g2_opencv_diagnostic.py": "e084ad3610886f2dd754dfa460c9c3cf9b093eb25fc09c981f09f0360810ac05",
+    "acceptance/feasibility/test_g2_opencv_diagnostic.py": "bb9b0d72aac8603a283c33313516287948225524183acc02873d33cd5c2a1cd6",
+    "feasibility/g2_opencv_experiment.py": "cd1a75893b3587756ab7e0f36525e102b250fbb0d36da380872ce7344b0b685d",
+    "feasibility/g2_checker.py": "51a585f7ad158768a2937b88791c304d15f4f6e8b3fc1d5cc234b84412a772a2",
+    "feasibility/png.py": "e9b3db336592dae24ea8f412fa71c757238dd01ee2e50f7afa1915a570a8b680",
+    "feasibility/g2-rule.v2.json": "f4278948fc853c2f8f3ffb4f126cf216793d1621ace0926b3e5d6e6607df60f7",
+    "feasibility/requirements-opencv.txt": "2f33153ad8d567412c4e3904d213d1763d60477ee64bd531c257d3f84ef0a877"
+  }
+}

@@ -1,15 +1,137 @@
 # PayPal AI Hackathon 2026
 
-조사 기준일: 2026-10-19 (KST)
+Contest research checked: 2026-10-19 (KST).
 
-- [최종 프로젝트: PACT](./PACT.md)
-- [수상 후보 아이디어 10선](./IDEAS.md)
+- [PACT design](./PACT.md)
+- [Project glossary](./GLOSSARY.md)
+- [Source setup guide](./docs/feasibility/clean-start-20261025.md)
+- [Submission description](./docs/feasibility/submission-description-draft-20261025.md)
 
-## 최종 프로젝트
+## Submission summary
 
-**PACT**는 두 사용자의 에이전트가 같은 조건에 서명하고, 이행 증거를 확인한 뒤 PayPal로 자동 결제하게 하는 상호 보증 규칙이다.
+PACT lets a buyer and a provider delegate a bounded digital task to separate Personal Agents.
+Each Principal signs a Mandate that limits the agent, counterparty, amount, and expiry.
+Gemini selects only permitted actions and complete candidates.
+Local services validate the decisions, signatures, image conditions, and payment state.
+PayPal Sandbox supplies consent, saved payment methods, authorization, capture, void, and readback.
 
-해커톤 시연에서는 한 사용자의 에이전트가 다른 사용자의 에이전트에 상품 사진 배경 제거를 맡긴다. 두 에이전트는 제한된 위임 안에서 자동으로 협상하고 합의한다. PayPal이 결제를 승인한 뒤 작업을 수행하고, 고정된 완료 검사를 통과하면 사람의 추가 클릭 없이 결제를 실행한다. 같은 합의서의 재사용 공격은 중복 결제 없이 차단한다.
+The demonstrated transaction used one fixed-price image task and JPY 1.
+The flow rejected an invalid source, accepted a replacement, generated the output, and captured payment after verification.
+Both participants downloaded matching output and signed evidence.
+The prototype does not support production payments.
+
+The project uses Python, SQLite, OpenCV, NumPy, cryptography, browser WebCrypto, Gemini, and PayPal Sandbox.
+The source is available under the [MIT License](./LICENSE).
+
+## Verify the source
+
+Use Linux with Python 3.13, `venv`, and network access for dependency installation.
+Run these commands from the repository root:
+
+```sh
+python3 -m venv /tmp/pact-review-venv
+/tmp/pact-review-venv/bin/python -m pip install \
+  -r feasibility/requirements-opencv.txt -r pact/requirements.txt
+export PATH="/tmp/pact-review-venv/bin:$PATH"
+./verify.sh
+```
+
+The suite uses synthetic accounts and synthetic payment responses.
+It makes no PayPal or Gemini requests.
+The latest fresh-environment run passed 565 tests with zero failures and zero skips.
+Follow the [source setup guide](./docs/feasibility/clean-start-20261025.md) to start an empty local HTTPS workspace.
+
+## Current project
+
+PACT connects bounded agents, one signed agreement, image checks, and PayPal Sandbox payment.
+The adopted scope permits one buyer, one provider, one linked merchant, JPY, and one negotiated source image.
+The [image amendment](docs/feasibility/negotiated-image-contract-20261024.md) replaces semantic background removal with an explicit raster operation.
+Agents exchange submission conditions before agreement and request replacement images when preflight fails.
+The [source exchange implementation](docs/feasibility/image-exchange-20261025.md) connects provider submissions, browser preflight, and signed agreement.
+Request revisions and restarts share three source submissions per transaction.
+Local, browser, and [live Gemini checks](docs/feasibility/evidence/image-exchange-gemini-20261025-attempt4.json) passed for this exchange.
+The live check used synthetic PayPal responses and made no actual payment request.
+A subsequent [combined Sandbox transaction](docs/feasibility/source-exchange-sandbox-20261025.md) passed with source rejection, replacement, real Gemini, and JPY 1 payment.
+Both participants downloaded verified output, and repeated execution preserved one payment path.
+One integer amount unit represents one yen.
+The target flow uses atomic finalization and reservations, separate authorization and capture, payment readback, and immutable output delivery.
+The [design](PACT.md), [glossary](GLOSSARY.md), and [GD adoption record](docs/feasibility/gd-reconciliation-20261024.md) define the implementation rules.
+
+Local feasibility code and actual bounded Sandbox experiments exist.
+The application implements the core transaction flow. Adopted demonstration acceptance remains incomplete.
+Recorded experiments cover saved payment, unattended authorization, capture, void, repeat consent, and response-loss readback recovery.
+G1 passed independent agent review within the [bounded Sandbox scope](docs/feasibility/g1-acceptance-20261024.md).
+The reviewed evidence includes recorded initial consent for a distinct saved token and its unattended payment.
+Production eligibility remains unverified.
+G2 passed independent review within the [prepared photographic-panel scope](docs/feasibility/g2-acceptance-20261024.md).
+G3 passed independent review within the [bounded transaction safety scope](docs/feasibility/g3-acceptance-20261025.md).
+G4 passed independent review within the [bounded Sandbox delivery scope](docs/feasibility/g4-acceptance-20261025.md).
+The latest suite passed 565 tests with zero failures and zero skips.
+G3 now includes [authenticated image submission and signed agreement routes](docs/feasibility/g3-submission-20261024.md).
+Participants can download [consistent evidence packages through HTTP](docs/feasibility/g3-http-records-20261024.md) for offline verification.
+The [merchant linkage implementation](docs/feasibility/g3-merchant-linkage-20261024.md) adds session-bound PayPal consent and device-signed registration.
+The [buyer linkage implementation](docs/feasibility/g3-buyer-linkage-20261024.md) adds fresh Vault consent and encrypted, device-signed buyer bindings.
+The [local HTTPS runtime](docs/feasibility/g3-local-runtime-20261024.md) connects these API services to private persistent state.
+The [browser workspace](docs/feasibility/g3-browser-workspace-20261024.md) adds device login, transaction downloads, activity, and emergency stop.
+The [browser consent flow](docs/feasibility/g3-browser-consent-20261024.md) adds explicit account review and device-signed buyer or merchant registration.
+The [worker command](docs/feasibility/g3-worker-runtime-20261024.md) executes one signed transaction through the same private persistent state.
+The browser also registers and revokes device-signed Mandates with one counterparty, JPY limits, and an expiry.
+The [local browser check](docs/feasibility/g3-http-browser-20261024.md) verifies device signing, protected cookies, CSRF, stop notices, and logout.
+The [application transport check](docs/feasibility/g3-sandbox-readback-20261024.md) verifies existing Sandbox records without new payments.
+User-signed Mandates, linked agent proposals, and both agreement signatures connect to the local transaction worker.
+`pact.agents.negotiate` connects two Personal Agents through permitted candidates, three signed proposals, and acceptance or rejection.
+Decision functions receive candidate data without signing keys. Existing services validate signatures, Mandates, and finalization.
+The [Gemini connection](docs/feasibility/g3-gemini-negotiation-20261024.md) adds structured model decisions and a private runtime command.
+The same runbook documents `pact.server trade`, which connects negotiation and payment execution through one bounded command.
+The operator must prepare permitted candidates and valid Mandates before starting it.
+Real Gemini comparison calls verified bounded agreement and rejection with `gemini-3.1-flash-lite`.
+Local tests cover this connection through image generation, synthetic payment, and download.
+Payment transport, encrypted images, persistent intake, and pre-capture closure also have local tests.
+Saved payment tokens and authorization request bodies use encryption with an external key.
+Actual seller ownership registration passed within the [revised verification scope](docs/feasibility/merchant-verification-scope-20261024.md).
+Actual [buyer Vault consent and signed registration](docs/feasibility/buyer-vault-live-20261025.md) passed through the HTTPS application.
+One [complete actual Sandbox transaction](docs/feasibility/integrated-sandbox-20261025.md) passed with real Gemini, signed Mandates, image checks, and JPY 6 payment.
+Participant retention holds, signed audit exports, and actual restart downloads passed the [recovery checks](docs/feasibility/retention-recovery-20261025.md).
+Participant support requests and restricted operator reviews passed the [support checks](docs/feasibility/support-recovery-20261025.md).
+An actual [browser objection review](docs/feasibility/g4-objection-browser-20261025.md) matched existing PayPal records without changing financial tables.
+An actual JPY 1 payment survived [worker interruption and query-only recovery](docs/feasibility/integrated-recovery-20261025.md).
+The [G3 and G4 evidence matrix](docs/feasibility/g3-g4-evidence-matrix-20261025.md) separates verified behavior from remaining acceptance.
+Query-only [objection evidence review](docs/feasibility/g4-objection-evidence-20261025.md) preserves objections and payment state.
+Full adopted-product retention closure, physical deletion, shared-reference protection, and external objection outcome linkage remain incomplete.
+These conditions must close before real trading. Deletion remains disabled.
+The [retention source review](docs/feasibility/retention-policy-basis-20261025.md) explains why deletion remains disabled.
+The [JP scope update](docs/feasibility/retention-jp-addendum-20261025.md) records the user-reported operator and participant jurisdictions.
+The [G5 clarification](docs/feasibility/g5-delegated-commerce-20261025.md) measures delegated-commerce savings against human-operated transactions.
+The [deterministic preflight](docs/feasibility/g5-comparator-preflight-20261025.md) separately limits claims about additional AI contribution.
+The [closure plan](docs/feasibility/g1-closure-plan-20261024.md) records current evidence and unresolved conditions.
+The [Korean checklist](docs/feasibility/user-checklist.ko.md) describes user tasks without exposing credentials.
+
+Run the local checks from the repository root:
+
+```sh
+python3 -m venv /tmp/pact-opencv-venv
+/tmp/pact-opencv-venv/bin/python -m pip install -r feasibility/requirements-opencv.txt -r pact/requirements.txt
+export PATH="/tmp/pact-opencv-venv/bin:$PATH"
+./verify.sh
+```
+
+This command runs local tests without PayPal payment requests or a server.
+The [source setup guide](docs/feasibility/clean-start-20261025.md) also starts an empty HTTPS workspace with synthetic credentials.
+A fresh dependency environment passed all 565 tests and the isolated HTTPS startup check.
+Fresh-account commerce setup and public judge access remain unverified.
+The [historical OpenCV experiment](docs/feasibility/g2-opencv-experiment-20261024.md) generates experimental cutouts without pretrained weights.
+The current negotiated raster implementation uses OpenCV with an independent pixel checker.
+The [local runbook](docs/feasibility/negotiated-image-runbook.md) covers request creation, preflight, output generation, and verification.
+The standalone image command does not run agent negotiation, persistent intake, or payments.
+The application connects those services through the source exchange and existing transaction worker.
+The target interface uses one transaction detail view with expandable agreement, checker, and payment evidence.
+A private [2:45 review draft](docs/feasibility/demo-recording-runbook-20261025.md) combines actual browser actions, recorded command execution, and labeled retained evidence.
+The [actual Gemini command](docs/feasibility/evidence/single-command-live-gemini-20261025.json) used synthetic PayPal responses and made no additional payment.
+Adopted demonstration acceptance and public publication remain unverified.
+The demonstration exports evidence without Disputes API submission.
+
+The historical contest research below retains its 2026-10-19 reference date.
+GD reconciliation does not revalidate contest eligibility, dates, prizes, or judging claims.
 
 목표 부문은 `Best Use of Agentic Commerce`, `Best Use of PayPal + AI`, `Most Creative`이다.
 
@@ -127,13 +249,13 @@ PayPal AI Toolkit의 sandbox MCP는 주문·결제, 환불, 청구서, 구독, �
 - 스폰서 도구는 제품에 꼭 필요할 때만 추가한다. 상금 트랙을 늘리기 위한 통합은 완성도와 설명 시간을 해칠 수 있다.
 - 돈을 움직이는 AI라면 사전에 정한 금액 한도, 취소 가능한 위임, 자동 검사와 검증 가능한 거래 기록이 필요하다. PACT는 이 범위 안에서 거래별 사용자 확인 없이 실행한다.
 
-## 바로 할 일
+## Next implementation conditions
 
-1. Devpost 참가 등록과 PayPal Developer 계정 생성을 완료한다.
-2. PayPal sandbox에서 저장된 결제수단, 결제 승인과 실행 흐름을 검증한다.
-3. 배경 제거 완료 검사 규칙을 정상 파일과 잘못된 파일로 검증한다.
-4. PACT 최소 구현의 화면과 저장 형식을 정한다.
-5. 앱 저장소와 제출 일정을 만든다.
+1. Preserve the accepted G1 scope and its query-only recovery restrictions.
+2. Preserve the accepted G2 implementation, evidence, and prepared photographic-panel scope.
+3. Use the GD adoption record and bounded G1 and G2 acceptances for transaction safety implementation.
+4. Verify G3 concurrency, ownership, stop, expiry, replay, and restart conditions.
+5. Verify output delivery recovery before preparing the complete demonstration.
 
 ## 확인이 더 필요한 사항
 

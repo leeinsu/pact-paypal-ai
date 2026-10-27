@@ -1,0 +1,107 @@
+{
+  "scope": "Two previously disclosed diagnostic originals. No independent reference masks or holdout images.",
+  "platform": "Linux-7.0.14-15-pve-x86_64-with-glibc2.41",
+  "processor": "x86_64",
+  "batch_peak_rss_kib": 669452,
+  "results": [
+    {
+      "status": "generated",
+      "experiment": "opencv-grabcut-v1",
+      "input_sha256": "65caabb51389f2f9af783f471bb09bf4b3956aaa629c7f517491f82332555622",
+      "output_sha256": "f0fb31e8cffbf6f132025c762fa8f1acfd1d2ee4a3e8abc0acb4d977a747557d",
+      "width": 960,
+      "height": 960,
+      "foreground_pixels": 236683,
+      "foreground_components": 1,
+      "opencv": "4.13.0",
+      "numpy": "2.5.4",
+      "iterations": 5,
+      "rng_seed": 0,
+      "elapsed_seconds": 2.536,
+      "row": "028",
+      "existing_v2_check": {
+        "status": "rejected",
+        "input_sha256": "65caabb51389f2f9af783f471bb09bf4b3956aaa629c7f517491f82332555622",
+        "output_sha256": "f0fb31e8cffbf6f132025c762fa8f1acfd1d2ee4a3e8abc0acb4d977a747557d",
+        "dimensions": {
+          "input": null,
+          "output": null
+        },
+        "rule_id": "g2-v2",
+        "metrics": {
+          "background_alpha": {
+            "numerator": null,
+            "denominator": null
+          },
+          "foreground_alpha": {
+            "numerator": null,
+            "denominator": null
+          },
+          "foreground_rgb_error": {
+            "numerator": null,
+            "denominator": null,
+            "pixel_denominator": null
+          }
+        },
+        "reason_codes": [
+          "input_unsupported",
+          "foreground_components_not_one",
+          "uncertain_region_exceeds_limit",
+          "input_boundary_ambiguous"
+        ]
+      }
+    },
+    {
+      "status": "generated",
+      "experiment": "opencv-grabcut-v1",
+      "input_sha256": "ed7d6183f6cb0e9ac6fe7c7d3f9e84d7d68c489881f9fb5d3c1f02b2c03b96d9",
+      "output_sha256": "ff7e4b4ec9eb4ed9c788dc8cd6ca1d6f22dc0d0ad3d32b4c1b9fbb770f54d6b4",
+      "width": 600,
+      "height": 600,
+      "foreground_pixels": 83629,
+      "foreground_components": 1,
+      "opencv": "4.13.0",
+      "numpy": "2.5.4",
+      "iterations": 5,
+      "rng_seed": 0,
+      "elapsed_seconds": 0.959,
+      "row": "029",
+      "existing_v2_check": {
+        "status": "rejected",
+        "input_sha256": "ed7d6183f6cb0e9ac6fe7c7d3f9e84d7d68c489881f9fb5d3c1f02b2c03b96d9",
+        "output_sha256": "ff7e4b4ec9eb4ed9c788dc8cd6ca1d6f22dc0d0ad3d32b4c1b9fbb770f54d6b4",
+        "dimensions": {
+          "input": null,
+          "output": null
+        },
+        "rule_id": "g2-v2",
+        "metrics": {
+          "background_alpha": {
+            "numerator": null,
+            "denominator": null
+          },
+          "foreground_alpha": {
+            "numerator": null,
+            "denominator": null
+          },
+          "foreground_rgb_error": {
+            "numerator": null,
+            "denominator": null,
+            "pixel_denominator": null
+          }
+        },
+        "reason_codes": [
+          "input_unsupported",
+          "foreground_components_not_one",
+          "uncertain_region_exceeds_limit",
+          "input_boundary_ambiguous"
+        ]
+      }
+    }
+  ],
+  "artifacts": {
+    "feasibility/g2_opencv_experiment.py": "cd1a75893b3587756ab7e0f36525e102b250fbb0d36da380872ce7344b0b685d",
+    "feasibility/requirements-opencv.txt": "2f33153ad8d567412c4e3904d213d1763d60477ee64bd531c257d3f84ef0a877",
+    "acceptance/feasibility/test_g2_opencv_experiment.py": "88f382aac9b4568a091ebeb39f582bf1dd44d2fd33fc23586bfc09228986847d"
+  }
+}

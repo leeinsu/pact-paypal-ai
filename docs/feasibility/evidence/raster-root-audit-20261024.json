@@ -1,0 +1,20 @@
+{
+  "attack_file_hash_audits": 140,
+  "audited_at_utc": "2026-10-24T04:39:15.687246+00:00",
+  "auditor": "/root",
+  "batch_sha256": "cc12487c599be87804b369a5274f325905268786ef9dbebd78ed9f8bb503ae30",
+  "freeze_sha256": "d6698d24443725123ec9363bb782193442371904746fdc7fd36bace882715c29",
+  "language_review": "Checked controlled prose and preserved quantities. No formal ASD-STE100 compliance claim.",
+  "local_tests": {
+    "executed": 145,
+    "failure_class": "none",
+    "failures": 0,
+    "skipped": []
+  },
+  "normal_pixel_audits": 20,
+  "payment_requests": 0,
+  "scope": "Read-only hash, metadata, chronology, stored result, and complete generated-pixel audit. This audit does not replace independent evidence review.",
+  "unchanged_frozen_repository_artifacts": 97,
+  "unchanged_runtime_binaries": 3,
+  "unsupported_file_hash_audits": 140
+}

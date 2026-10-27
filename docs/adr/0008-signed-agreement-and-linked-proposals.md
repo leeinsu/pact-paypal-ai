@@ -1,3 +1,12 @@
-# 최종 합의와 제안 변경 과정을 함께 검증한다
+# Bind the agreement and linked proposals
 
-두 개인 에이전트는 양쪽 위임장에 맞는 최종 거래 합의서에 서명해야 한다. 합의서는 공통 항목과 거래 종류에 맞는 거래 규칙서의 판을 명시한다. 각 제안은 바로 전 제안의 확인값을 포함한다. 조건이 위임장과 맞지 않으면 에이전트는 거절하거나 새 조건을 제안하며 임의로 조건을 완화하지 않는다.
+Both Personal Agents sign the same canonical agreement bytes under their respective Mandates.
+The agreement binds the transaction ID, both Mandate hashes, roles, JPY amount, and obligations.
+It also binds the account binding version, merchant identity, input hash, rule hash and version, and deadline.
+It includes rework, cancellation, refund, delivery, and retention conditions.
+Each signed proposal references the previous proposal hash.
+The validator rejects terms outside either Mandate.
+Both signatures are prerequisites for the finalization commit, not finalization by themselves.
+
+GD amendment adopted on 2026-10-24.
+See the [adoption record](../feasibility/gd-reconciliation-20261024.md) and [glossary](../../GLOSSARY.md).

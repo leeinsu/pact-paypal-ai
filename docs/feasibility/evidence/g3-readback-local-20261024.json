@@ -1,0 +1,47 @@
+{
+  "artifacts": {
+    "README.md": "ed7b7de6af995af8b3ead69b5255f60941c6186a0808f1041b7826e85f643a2b",
+    "acceptance/transaction/test_paypal.py": "e069dbb3c4ddd5b9943060fd84b80fc11c453468b914d8b1cc796e0db91380fc",
+    "docs/feasibility/evidence/g3-sandbox-readback-20261024.json": "efd6c31eb46879c482e819ea8e5ce0bd821e48b91ee2c13b5c56bf94e66c596d",
+    "docs/feasibility/g3-sandbox-readback-20261024.md": "73de22593a76bce658ec124851994a0f219e6d0dddb590a60dc2fae8a3eddafc",
+    "pact/paypal.py": "aabefbb57804736e04192ca5781ae6047dd6bba5bdcd14bea634e35ce8bb70ec"
+  },
+  "command": "PATH=\"/tmp/pact-opencv-venv/bin:$PATH\" DEVFLOW_TEST_RESULT=/tmp/pact-g3-readback-tests.json ./verify.sh",
+  "credential_access": true,
+  "exit_code": 0,
+  "g2_freeze_sha256": "d6698d24443725123ec9363bb782193442371904746fdc7fd36bace882715c29",
+  "language_review": "Reviewed changed English prose and glossary terms. No additional exceptions. No formal ASD-STE100 compliance claim.",
+  "local_tests": {
+    "executed": 417,
+    "failure_class": "none",
+    "failures": 0,
+    "skipped": []
+  },
+  "new_tests": {
+    "vault_readback": 2
+  },
+  "oauth_requests": 1,
+  "payment_requests": 0,
+  "probe_sha256": "b92385e928f083fabc1547980824935b9c17fb108118e3d96b1aac5c163af932",
+  "recorded_at_utc": "2026-10-24T07:49:01.559350+00:00",
+  "resource_get_requests": 5,
+  "scope": "Vault readback methods and existing G1 Sandbox records through the current application transport. G3 remains open.",
+  "test_log_sha256": "749b29944acf23a65f849750f9e2f606db3a83d0135e6ea9433b82c21d90a04c",
+  "unchanged_g2_repository_artifacts": 97,
+  "unchanged_g2_runtime_binaries": 3,
+  "verified_baselines": {
+    "authentication": 8,
+    "conditions": 13,
+    "detail": 6,
+    "http": 6,
+    "notifications": 6,
+    "offline-records": 6,
+    "operations": 12,
+    "payments": 10,
+    "records": 6,
+    "reservations": 6,
+    "signed-flow": 11,
+    "submission": 9,
+    "transport": 18
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-25",
+  "scope": "Counterproposal, delegated agreement, image fulfillment, synthetic payment, both participant downloads, and completed worker replay.",
+  "command": "PATH=/tmp/pact-opencv-venv/bin:$PATH ./verify.sh",
+  "tests": {
+    "executed": 551,
+    "skipped": [],
+    "failures": 0,
+    "failure_class": "none"
+  },
+  "seconds": 49.714,
+  "focused_test": "acceptance.transaction.test_agents.TestPersonalAgents.test_counterproposal_reaches_payment_and_both_downloads_without_new_user_signatures",
+  "observations": {
+    "initial_offer_jpy": 5,
+    "accepted_counterproposal_jpy": 6,
+    "scripted_agent_decisions": 3,
+    "signed_mandates_unchanged": true,
+    "transaction_status": "paid",
+    "buyer_and_provider_output_equal": true,
+    "output_hash_verified": true,
+    "synthetic_financial_mutations": 3,
+    "additional_transport_calls_after_completed_replay": 0
+  },
+  "source_sha256": {
+    "acceptance/transaction/test_agents.py": "0279e0ff5ebe0a8ecf52fab63fc346bb12aeefea35b2266b2de449fba5c758c3",
+    "pact/agents.py": "471bc0a83f0fae200824e412633dd133daa4c255ccd978fda115b3fe306604db",
+    "pact/worker.py": "8989f0d4f47a634ea6e718c82fd25f7c954593cc35899bdc0d5ac235d5658d23",
+    "docs/feasibility/g5-delegated-commerce-20261025.md": "bde65b1f40fd2fc30c1c762e08b273f176f6e7fbbe40aea71253babf0ddebb9d"
+  },
+  "actual_paypal_requests": 0,
+  "actual_model_requests": 0,
+  "payment_authorization_jpy": 2500,
+  "conservative_consumption_jpy": 12,
+  "limits": [
+    "The fixture prepares identities, account bindings, Mandates, images, and complete candidates before execution.",
+    "Scripted decisions replace Gemini and local responses replace PayPal.",
+    "The operator starts negotiation and the worker separately.",
+    "This check does not measure customer time savings or arbitrary natural-language condition conversion.",
+    "This check does not grant G4 or G5 acceptance."
+  ],
+  "language_review": {
+    "scope": "Changed status prose and evidence descriptions.",
+    "exceptions": [
+      "The user requested Korean prose in user-checklist.ko.md."
+    ],
+    "formal_asd_ste100_compliance_checked": false
+  }
+}

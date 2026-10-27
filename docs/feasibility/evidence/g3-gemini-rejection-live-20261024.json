@@ -1,0 +1,64 @@
+{
+  "case": "incompatible_policies",
+  "elapsed_seconds": 7.989,
+  "live_paypal_requests": 0,
+  "model_calls": [
+    {
+      "decision": {
+        "action": "propose",
+        "candidate": 1
+      },
+      "model_version": "gemini-3.1-flash-lite",
+      "role": "buyer",
+      "usage": {
+        "candidatesTokenCount": 19,
+        "promptTokenCount": 2168,
+        "totalTokenCount": 2187
+      }
+    },
+    {
+      "decision": {
+        "action": "propose",
+        "candidate": 1
+      },
+      "model_version": "gemini-3.1-flash-lite",
+      "role": "buyer",
+      "usage": {
+        "candidatesTokenCount": 19,
+        "promptTokenCount": 2332,
+        "totalTokenCount": 2351
+      }
+    },
+    {
+      "decision": {
+        "action": "propose",
+        "candidate": 0
+      },
+      "model_version": "gemini-3.1-flash-lite",
+      "role": "provider",
+      "usage": {
+        "candidatesTokenCount": 19,
+        "promptTokenCount": 2253,
+        "totalTokenCount": 2272
+      }
+    },
+    {
+      "decision": {
+        "action": "reject",
+        "candidate": null
+      },
+      "model_version": "gemini-3.1-flash-lite",
+      "role": "provider",
+      "usage": {
+        "candidatesTokenCount": 17,
+        "promptTokenCount": 2408,
+        "totalTokenCount": 2425
+      }
+    }
+  ],
+  "negotiation": {
+    "proposal_head": "d7395dad03e9d0011121a82224f5c449a5e3bd0d450feef94f9bdda015588e29",
+    "status": "rejected"
+  },
+  "reservations": 0
+}

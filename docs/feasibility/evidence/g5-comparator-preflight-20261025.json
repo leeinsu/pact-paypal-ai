@@ -1,0 +1,16 @@
+{
+  "scope": "Abstract permitted sets for four ordered complete candidates.",
+  "pairs": 256,
+  "compatible_pairs": 175,
+  "incompatible_pairs": 81,
+  "comparator_manual_interventions": 0,
+  "maximum_possible_intervention_reduction": 0,
+  "required_intervention_reduction": 2,
+  "intervention_reduction_criterion_satisfiable": false,
+  "external_requests": 0,
+  "limits": [
+    "This check does not execute the twenty shared customer cases.",
+    "This check does not measure AI latency, monetary cost, or customer value.",
+    "This check does not grant G5 acceptance or change its thresholds."
+  ]
+}

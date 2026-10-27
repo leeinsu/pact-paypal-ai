@@ -1,3 +1,16 @@
-# 열쇠 탈취가 의심되면 미완료 행동을 긴급 정지한다
+# Stop new payment intents at the submission commit boundary
 
-사용자는 새 거래 확정, 아직 실행하지 않은 결제와 새 증거 제출을 긴급 정지할 수 있다. 정지 전에 확정된 거래의 의무는 자동으로 사라지지 않으며 해당 거래는 확인 또는 분쟁 상태로 이동한다. 탈취 주장 전의 거래도 자동으로 무효가 되지 않고 거래 증거에 따라 다툰다.
+Emergency stop prevents new finalization, new payment submission commits, and new evidence submission.
+The payment worker rechecks stop, deadline, accepted output, account ownership, and delegated authority in one payment submission transaction.
+The payment submission commit fixes the existing payment intent before HTTP transmission.
+A stop committed first prevents submission and transmission.
+A payment submission commit recorded first continues despite later stop or agreement deadline expiry.
+This rule also applies when the process exits before HTTP transmission.
+Recovery uses the existing job, request identifier, and immutable payload under ADR 0012.
+Unknown payment state retains reservations and permits no replacement payment.
+A remaining authorization without a payment submission commit enters verified cancellation handling.
+The interface states that stopping does not cancel a previously committed payment intent.
+Stop does not erase existing obligations or create an automatic refund.
+
+GD amendment adopted on 2026-10-24.
+See the [adoption record](../feasibility/gd-reconciliation-20261024.md) and [glossary](../../GLOSSARY.md).

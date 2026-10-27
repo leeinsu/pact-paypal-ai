@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-25",
+  "scope": "One command connects prepared source exchange, bounded negotiation, fulfillment, checks, and synthetic payment.",
+  "command": "PATH=/tmp/pact-opencv-venv/bin:$PATH DEVFLOW_TEST_RESULT=/tmp/pact-trade-tests-20261025.json ./verify.sh",
+  "tests": {
+    "executed": 559,
+    "skipped": [],
+    "failures": 0,
+    "failure_class": "none"
+  },
+  "seconds": 50.618,
+  "focused_tests": {
+    "command": "/tmp/pact-opencv-venv/bin/python -m unittest acceptance.transaction.test_gemini -q",
+    "executed": 21,
+    "failures": 0,
+    "seconds": 1.719
+  },
+  "new_trade_cases": [
+    "Replace a rejected source, accept a counterproposal, pay, and grant both downloads through one command.",
+    "Reject negotiation without constructing the payment worker.",
+    "Reject an excessive amount before model or payment requests.",
+    "Complete one permitted rework without another command.",
+    "Void authorization after the second rejected output without capture or a third attempt.",
+    "Recover a lost capture response through the same transaction without another payment mutation.",
+    "Stop after model failure without payment or secret disclosure.",
+    "Warn that payment can complete after interruption."
+  ],
+  "tdd": {
+    "before_implementation": "The primary trade test failed because argparse rejected the missing trade command.",
+    "after_implementation": "All 21 Gemini runtime tests and all 559 repository tests passed."
+  },
+  "observations": {
+    "source_submission_number": 2,
+    "initial_offer_jpy": 5,
+    "accepted_counterproposal_jpy": 6,
+    "transaction_status": "paid",
+    "buyer_and_provider_output_equal": true,
+    "synthetic_financial_mutations": 3,
+    "additional_transport_calls_after_completed_worker_replay": 0,
+    "maximum_reworks": 1,
+    "failed_rework_captured": false,
+    "lost_capture_recovery_additional_mutations": 0
+  },
+  "source_sha256": {
+    "pact/server.py": "f6a35fb361e9efb3072f1a1f95464d28b4b3fdd224e8b2ec7fc2827f17a50c63",
+    "pact/worker.py": "8989f0d4f47a634ea6e718c82fd25f7c954593cc35899bdc0d5ac235d5658d23",
+    "pact/agents.py": "471bc0a83f0fae200824e412633dd133daa4c255ccd978fda115b3fe306604db",
+    "acceptance/transaction/test_gemini.py": "8c2c76ca54e9e64acb77fdb90ca38a41d5d54d43296d64d607bbe49b6f9bef22"
+  },
+  "actual_paypal_requests": 0,
+  "actual_model_requests": 0,
+  "payment_authorization_jpy": 2500,
+  "conservative_consumption_jpy": 12,
+  "remaining_authorization_jpy": 2488,
+  "limits": [
+    "The operator prepares complete permitted candidates, account bindings, source files, and valid Mandates before starting the command.",
+    "Scripted decisions replace Gemini and local responses replace PayPal in this check.",
+    "A zero process exit code does not establish payment completion. Inspect execution.status.",
+    "Partially completed negotiation requires inspection. Recover uncertain payments through work with the same finalized transaction.",
+    "The amount option limits each candidate. It does not reset cumulative authorization.",
+    "This check does not measure customer savings or implement arbitrary natural-language condition conversion.",
+    "This change does not grant independent review acceptance, G4 acceptance, G5 acceptance, or production eligibility."
+  ],
+  "language_review": {
+    "scope": "Changed runtime messages, command instructions, status prose, design connections, and evidence descriptions.",
+    "checks": "Manual terminology and meaning review plus sentence, local-link, and whitespace checks.",
+    "exceptions": [
+      "The user requested Korean prose in user-checklist.ko.md. Exact commands, paths, and identifiers retain their required forms."
+    ],
+    "formal_asd_ste100_compliance_checked": false
+  }
+}

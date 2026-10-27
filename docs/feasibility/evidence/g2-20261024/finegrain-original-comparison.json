@@ -1,0 +1,96 @@
+{
+  "recorded_at": "2026-10-23T16:49:59.547889+00:00",
+  "purpose": "Original accessibility and input-support diagnostics for previously selected calibration candidates only.",
+  "parquet_sha256": "09523852fe7b22f2f4c356ee209cd5384e18ecefdf512658e95ae1b0c7c42ad3",
+  "parquet_bytes": 118228477,
+  "pyarrow_version": "26.0.0",
+  "read_columns": [
+    "image"
+  ],
+  "reference_masks_read": false,
+  "heldout_selected": false,
+  "normalization": "Existing FFmpeg RGBA decoding and minimal PNG encoding. No resize, recoloring, compositing, or thresholding.",
+  "artifact_sha256": {
+    "feasibility/g2-rule.v2.json": "f4278948fc853c2f8f3ffb4f126cf216793d1621ace0926b3e5d6e6607df60f7",
+    "feasibility/g2_checker.py": "51a585f7ad158768a2937b88791c304d15f4f6e8b3fc1d5cc234b84412a772a2",
+    "feasibility/png.py": "e9b3db336592dae24ea8f412fa71c757238dd01ee2e50f7afa1915a570a8b680"
+  },
+  "results": [
+    {
+      "row_idx": 28,
+      "source_image_path": "e241647010ad318db63a367b61ae5498472621",
+      "original_file": ".g2-evaluator/finegrain-originals/028-original.jpg",
+      "original_byte_size": 68758,
+      "original_sha256": "e787698b8d733515aed8adfa5f124b19c47c56cdf18aff2eea39f7bd79c343a1",
+      "normalized_png_sha256": "65caabb51389f2f9af783f471bb09bf4b3956aaa629c7f517491f82332555622",
+      "decoded_rgba_sha256": "3c8d58c828c55d664c90311bf8d55911381f168e259c95d8a33f4a93312e161b",
+      "width": 960,
+      "height": 960,
+      "preview_jpeg_sha256": "ce3331c60c540776f4366961dfa3747410eba81dd25fe1e6d95b49d16fac2d9e",
+      "preview_decoded_rgba_sha256": "8f6e15218cb0b6d9272eaaaa2e54d650a3671f132b8c9d48ce96ac20a9357c06",
+      "original_bytes_equal_preview": false,
+      "decoded_pixels_equal_preview": false,
+      "changed_rgba_pixels": 8503,
+      "maximum_channel_difference": 6,
+      "mean_absolute_rgba_channel_difference": 0.006864149305555556,
+      "checker_result": {
+        "status": "unsupported",
+        "input_sha256": "65caabb51389f2f9af783f471bb09bf4b3956aaa629c7f517491f82332555622",
+        "width": 960,
+        "height": 960,
+        "rule_id": "g2-v2",
+        "region_counts": {
+          "total": 921600,
+          "background": 599539,
+          "foreground_candidate": 217750,
+          "foreground": 199089,
+          "uncertain": 122972,
+          "foreground_components": 52
+        },
+        "reason_codes": [
+          "foreground_components_not_one",
+          "uncertain_region_exceeds_limit",
+          "input_boundary_ambiguous"
+        ]
+      }
+    },
+    {
+      "row_idx": 29,
+      "source_image_path": "8303afff893d6c35d13d409cb6316678abf988",
+      "original_file": ".g2-evaluator/finegrain-originals/029-original.jpg",
+      "original_byte_size": 37145,
+      "original_sha256": "5fd3e7efc549930577f38b770378b1abe59fa148ec8e145fcbd1946f8b1cd531",
+      "normalized_png_sha256": "ed7d6183f6cb0e9ac6fe7c7d3f9e84d7d68c489881f9fb5d3c1f02b2c03b96d9",
+      "decoded_rgba_sha256": "8d85bd8878563c1d55c746028b3df00b5c0156c62415bfa53fc7e1f6157be5f0",
+      "width": 600,
+      "height": 600,
+      "preview_jpeg_sha256": "6509f8972be7b3ae3e7ca8b803304f03d1d12bf1df5001bf331daabdef05d129",
+      "preview_decoded_rgba_sha256": "121a94a7de83f1944097ab433287aed9d2f09365f3c40c3e75592325f9e85d15",
+      "original_bytes_equal_preview": false,
+      "decoded_pixels_equal_preview": false,
+      "changed_rgba_pixels": 1458,
+      "maximum_channel_difference": 3,
+      "mean_absolute_rgba_channel_difference": 0.002979166666666667,
+      "checker_result": {
+        "status": "unsupported",
+        "input_sha256": "ed7d6183f6cb0e9ac6fe7c7d3f9e84d7d68c489881f9fb5d3c1f02b2c03b96d9",
+        "width": 600,
+        "height": 600,
+        "rule_id": "g2-v2",
+        "region_counts": {
+          "total": 360000,
+          "background": 255002,
+          "foreground_candidate": 74037,
+          "foreground": 53355,
+          "uncertain": 51643,
+          "foreground_components": 377
+        },
+        "reason_codes": [
+          "foreground_components_not_one",
+          "uncertain_region_exceeds_limit",
+          "input_boundary_ambiguous"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "rule_id": "pact-raster-v1",
+  "format": {
+    "encoding": "PNG",
+    "max_encoded_bytes": 8388608,
+    "min_dimension": 64,
+    "max_dimension": 1024,
+    "bit_depth": 8,
+    "input_color_types": [2, 6],
+    "interlace": false,
+    "ancillary_chunks": false
+  },
+  "input_alpha": 255,
+  "background_distance_max": 8,
+  "preserved_distance_min": 32,
+  "connectivity": 4,
+  "require_uniform_perimeter": true,
+  "preserved_components": 1,
+  "output_background_alpha": 0,
+  "output_preserved_alpha": 255,
+  "preserve_all_rgb": true,
+  "max_input_submissions": 3,
+  "semantic_product_recognition": false
+}

@@ -1,3 +1,11 @@
-# PACT는 분쟁을 판정하지 않고 증거를 제공한다
+# Export evidence without deciding disputes
 
-PACT에는 내부 분쟁 판정자를 두지 않는다. 결제 후 PayPal 분쟁이 발생하면 PACT는 별도의 분쟁 대응 위임장 범위 안에서 거래 증거를 제출한다. PayPal 내부 분쟁은 PayPal이 판단하며 외부 지급 거절은 해당 금융기관이 판단할 수 있다. PACT는 그 결과를 거래 기록에 연결한다.
+PACT has no internal dispute adjudicator.
+The demonstration exports permitted transaction evidence without claiming PayPal submission or acceptance.
+Any future automatic submission requires separate dispute authority and verified account capability.
+PayPal decides disputes within its authority.
+An external financial institution can decide chargebacks within its authority.
+PACT links available dispute outcomes to the transaction record without guaranteeing a favorable result.
+
+GD amendment adopted on 2026-10-24.
+See the [adoption record](../feasibility/gd-reconciliation-20261024.md) and [glossary](../../GLOSSARY.md).

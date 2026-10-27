@@ -1,0 +1,58 @@
+{
+  "artifacts": {
+    "README.md": "9cc176f512dc79e0947da0208ba362d5b464eed9713b36cc9d59a3486db09fd5",
+    "acceptance/transaction/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "acceptance/transaction/test_payment_operations.py": "03a8bfc429d7c2537037a0e96e1653f72a780cd23c3ec75406a8a87b1d55eb60",
+    "acceptance/transaction/test_payments.py": "3b4ef7e79f9733eb4ef27232707269ad6f3d48a22a59f7fd2d638bd8d6b04462",
+    "acceptance/transaction/test_reservations.py": "bbc77821371c0c1241ebbcbc7e6d3ac08d0ad149d8b9d1f6f4393f0650d4d0b7",
+    "docs/feasibility/g3-operations-20261024.md": "28a307161dcec7aa304f947abbb7d85fe3f54410a9a59fa0576ab29fa28a9e2e",
+    "docs/feasibility/g3-payments-20261024.md": "36f1ee2a88baeb8f8c6643fe99582ea38074eab4fbfbec419212dc0359c99d99",
+    "docs/pact-revision-proposal.md": "4803eb0348fea424eccc76f23251e3510bda8bff7f74d82916c1ec6f948e4109",
+    "pact/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pact/requirements.txt": "8b5c18678b29b5e8e0fb586a35ac1dce3ccd9da321e8f12ace0e118350b4e568",
+    "pact/reservations.py": "3ab7c9f1a959978aa67beb4177b46aefc2ac03125f5009d7da0560e31b10e59a",
+    "verify.sh": "79766002f29bcef71f84987d49dc581c0883a8d3c16d15a95e266aa5c6c42048"
+  },
+  "command": "PATH=\"/tmp/pact-opencv-venv/bin:$PATH\" DEVFLOW_TEST_RESULT=/tmp/pact-g3-operations-tests.json ./verify.sh",
+  "credential_access": false,
+  "cryptography_version": "50.0.2",
+  "dependency_check": "python -m pip check: No broken requirements found.",
+  "existing_payment_tests": 24,
+  "exit_code": 0,
+  "g2_freeze_sha256": "d6698d24443725123ec9363bb782193442371904746fdc7fd36bace882715c29",
+  "language_review": "Checked changed English prose against glossary terms, active voice, sentence limits, conditions, quantities, and uncertainty. No formal ASD-STE100 compliance claim.",
+  "local_tests": {
+    "executed": 214,
+    "failure_class": "none",
+    "failures": 0,
+    "skipped": []
+  },
+  "new_operation_tests": 22,
+  "payment_requests": 0,
+  "recorded_at_utc": "2026-10-24T05:59:17.850147+00:00",
+  "recovery_limit": "Only the initial operation commit grants dispatch. Unknown order identifiers remain on hold. Known orders permit authorization queries only.",
+  "regression_proof": {
+    "after_fix": "The full suite passes with the rejection check.",
+    "before_fix": "The focused test failed because finalization did not raise payment_source_required.",
+    "case": "New payment agreements require a registered token before finalization."
+  },
+  "remaining": [
+    "Authenticated sessions, signatures, and delegated conditions",
+    "Verified account registration and token ownership",
+    "Encrypted immutable files and intake limits",
+    "Payment transport and dispatch enforcement",
+    "Supported nonpayment closure before capture",
+    "Authorized output access",
+    "Integrated Sandbox response-loss evidence and independent G3 review"
+  ],
+  "scope": "Local order and authorization persistence, token encryption, and conservative restart recovery. G3 remains open.",
+  "security_boundary": "Trusted internal storage. Callers must verify consent, token ownership, sessions, signatures, merchant registration, and API readbacks.",
+  "sqlite_version": "3.46.1",
+  "test_log_sha256": "5140f6ff33d6c4d85e2480e72830726887e52172022ce8e6e542cf8ce75ff1d4",
+  "unchanged_g2_repository_artifacts": 97,
+  "unchanged_g2_runtime_binaries": 3,
+  "verified_baselines": {
+    "docs/feasibility/evidence/g3-payments-baseline-20261024": 10,
+    "docs/feasibility/evidence/g3-reservations-baseline-20261024": 6
+  }
+}

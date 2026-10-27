@@ -1,0 +1,48 @@
+{
+  "artifacts": {
+    "README.md": "32dc79a14e9c31fc4e8e6928cc9e4cf3395fa89eca7977487f05672d646ca429",
+    "acceptance/transaction/test_conditions.py": "e3f96ddf134c52d40ba69678e89f49462249f07e5817606e5810612f8e208483",
+    "acceptance/transaction/test_delegation.py": "d2b93ba2b97c80e28096ff423b62a6ab88ffad3f9d389e98f043ed9597de1bed",
+    "acceptance/transaction/test_rework.py": "4d45778c11dbf99c33db8073ef606e02f98e1abf66793877ab99e2f6a87c39a7",
+    "acceptance/transaction/test_worker.py": "a50481b21189abec0de8589e68d8d614ee1121704ec77efb4e7b1deca3aeb181",
+    "docs/feasibility/g3-conditions-20261024.md": "6043a96e7507fa459f49d183a6b61d91f968fbbeb488c5dc49aac6765b743dc0",
+    "docs/feasibility/g3-signed-flow-20261024.md": "5d3daaba6a7b9a424160a7b4af57aafcf0fa0685fd4074dfcb104e7163eb625b",
+    "docs/pact-revision-proposal.md": "6f86e2cbbf21242cfffcfcaad16a4071a73a9e34d2d5d24b033a36fece30fea2",
+    "pact/conditions.py": "d296d1fbe3a0889b10fa62b533abc8a5fdaf07b758cb60c07ffc13fecc18f8ac",
+    "pact/delegation.py": "25c026da8ca2da8d10cd599f96fed18c7d1c4ce933ef7d08cc821c5d85628984",
+    "pact/negotiation.py": "7cc4eef269259fc76f58749079787c3f4517bba087bce45fb82e8c3a68e29785",
+    "pact/reservations.py": "4b139c8ffb7821d56b0aa20deffb86bdad979f8a39595a7e41129247a6926e76",
+    "pact/worker.py": "afd72c9559490ed5c93445920558a97b8d165c264b803fa296654730aa675413"
+  },
+  "command": "PATH=\"/tmp/pact-opencv-venv/bin:$PATH\" DEVFLOW_TEST_RESULT=/tmp/pact-g3-conditions-tests.json ./verify.sh",
+  "credential_access": false,
+  "dependency_check": "No broken requirements found.",
+  "exit_code": 0,
+  "external_http_requests": 0,
+  "g2_freeze_sha256": "d6698d24443725123ec9363bb782193442371904746fdc7fd36bace882715c29",
+  "language_review": "Reviewed changed English prose and glossary terms. No additional exceptions. No formal ASD-STE100 compliance claim.",
+  "local_tests": {
+    "executed": 326,
+    "failure_class": "none",
+    "failures": 0,
+    "skipped": []
+  },
+  "new_tests": {
+    "conditions": 4,
+    "rework": 9
+  },
+  "payment_requests": 0,
+  "recorded_at_utc": "2026-10-24T06:56:39.178287+00:00",
+  "scope": "Explicit signed agreement conditions and bounded worker rework. Retention basis remains unverified. G3 remains open.",
+  "test_log_sha256": "e6b12f12852162f847531f9bf1dbefd710a88aa01462e7776d6e30f654d51450",
+  "unchanged_g2_repository_artifacts": 97,
+  "unchanged_g2_runtime_binaries": 3,
+  "verified_baselines": {
+    "authentication": 8,
+    "operations": 12,
+    "payments": 10,
+    "reservations": 6,
+    "signed-flow": 11,
+    "transport": 18
+  }
+}

@@ -1,3 +1,13 @@
-# 최종 거래 합의서마다 하나의 결제 흐름만 허용한다
+# Keep one payment flow for each agreement
 
-각 최종 거래 합의서는 고유한 거래 번호로 하나의 PayPal 결제 흐름과 연결된다. 같은 요청이 반복되면 새 주문이나 지급을 만들지 않고 이미 기록된 결과를 반환한다. 이 규칙은 통신 재시도와 기록 재사용으로 생기는 중복 결제를 막는다.
+One transaction ID binds one agreement hash to one PayPal payment flow.
+The server rejects a different agreement hash under that transaction ID and duplicate order bindings.
+Repeated submissions return recorded state without creating another payment flow.
+The worker persists immutable payloads and distinct request identifiers for order creation, authorization, and capture before external calls.
+Recovery queries known external identifiers first.
+Retries require G1-confirmed endpoint support, the same request identifier and payload, and a valid retention period.
+Missing identifiers or expired retention preserve unknown payment state unless supported recovery establishes the outcome.
+Recovery never creates a replacement order or authorization to bypass uncertainty.
+
+GD amendment adopted on 2026-10-24.
+See the [adoption record](../feasibility/gd-reconciliation-20261024.md) and [glossary](../../GLOSSARY.md).

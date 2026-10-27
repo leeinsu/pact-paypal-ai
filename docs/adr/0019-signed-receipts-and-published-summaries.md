@@ -1,3 +1,11 @@
-# 공개 기록판은 서명된 접수증과 정기 기록 요약을 제공한다
+# Provide signed receipts and minimal summaries
 
-PACT 기록 서버는 새 기록을 순서대로 연결하고 서명된 접수증을 발급한다. 양쪽 개인 에이전트는 접수증을 각각 보관한다. 서버는 기록 요약을 정기적으로 공개한다. 접수증이나 기록 요약과 맞지 않는 삭제와 변경은 검증 과정에서 드러나야 한다. 별도 화폐나 합의망은 만들지 않는다.
+The record server links ordered records and issues signed receipts.
+Both Personal Agents retain their receipts and permitted evidence bundles.
+The server publishes periodic minimal record summaries.
+Comparisons can reveal changes or deletions that conflict with retained receipts or summaries.
+These checks do not expose consistent server lies to all parties or prove PayPal-signed payment state.
+PACT creates no currency or distributed consensus network.
+
+GD amendment adopted on 2026-10-24.
+See the [adoption record](../feasibility/gd-reconciliation-20261024.md) and [glossary](../../GLOSSARY.md).

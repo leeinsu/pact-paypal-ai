@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-25",
+  "scope": "Paid transaction, both participant hold releases, active objection, restart, and query-only review.",
+  "command": "/tmp/pact-opencv-venv/bin/python -m unittest acceptance.transaction.test_support acceptance.transaction.test_retention -q",
+  "tests": 28,
+  "failures": 0,
+  "seconds": 4.413,
+  "new_test": "test_releasing_both_paid_transaction_holds_does_not_clear_objection_after_restart",
+  "observations": {
+    "transaction_state": "paid",
+    "participant_holds": 0,
+    "unresolved_payment": false,
+    "objection_active": true,
+    "support_hold": true,
+    "deletion_permitted": false,
+    "additional_financial_mutations": 0,
+    "original_download_verified": true,
+    "signed_export_verified": true
+  },
+  "source_sha256": {
+    "acceptance/transaction/test_support.py": "0b1bf6351dfc50e04355975ee2a18c5ed5cd8c9513b39475ee0861a8ea381e5a",
+    "pact/users.py": "fc00181fbdb7dc1cf2bf1e5d98a90d736846d153bf21f235137dc969009b247e",
+    "pact/support.py": "658842efd0d5e184bd4ad65433cf2ef15cfa8e755597fb819a6e2c294b54a4d4"
+  },
+  "actual_paypal_requests": 0,
+  "limits": [
+    "Payment responses use local fixtures.",
+    "Policy acceptance, objection clearance, and deletion remain incomplete."
+  ]
+}

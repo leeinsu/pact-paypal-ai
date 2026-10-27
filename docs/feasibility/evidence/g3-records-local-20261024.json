@@ -1,0 +1,40 @@
+{
+  "artifacts": {
+    "README.md": "8ef60e704770bf6bc5cd362d9145b4e80b93a1a965b2a8a17b24cc18aaa43713",
+    "acceptance/transaction/test_records.py": "fb0e7cfb3db54ed74e395239e1fdda5a79abc59b0595f05abc911471476a570e",
+    "docs/feasibility/g3-conditions-20261024.md": "a3112ed19ecb7fe9d94d677925d304db4e02f9012c944d63df55499c35719f17",
+    "docs/feasibility/g3-records-20261024.md": "2aad699d54ac2ac8ac2903a346436c051bdd80e7dbfd82dd4c0933a37cc00793",
+    "docs/pact-revision-proposal.md": "9f7079a5bee8305fe90566503178a352af4d7978e8c5f27d595dcae078f53d7d",
+    "pact/records.py": "eb61e9b99bbd3b34466ddaab2fa3e6c22fbee19a574199f82add0c828fcb0be2"
+  },
+  "command": "PATH=\"/tmp/pact-opencv-venv/bin:$PATH\" DEVFLOW_TEST_RESULT=/tmp/pact-g3-records-tests.json ./verify.sh",
+  "credential_access": false,
+  "exit_code": 0,
+  "external_http_requests": 0,
+  "g2_freeze_sha256": "d6698d24443725123ec9363bb782193442371904746fdc7fd36bace882715c29",
+  "language_review": "Reviewed changed English prose and glossary terms. No additional exceptions. No formal ASD-STE100 compliance claim.",
+  "local_tests": {
+    "executed": 344,
+    "failure_class": "none",
+    "failures": 0,
+    "skipped": []
+  },
+  "new_tests": {
+    "records": 18
+  },
+  "payment_requests": 0,
+  "recorded_at_utc": "2026-10-24T07:05:23.939199+00:00",
+  "scope": "Signed minimal ordering records and participant evidence export. Server assertions are not independent PayPal proof. G3 remains open.",
+  "test_log_sha256": "ca47f86383b22ad367a6fe12ad9a77f5eb4d3d7e8f7fed4604674461a31555dc",
+  "unchanged_g2_repository_artifacts": 97,
+  "unchanged_g2_runtime_binaries": 3,
+  "verified_baselines": {
+    "authentication": 8,
+    "conditions": 13,
+    "operations": 12,
+    "payments": 10,
+    "reservations": 6,
+    "signed-flow": 11,
+    "transport": 18
+  }
+}

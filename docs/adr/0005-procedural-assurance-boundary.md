@@ -1,3 +1,10 @@
-# PACT는 거래 기록을 검증하고 실제 이행과 품질은 보증하지 않는다
+# Limit assurance to recorded procedures
 
-PACT는 에이전트의 권한, 양측의 동일 조건 합의, 기록의 변경 여부, 기록 재사용과 결제 연결을 검증한다. 서비스 품질, 상품 진위, 법적 효력과 사기 발생 여부는 PACT가 직접 보증하지 않는다. 거래별 증거와 각 에이전트의 판단은 별도로 기록한다.
+PACT checks delegated authority, identical agreement bytes, record integrity, replay prevention, and payment links.
+PACT does not guarantee service quality, authenticity, legal effect, fraud prevention, or actual fulfillment beyond the declared checks.
+Checker acceptance establishes only the frozen rule's result within its supported scope.
+Agent judgments remain separate from deterministic validation and observed PayPal state.
+The server trust limits in ADR 0004 remain applicable.
+
+GD amendment adopted on 2026-10-24.
+See the [adoption record](../feasibility/gd-reconciliation-20261024.md) and [glossary](../../GLOSSARY.md).

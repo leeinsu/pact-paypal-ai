@@ -1,0 +1,73 @@
+{
+  "evidence_class": "local_synthetic",
+  "source_provenance": "Developer fixture with coordinate-defined regions. Not independent G2 evaluation.",
+  "transcript": [
+    {
+      "status": "resubmit",
+      "reason_codes": [
+        "invalid_png"
+      ],
+      "submission_number": 1,
+      "submissions_remaining": 2,
+      "submitted_input_sha256": "f526795c95399cea27c055c842c3d6ab018ed0fa4f66f701c28ab22dec28237b"
+    },
+    {
+      "status": "ready_to_sign",
+      "reason_codes": [],
+      "image_terms": {
+        "request_sha256": "49a0f12b929a34b513647b5abfcce16138a8fcf180013c941a55d83c6b1e9445",
+        "input_sha256": "69f7009be491e08e57a19bbe0700c44de7423ec32ecedf247e66ff8c1c5e4c77",
+        "rule_id": "pact-raster-v1",
+        "rule_sha256": "977abebe990c4396691be86c5200986589bcbd65444679b587cc8f71792d19f9",
+        "width": 100,
+        "height": 100,
+        "background_pixels": 7400,
+        "preserved_pixels": 2600
+      },
+      "submission_number": 2,
+      "submissions_remaining": 1,
+      "submitted_input_sha256": "69f7009be491e08e57a19bbe0700c44de7423ec32ecedf247e66ff8c1c5e4c77"
+    }
+  ],
+  "cli_exit_code": 0,
+  "cli_result": {
+    "delivery": {
+      "input_sha256": "69f7009be491e08e57a19bbe0700c44de7423ec32ecedf247e66ff8c1c5e4c77",
+      "output_sha256": "f843468357c4ddb9d27a2b3134a70f9b73ad52a92fe8d9b75527424e5dc3b516",
+      "reason_codes": [],
+      "request_sha256": "49a0f12b929a34b513647b5abfcce16138a8fcf180013c941a55d83c6b1e9445",
+      "rule_id": "pact-raster-v1",
+      "status": "accepted"
+    },
+    "image_terms": {
+      "background_pixels": 7400,
+      "height": 100,
+      "input_sha256": "69f7009be491e08e57a19bbe0700c44de7423ec32ecedf247e66ff8c1c5e4c77",
+      "preserved_pixels": 2600,
+      "request_sha256": "49a0f12b929a34b513647b5abfcce16138a8fcf180013c941a55d83c6b1e9445",
+      "rule_id": "pact-raster-v1",
+      "rule_sha256": "977abebe990c4396691be86c5200986589bcbd65444679b587cc8f71792d19f9",
+      "width": 100
+    },
+    "reason_codes": [],
+    "status": "ready_to_sign",
+    "submission_number": 1,
+    "submissions_remaining": 2,
+    "submitted_input_sha256": "69f7009be491e08e57a19bbe0700c44de7423ec32ecedf247e66ff8c1c5e4c77"
+  },
+  "verification": {
+    "executed": 145,
+    "skipped": [],
+    "failures": 0,
+    "failure_class": "none"
+  },
+  "artifact_sha256": {
+    "feasibility/negotiated_image.py": "9f23fb97de0ab0070b24d9e304ffa6dfa4cb79fb780d475fce0549e171ffb939",
+    "feasibility/image-rule.raster-v1.json": "a642ab60cd9f8cf9c7b119df5d0b9f4125ad3ebcea7f24f933b74943530b4c1e",
+    "feasibility/png.py": "e9b3db336592dae24ea8f412fa71c757238dd01ee2e50f7afa1915a570a8b680",
+    "acceptance/feasibility/test_negotiated_image.py": "c6fa6dd5e719ea5f76bf2cc91ac4d624073c13cd0ea2a424c646471f41bc4b28"
+  },
+  "freeze_status": "Not frozen for independent G2 disclosure.",
+  "payment_requests": 0,
+  "g2_status": "unresolved"
+}

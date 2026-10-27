@@ -1,0 +1,32 @@
+{
+  "/info/title": "Payments",
+  "/info/version": "2.12",
+  "/components/parameters/paypal_request_id": {
+    "name": "PayPal-Request-Id",
+    "in": "header",
+    "description": "A unique ID identifying the request header for idempotency purposes.",
+    "required": false,
+    "schema": {
+      "description": "A unique ID identifying the request header for idempotency purposes.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 10000,
+      "pattern": "^.*$"
+    },
+    "examples": {
+      "request_id": {
+        "summary": "A request id.",
+        "description": "A paypal-request-id header with a randomized value.",
+        "value": "17e81d06-77ab-11e8-adc0-fa71639ebebc"
+      }
+    }
+  },
+  "/paths/~1v2~1payments~1authorizations~1{authorization_id}~1capture/post/operationId": "authorizations.capture",
+  "/paths/~1v2~1payments~1authorizations~1{authorization_id}~1capture/post/parameters/1": {
+    "$ref": "#/components/parameters/paypal_request_id"
+  },
+  "/paths/~1v2~1payments~1authorizations~1{authorization_id}~1void/post/operationId": "authorizations.void",
+  "/paths/~1v2~1payments~1authorizations~1{authorization_id}~1void/post/parameters/3": {
+    "$ref": "#/components/parameters/paypal_request_id"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "recorded_at": "2026-10-23T16:44:19.610702+00:00",
+  "purpose": "Input-support diagnostics only. Manual mask provenance and original pixel equivalence remain unverified.",
+  "labels_before_checker": true,
+  "cases": [
+    {
+      "row_index": 27,
+      "width": 700,
+      "height": 700,
+      "download_sha256": "f76e0f7dd95e8f3d8d844383a9725eec0eee833d67be641b15929b3b4be85048",
+      "input_sha256": "f47155e67a5555add67b7139f54584db364053afeeb38a79a60ebfde862c823c",
+      "independent_support": "unsupported",
+      "label_reason": "The illuminated lamp shade transmits light. Opacity is not established."
+    },
+    {
+      "row_index": 28,
+      "width": 960,
+      "height": 960,
+      "download_sha256": "ce3331c60c540776f4366961dfa3747410eba81dd25fe1e6d95b49d16fac2d9e",
+      "input_sha256": "a5480e09160ea3b9443b49b93b20503407e938e0d6a559dd9dfd564ed5d654bc",
+      "independent_support": "visually_supported",
+      "label_reason": "One opaque bench stands before an apparently uniform white background. Product colors remain visually separable."
+    },
+    {
+      "row_index": 29,
+      "width": 600,
+      "height": 600,
+      "download_sha256": "6509f8972be7b3ae3e7ca8b803304f03d1d12bf1df5001bf331daabdef05d129",
+      "input_sha256": "8efe84fe276fb909a6c223cd6aec7d4cac6e2058c423bc1568ea89ed197f5a4a",
+      "independent_support": "visually_supported",
+      "label_reason": "One opaque mesh bench stands before an apparently uniform white background. Holes are part of the product geometry."
+    },
+    {
+      "row_index": 31,
+      "width": 1000,
+      "height": 1000,
+      "download_sha256": "56fb5d9a65ff1cc6f9c0a690281727e8e8a488f958de3e97b8897678a20bc8a5",
+      "input_sha256": "7e700a16d534c2b93b8fa01b3d2fc0ded8374db512766f6cec6a1252e632d95f",
+      "independent_support": "unsupported",
+      "label_reason": "The open cosmetic jar and detached lid overlap a structured background. Glass and shadows remain visible."
+    },
+    {
+      "row_index": 36,
+      "width": 700,
+      "height": 700,
+      "download_sha256": "42d26ba1239e75c03a52932a7d8ccbe50b0b68846801c141746abe9b27e731ca",
+      "input_sha256": "e4165e675df2f64b442fe44b4aed501474f52a91ca7d04501fde43d6c060d7a1",
+      "independent_support": "unsupported",
+      "label_reason": "The mower casts a broad visible shadow."
+    },
+    {
+      "row_index": 37,
+      "width": 224,
+      "height": 650,
+      "download_sha256": "4e8c3b0808fb695392dc271c3301c329fd5a194d6119249e669250f258df67a2",
+      "input_sha256": "d88941262a8af6d7e1844e3c72625175c5eb04c68e6b92b0c8049ecf665757b4",
+      "independent_support": "unsupported",
+      "label_reason": "The product casts a strong visible shadow."
+    },
+    {
+      "row_index": 41,
+      "width": 800,
+      "height": 800,
+      "download_sha256": "cf0bfa4324b40bbdda4dd3fdad786e719d93e152f6ea92ae10b5bdf052d72bf4",
+      "input_sha256": "96320bf045351bc909d3f617f2d1d6881efc742e3e93a19b07b058aca9a2deb6",
+      "independent_support": "unsupported",
+      "label_reason": "A separate desk and chair overlap a white background. White product regions have weak separation."
+    },
+    {
+      "row_index": 42,
+      "width": 800,
+      "height": 800,
+      "download_sha256": "cf0bfa4324b40bbdda4dd3fdad786e719d93e152f6ea92ae10b5bdf052d72bf4",
+      "input_sha256": "96320bf045351bc909d3f617f2d1d6881efc742e3e93a19b07b058aca9a2deb6",
+      "independent_support": "unsupported",
+      "label_reason": "This row repeats the desk and chair photograph. Multiple objects and weak separation remain."
+    },
+    {
+      "row_index": 113,
+      "width": 768,
+      "height": 1024,
+      "download_sha256": "4a4bd18a1fc0c0e45075205e6551651c9fafc9506eb65ca541e8a7b852cf7a08",
+      "input_sha256": "647c0a70ce4a056f90ab773c1e630afa87ec9a8465fead8dbf3335375cb394a4",
+      "independent_support": "unsupported",
+      "label_reason": "The transparent bottle overlaps a graded background with strong reflections and shadows."
+    },
+    {
+      "row_index": 114,
+      "width": 768,
+      "height": 976,
+      "download_sha256": "0c7f4735588499884c77db39c7a45820acfecbeb6c2537e9303462c17cad129b",
+      "input_sha256": "c2faaa9ce1271d0be7c673ce26c0ba0d76e15722c5c765c14966d3463e0fd9d5",
+      "independent_support": "unsupported",
+      "label_reason": "The translucent perfume bottle casts a strong shadow and transmits background detail."
+    }
+  ]
+}

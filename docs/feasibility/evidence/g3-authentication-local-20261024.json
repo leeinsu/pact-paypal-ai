@@ -1,0 +1,41 @@
+{
+  "artifacts": {
+    "README.md": "f4ac7d0ed145e9dc01bc104556004fd9c5d43f4a182cbf9b74118a15a4a21848",
+    "acceptance/transaction/test_auth.py": "d32d1a5e39b77b7d984348d28d0436f4f596827f5cb3ef5d48d85802f92c3413",
+    "acceptance/transaction/test_users.py": "0465c78c3f3a46551e16ceb6bca5a55497b7fdfd30227ef1700adfb78bc0072f",
+    "docs/feasibility/g3-authentication-20261024.md": "ebc5ba88eede866d74001258b563e3c84251011e87fa1fbd1a74acec5191a292",
+    "docs/feasibility/g3-transport-20261024.md": "05693b85df6c970f027051d7084ec9afd21ab401be7661a0b9684e3323aaae09",
+    "docs/pact-revision-proposal.md": "036229bd2082d45a048cdb0040961f8121f7dfe6851981b75b64752a9d9326ec",
+    "pact/auth.py": "ca7a2aa68fe970a00f3e4e045c25266a1a4c062c0c4fa210ac8a43325eb81c70",
+    "pact/users.py": "7d4e2dedc78687461675744bf8d068ae904cfef42de0ad1bb1249436df3a8a38"
+  },
+  "command": "PATH=\"/tmp/pact-opencv-venv/bin:$PATH\" DEVFLOW_TEST_RESULT=/tmp/pact-g3-authentication-tests.json ./verify.sh",
+  "credential_access": false,
+  "dependency_check": "No broken requirements found.",
+  "exit_code": 0,
+  "external_http_requests": 0,
+  "g2_freeze_sha256": "d6698d24443725123ec9363bb782193442371904746fdc7fd36bace882715c29",
+  "language_review": "Reviewed changed English prose and glossary terms. No additional exceptions. No formal ASD-STE100 compliance claim.",
+  "local_tests": {
+    "executed": 278,
+    "failure_class": "none",
+    "failures": 0,
+    "skipped": []
+  },
+  "new_tests": {
+    "authentication": 17,
+    "user_boundary": 4
+  },
+  "payment_requests": 0,
+  "recorded_at_utc": "2026-10-24T06:37:07.326461+00:00",
+  "scope": "Local user authentication, action signatures, consent state, and session-derived user operations. G3 remains open.",
+  "test_log_sha256": "dcaf11f923599e3a0e3aea8e4b700a768f73748a0c66db3e443f83afe873503d",
+  "unchanged_g2_repository_artifacts": 97,
+  "unchanged_g2_runtime_binaries": 3,
+  "verified_baselines": {
+    "operations": 12,
+    "payments": 10,
+    "reservations": 6,
+    "transport": 18
+  }
+}

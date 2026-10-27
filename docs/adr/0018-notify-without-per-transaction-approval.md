@@ -1,3 +1,11 @@
-# 무인 거래의 주요 사건을 사용자에게 즉시 알린다
+# Notify users without requesting transaction approval
 
-최종 거래 확정, 결제 승인, 자동 확인 성공 또는 실패, 결제 완료, 긴급 정지와 분쟁 발생을 사용자에게 즉시 알린다. 알림은 거래별 승인을 요구하지 않으며 거래 기록 확인과 긴급 정지 수단을 제공한다.
+Application notifications cover finalization, authorization, checker success or failure, payment confirmation, stop, and dispute-related records.
+Notifications do not request per-transaction approval.
+The transaction view shows current stage, price, remaining limit, payment status, and available next actions.
+Unknown payment views show reserved amounts, last verification, unresolved reason, support owner, and next verification time.
+Users can inspect records, request support, raise objections, and stop permitted new actions.
+Email integration remains outside scope.
+
+GD amendment adopted on 2026-10-24.
+See the [adoption record](../feasibility/gd-reconciliation-20261024.md) and [glossary](../../GLOSSARY.md).

@@ -1,195 +1,260 @@
 # PACT
 
-> 두 사용자의 에이전트가 같은 조건에 서명하고, 이행 증거를 확인한 뒤 PayPal로 자동 결제하게 하는 상호 보증 규칙
+PACT connects two bounded Personal Agents, one signed agreement, fulfillment checks, and PayPal payment.
+It provides procedural assurance around external payment, not a new payment rail, escrow, or dispute court.
 
-## 목표
+## Adopted design and implementation status
 
-에이전트가 물건과 서비스를 서로 사고파는 시대에는 결제 버튼보다 먼저 풀어야 할 문제가 있다.
+The user authorized GD execution on 2026-10-24.
+The [adoption record](docs/feasibility/gd-reconciliation-20261024.md) reconciles this document with the [revision proposal](docs/pact-revision-proposal.md) and ADRs.
+The [glossary](GLOSSARY.md) defines project terms.
+The proposal specifies detailed requirements that this document summarizes.
+These requirements describe the target implementation, not completed features.
 
-- 이 에이전트가 사용자의 허락을 받았는가?
-- 두 에이전트가 같은 조건에 합의했는가?
-- 합의 뒤 조건이 바뀌지 않았는가?
-- 약속한 일이 끝났는가?
-- 같은 요청이 두 번 결제되지 않는가?
-- 문제가 생기면 무엇을 증거로 낼 수 있는가?
+The scope permits one buyer, one provider, one linked merchant, JPY, and one image.
+One integer amount unit represents one yen.
+The implementation uses one server, SQLite write transactions, and one payment worker.
+Local feasibility code and bounded Sandbox experiments exist.
+G1 passed review within the [accepted bounded Sandbox scope](docs/feasibility/g1-acceptance-20261024.md).
+Independent G2 evaluation remains unresolved.
+G3 implementation requires reviewed G1, G2, and GD success.
+Current evidence appears in the [closure plan](docs/feasibility/g1-closure-plan-20261024.md).
 
-PACT는 이 질문에 답하는 상호 보증 계층이다. PACT는 새 결제망, 에스크로 또는 분쟁 법원이 아니다. 실제 결제와 결제 후 분쟁 처리는 PayPal이 맡는다.
+## Problem and claim limits
 
-## 핵심 차이
+The customer hypothesis concerns small merchants who repeatedly outsource product images to an independent provider.
+PACT aims to let Principals specify conditions before their Personal Agents arrange and execute commerce within prior user limits.
+The primary value comparison measures human work against human-operated transactions.
+The [G5 clarification](docs/feasibility/g5-delegated-commerce-20261025.md) separates this benefit from additional AI contribution.
+This hypothesis remains unvalidated.
+Direct model calls, human inspection, and deterministic automatic payment remain comparison flows.
+The proposal defines sampling, fair comparison, rejection thresholds, setup costs, time, and total costs.
+PACT does not claim other protocols support only buyers or lack delegation and signed payment evidence.
+Negotiation superiority and interoperability remain unverified.
 
-일반 결제 에이전트는 한 사용자의 구매 권한을 확인한다. PACT는 거래 양쪽 사용자의 에이전트를 같은 규칙으로 확인한다. 양쪽은 서로의 위임 범위, 제안, 최종 합의와 이행 증거를 독립적으로 검증한다.
+## Participants and authority
 
-사용자는 처음에 거래 한도와 허용 범위를 정한다. 그 뒤에는 협상, 합의, 이행 확인과 결제가 사람의 추가 클릭 없이 진행된다. 사용자는 주요 사건을 즉시 통보받고 언제든 새 거래를 멈출 수 있다.
-
-## 참여자
-
-| 참여자 | 역할 |
+| Actor | Responsibility |
 | --- | --- |
-| 구매 사용자 | 금액, 기간, 거래 종류와 상대방 범위를 위임한다. |
-| 구매 에이전트 | 위임 범위 안에서 조건을 협상하고 결제 승인을 요청한다. |
-| 제공 사용자 | 작업 종류, 최소 금액과 이행 조건을 위임한다. |
-| 제공 에이전트 | 조건을 협상하고 작업과 증거를 제출한다. |
-| PACT 서비스 | 서명된 기록을 전달하고 순서를 기록하며 PayPal 호출을 연결한다. 기록 내용의 유일한 신뢰 근거는 아니다. |
-| 자동 이행 확인 도구 | 합의된 규칙으로 제출물을 검사한다. 분쟁의 승패는 판단하지 않는다. |
-| PayPal | 결제를 승인하고 실행한다. 결제 후 PayPal 분쟁을 판단한다. |
+| Buyer Principal | Issue the buyer Mandate and consent to the saved payment method. |
+| Buyer Personal Agent | Propose and sign terms within that Mandate. |
+| Provider Principal | Issue the provider Mandate and register the fixed merchant. |
+| Provider Personal Agent | Negotiate, perform work, and submit the output and evidence. |
+| PACT server | Validate authority, order records, reserve limits, control files, and orchestrate PayPal calls. |
+| Fulfillment checker | Evaluate the frozen deterministic rule without deciding disputes. |
+| PayPal | Authorize and capture payment and decide disputes within its authority. |
 
-## 거래 자료
+User and agent signing keys remain separate.
+User private keys remain on user devices.
+The server authenticates browser-bound, purpose-bound, signed challenges with one-use nonces and five-minute expiry.
+The server derives the Principal from its verified key registration.
+HTTPS sessions use HttpOnly, Secure, and SameSite cookies with request forgery protection for state changes.
+Account changes require a current session and a new action-bound user signature.
+PayPal consent callbacks require a matching session and one-use state value.
 
-PACT 거래는 다음 자료를 사용한다.
+The account binding version links the buyer Principal to server-obtained buyer and token identities.
+Merchant registration links the provider Principal to the fixed merchant identity.
+Agents cannot supply arbitrary payment tokens or substitute merchants.
+Finalization and payment submission validate both ownership bindings and both delegated signing keys.
+The server checks object permissions before disclosure, state changes, or external calls.
+Support operators cannot download files, change account bindings, or create payments.
+Proposal section 4 specifies the complete permission matrix.
 
-1. **위임장**: 에이전트 공개 열쇠, 거래별 한도, 기간 총한도, 허용 거래 종류, 만료일과 선택한 상대방 제한
-2. **제안 기록**: 이전 제안 확인값을 포함한 서명된 가격과 조건 변경 기록
-3. **최종 거래 합의서**: 역할, 금액, 통화, 의무, 완료 기준, 기한, 취소·환불 조건, 규칙서 판과 양쪽 위임장 식별값
-4. **이행 증거**: 입력과 출력 확인값, 검사 결과, 시각, 사용한 규칙과 필요한 최소 자료
-5. **결제 기록**: PACT 거래 번호에 연결한 PayPal 주문, 승인, 결제와 분쟁 식별값
-6. **공개 기록**: 원문을 제외한 확인값, 기록 종류, 서명자, 순서와 시각
+## Signed records and trust
 
-두 에이전트는 같은 서명 자료와 기록 영수증을 보관한다. 어느 한 서버가 기록을 바꾸거나 지워도 상대방 사본과 공개 요약으로 이를 찾을 수 있다.
+Each Mandate binds user and agent keys, permitted roles, counterparties, tasks, transaction and period limits, duration, expiry, and revocation identifier.
+Both agents sign the same canonical agreement bytes.
+The agreement binds transaction ID, both Mandates, roles, integer JPY amount, obligations, account version, and merchant.
+It also binds image request hash, input hash, rule hash and version, dimensions, region counts, and deadlines.
+It binds rework, cancellation, refund, delivery, and retention conditions.
+Signed proposals link to their previous proposal hashes.
+Output and checker records bind the agreement hash, submission number, file hashes, checker version, measurements, and time.
+Payment records bind the same agreement, accepted output, account version, merchant, amount, currency, and distinct request identifiers.
+The validator treats AI output as untrusted input.
+It checks types, ranges, signatures, times, file sizes, and permissions at input boundaries.
 
-## 거래 흐름
+Both parties can independently verify signatures and hashes on their permitted evidence copies.
+The server remains trusted for account bindings, file custody, and authenticated PayPal readback assertions.
+A server signature proves the server made an assertion.
+It does not prove PayPal signed the agreement or prevent consistent server lies.
+Signed receipts and minimal public summaries support comparison against retained copies.
+This single-server record provides no distributed consensus, availability guarantee, or collusion resistance.
+
+## Transaction flow
 
 ```mermaid
 sequenceDiagram
-    participant BA as 구매 에이전트
-    participant P as PACT
-    participant SA as 제공 에이전트
-    participant V as 자동 이행 확인
-    participant PP as PayPal
-
-    BA->>SA: 서명된 조건 제안
-    SA-->>BA: 서명된 수정 또는 수락
-    BA->>P: 양쪽 위임과 취소 상태 확인
-    SA->>P: 같은 최종 합의서에 서명
-    P->>PP: 결제 승인
-    PP-->>P: 승인 식별값
-    SA->>V: 작업 결과와 이행 증거 제출
-    V-->>P: 규칙 검사 결과
-    P->>PP: 통과하면 결제 실행
-    PP-->>BA: 결제 결과 알림
-    PP-->>SA: 결제 결과 알림
+    participant B as Buyer agent
+    participant S as PACT server
+    participant P as Provider agent
+    participant C as Checker
+    participant PP as PayPal Sandbox
+    B->>P: Signed proposal with image request within both Mandates
+    P->>S: Requested source image and proposal reference
+    S->>C: Preflight source against requested image rule
+    C-->>S: Ready image terms or resubmission reasons
+    S-->>B: Bound image terms or rejected submission
+    S-->>P: Bound image terms or remaining submission attempts
+    P-->>B: Signed agreement with identical bytes
+    B->>S: Both signatures and immutable bindings
+    S->>S: Finalization commit and both reservations
+    S->>PP: Create order and authorize saved payment method
+    PP-->>S: Authorization readback
+    S->>P: Start work after confirmed authorization
+    P->>S: Output and linked evidence
+    S->>S: Encrypt, persist, and reread output hash
+    S->>C: Check frozen rule and exact output
+    C-->>S: Measurements and result
+    S->>S: Recheck conditions and commit payment submission
+    S->>PP: Capture with persisted request identifier
+    S->>PP: Query existing payment
+    PP-->>S: Confirm linked capture state
+    S->>S: Consume reservations once and grant output access
+    S-->>B: Same output file and permitted evidence
+    S-->>P: Payment status and permitted evidence
 ```
 
-각 단계는 다음 규칙을 지킨다.
+The runtime command `pact.server trade` connects source exchange, negotiation, and the existing worker for one prepared transaction.
+The operator supplies complete permitted candidates and valid Mandates before execution.
+The command performs at most one rework when the signed conditions permit it.
+The separate `negotiate` command remains payment-free.
+Uncertain execution requires inspection and recovery of the same finalized transaction through `work`.
+This command does not change consent, payment limits, or gate acceptance.
 
-- 최종 합의 직전에 두 위임장이 아직 유효한지 확인한다.
-- 공개 기록 순서상 위임 취소가 먼저면 새 합의를 만들지 않는다.
-- 결제 승인에 실패하면 이행을 시작하지 않는다.
-- 자동 확인에 실패하거나 확인할 수 없으면 결제를 실행하지 않는다.
-- 같은 거래 번호의 재시도는 이전 결과를 돌려준다. 새 결제를 만들지 않는다.
-- 결제 승인은 지급 보장이 아니다. 승인 뒤에도 PayPal의 위험 검사나 자금 상태로 결제가 실패할 수 있다.
+### Finalization, revocation, and limits
 
-## 해커톤 시연
+Both signatures are prerequisites, not finalization.
+The finalization commit validates both Mandates, revocation, expiry, stop state, and limits in one SQLite write transaction.
+It reserves both original period limits and records the agreement and sequence atomically.
+Revocation and finalization use the same write order.
+Revocation committed first rejects finalization.
+Finalization committed first preserves that agreement despite later revocation.
+Unavailable ordering state prevents finalization.
 
-### 상황
+Each period requires consumed amount plus reserved amount plus the new amount at or below its limit.
+Two concurrent JPY 6 agreements against a JPY 10 limit must finalize exactly one agreement.
+Failure on either side leaves neither reservation.
+Reservations remain in their original periods after period boundaries.
+Confirmed capture moves reservations to consumption exactly once.
+Unknown payment results retain reservations.
+Release requires confirmed nonpayment and impossibility of payment through the existing path.
+Local timeout or deadline expiry alone does not establish those conditions.
+Refunds do not automatically restore period consumption.
 
-사용자 A의 구매 에이전트가 사용자 B의 작업 에이전트에 상품 사진 배경 제거를 맡긴다.
+### Payment submission, stop, and recovery
 
-1. 구매 에이전트가 가격, 파일 형식, 크기, 기한과 사용 권리를 제안한다.
-2. 제공 에이전트가 조건을 수정하거나 수락한다.
-3. 두 에이전트가 같은 최종 합의서에 서명한다.
-4. PACT가 PayPal 결제 승인을 받는다.
-5. 제공 에이전트가 배경을 제거하고 PNG 파일을 제출한다.
-6. 고정된 검사기가 크기, 형식, 투명 영역, 입력·출력 연결과 전경 보존 기준을 확인한다.
-7. 통과하면 PACT가 PayPal 결제를 실행한다.
-8. 같은 합의서를 다시 보내면 중복 결제가 막히고 그 사건이 기록된다.
+The worker persists immutable payloads and distinct step request identifiers before order creation, authorization, and capture.
+The payment submission commit rechecks stop, deadline, accepted output, account ownership, and delegated authority in one write transaction.
+A stop committed first prevents payment submission and transmission.
+A payment submission commit recorded first fixes that payment intent, even before HTTP transmission.
+Later stop or agreement deadline expiry does not cancel that existing intent.
+Other new payment intents and evidence submissions remain prohibited.
+The interface explains this boundary and shows current payment status.
+A remaining authorization without committed payment submission enters verified cancellation handling.
 
-검사 통과는 약속한 파일 조건을 만족했다는 뜻이다. 미적 품질이나 완벽한 배경 제거를 보증한다는 뜻은 아니다.
+Recovery queries known external identifiers first.
+A supported retry uses the existing job, request identifier, and immutable payload within G1-confirmed endpoint conditions.
+Recovery never substitutes a new order, authorization, account binding, or request identifier to bypass uncertainty.
+Missing identifiers, expired idempotency retention, `PENDING`, or conflicting evidence preserve unknown payment state unless supported recovery establishes an outcome.
+External authorization expiry differs from the agreement deadline.
+The worker queries existing payment state before treating authorization expiry as terminal failure.
+Repeated agreement submissions return existing state without an additional payment flow.
 
-### 화면 구성
+The user sees reserved amounts, unresolved reason, last verification, support owner, and next verification time.
+An authenticated support operator can record linked official account or PayPal support evidence under proposal section 6.
+The state handler validates evidence, bindings, and allowed transitions before changing state and reservations together.
+Screenshots, balance changes, or missing search results alone cannot close the case.
+Insufficient or conflicting evidence preserves unknown state and reservations.
+The audit records actor, time, source, evidence hash, reason, and previous and resulting states.
+The initial support acknowledgement target is one business day, not a resolution or PayPal timing guarantee.
 
-- 왼쪽: 구매 사용자와 구매 에이전트
-- 오른쪽: 제공 사용자와 제공 에이전트
-- 가운데: 합의서 확인값, 단계별 증거와 PayPal 상태
+## Supported work and independent checker evaluation
 
-시연 전에 한 번만 위임장과 PayPal 결제수단 권한을 보여 준다. 실제 시연에서는 협상부터 결제까지 사람의 클릭을 넣지 않는다.
+The [negotiated image amendment](docs/feasibility/negotiated-image-contract-20261024.md) defines the adopted image service.
+The buyer agent sends a versioned request with dimensions, background RGB, and the complete fixed rule.
+The provider agent submits a source image or proposes supported alternatives within both Mandates.
+The server performs preflight before agreement, reservations, or payment authorization.
+The server records up to three source submissions under the same negotiation identity.
+A successful preflight binds request, source, rule, dimensions, and region counts into the final agreement.
+Three failures close the negotiation without payment.
 
-### 3분 영상 구성
+The raster rule removes perimeter-connected pixels near the requested background color and preserves every other pixel exactly.
+The rule rejects ambiguous colors, enclosed background regions, disconnected preserved regions, and unsupported formats.
+It does not identify products, remove every shadow, or certify photographic quality.
+OpenCV generates the output without pretrained models.
+A separate deterministic traversal checks every output pixel without trusting provider masks.
 
-| 시간 | 내용 |
-| --- | --- |
-| 0:00~0:25 | 에이전트끼리 거래할 때 생기는 권한, 조건 변경과 증거 문제 |
-| 0:25~0:45 | 양쪽 사용자의 제한된 위임장과 한 번의 PayPal 권한 설정 |
-| 0:45~1:25 | 두 에이전트의 자동 협상과 같은 조건 서명 |
-| 1:25~2:05 | PayPal 승인, 배경 제거, 자동 이행 확인과 결제 실행 |
-| 2:05~2:30 | 같은 거래 재사용 공격 차단과 양쪽 증거 묶음 |
-| 2:30~2:50 | 결제 후 분쟁에서 PayPal에 제출할 증거 연결 |
-| 2:50~3:00 | PACT 한 문장 설명과 확장 가능성 |
+G2 retains ten calibration originals and twenty independent evaluation originals after a fresh freeze.
+Independent raster references replace semantic product masks under the new contract.
+The evaluator must not derive reference regions from production checker or generator results.
+The target accepts at least eighteen valid outputs and rejects all 140 attacks and every declared unsupported case.
+The evaluator retains every first-run result and distinguishes photographs from synthetic cases.
+Rule or scope changes require fresh independent evaluation data.
+Local synthetic tests and previous semantic experiments do not establish G2 success.
 
-## AI와 PayPal의 역할
+The normal negotiation permits at most three proposals.
+An agreement can permit one rework within its deadline after checker failure.
+A second failure or unverifiable result starts cancellation handling without capture.
+Per-transaction human approval cannot bypass checker failure.
+Authorization must be confirmed before work, but does not guarantee payment success or cover provider work costs.
 
-AI는 다음 일에 사용한다.
+## Delivery, evidence, and disputes
 
-- 두 위임 범위 안에서 가격과 조건을 협상한다.
-- 대화에서 합의 항목을 구조화하고 빠진 조건을 찾는다.
-- 배경 제거 작업을 수행한다.
-- 분쟁이 생기면 필요한 자료를 거래 기록에서 찾고 설명을 만든다.
+Before capture, the server encrypts and durably stores the immutable output under its hash.
+It reads the stored file again and verifies the hash.
+Storage failure prevents payment submission.
+The buyer cannot download the original result before confirmed payment.
+Confirmed payment grants access to the same output hash.
+Restart after payment but before access persistence must recover access through payment readback without another payment.
+Delivery retry uses the same paid file and creates no additional payment.
+Permanent file loss remains unresolved and exposes support and evidence export instead of a delivery success claim.
+Host-loss backup remains outside scope.
 
-일반 코드는 금액, 통화, 한도, 서명, 만료, 기록 순서, 중복 요청과 자동 완료 기준을 검사한다. AI의 숨은 추론 내용은 증거로 저장하지 않는다. 입력 자료의 참조, 사용한 규칙과 모델 판, 구조화한 결과, 확신도와 짧은 근거만 저장한다.
+The server encryption key remains separate from database, file storage, repository, user signing keys, and user backup keys.
+The server process can decrypt files, so host administrator confidentiality is not guaranteed.
+Both parties receive permitted evidence without payment secrets or the other party's private account data.
+Public summaries contain no original files or payment secrets.
+Retention follows the agreed end date and applicable obligations.
+Disputes, unknown payments, and objections suspend related evidence deletion.
+Optional user backup uses the user's separate encryption key and remains outside the core demonstration path.
 
-PayPal은 다음 일에 사용한다.
+The demonstration exports evidence only.
+Disputes API submission requires separate dispute authority and verified account capability outside this implementation scope.
+PACT does not decide disputes, guarantee a favorable outcome, or promise automatic refunds.
 
-- 사용자의 최초 결제수단 권한 설정
-- Orders와 Payments를 통한 승인과 결제 실행
-- 결제와 분쟁 식별값 제공
-- 결제 후 PayPal 분쟁 판단
+## User interface and AI contribution
 
-최초 권한 설정 뒤 사람의 추가 승인 없이 후속 결제를 실행할 수 있는 정확한 sandbox 방식과 계정 권한은 구현 전에 확인해야 한다.
+One transaction detail view shows stage, price, remaining limit, payment status, and next actions.
+Application notifications require no transaction approval.
+Expandable evidence shows agreement and Mandates, output and checker results, then payment readback and downloaded file hashes.
+The transaction ID stays visible throughout.
+Email integration remains outside scope.
 
-## 증거와 분쟁
+AI proposes bounded prices, deadlines, and compatible image submission conditions.
+It structures terms and explains evidence from recorded facts.
+OpenCV performs the agreed raster operation.
+Deterministic code validates authority and payment conditions.
+The system does not store hidden model reasoning as evidence.
+It stores input references, rule and model versions, structured results, confidence, and a short reason.
+A fair deterministic comparator receives the same constraints, candidates, checker, payment, and recovery infrastructure.
+If that comparator performs equally, PACT cannot claim negotiation superiority.
+Equal automated performance does not disprove reduced human work against human-operated commerce.
+The proposal defines the exact comparison and customer validation protocol.
 
-PACT는 누가 어떤 권한으로 어떤 조건에 서명했고 무엇을 제출했는지 증명한다. 서비스 품질, 상품 진위, 법적 효력 또는 사기가 없다는 사실까지 증명하지 않는다.
+The planned 2:45 video includes consent evidence, unattended transaction, damaged-output rejection, recovery, replay prevention, and evidence export.
+Actual timing and the complete integrated demonstration remain unverified.
+The presentation must distinguish plans, local tests, actual Sandbox observations, and unresolved conditions.
 
-결제 후 분쟁이 생기면 PACT가 승패를 판단하지 않는다. 별도의 분쟁 대응 위임장이 있을 때만 필요한 증거를 PayPal에 제출한다. PayPal 내부 분쟁은 PayPal이 판단한다. 카드 결제 취소처럼 외부 금융기관이 다루는 사건은 해당 기관이 판단할 수 있다.
+## Implementation sequence and exclusions
 
-거래 자료는 정해진 보관 종료일까지 보관한다. 분쟁 중에는 삭제를 멈춘다. 원본 대화와 파일은 암호화해 각 사용자 쪽에 보관하고 필요한 자료만 공개한다. 사용자는 자기 자료를 선택한 저장소에 암호화해 백업할 수 있다.
+1. Complete reviewed G1 payment evidence under the declared conditions.
+2. Complete independent G2 checker evaluation under the frozen protocol.
+3. Record GD adoption and document consistency.
+4. Implement and verify G3 transaction safety after those conditions hold.
+5. Verify G4 failure flows, restart recovery, and delivery access.
+6. Measure G5 customer applicability, costs, intervention, and negotiation value.
 
-## 주요 위험과 대응
-
-| 위험 | 대응 | 남는 한계 |
-| --- | --- | --- |
-| 에이전트가 권한을 넘음 | 양쪽이 최종 합의 전 위임 한도와 취소 기록을 확인 | 사용자 위임 자체가 너무 넓으면 손실 가능 |
-| 같은 거래를 다시 보냄 | 거래 번호 하나를 PayPal 결제 흐름 하나에 묶음 | 외부 시스템이 거래 번호를 무시하면 별도 방어 필요 |
-| 기록을 바꾸거나 지움 | 양쪽 서명 사본, 연결된 확인값, 서명 영수증과 공개 요약 | 공개 기록 서비스가 멈추면 새 합의를 중단해야 함 |
-| 자동 검사를 속임 | 거래 종류별 고정 규칙과 최소 증거 사용 | 미적 품질과 외부 사실은 완전히 확인할 수 없음 |
-| 작업 뒤 결제가 실패함 | 승인 직후 짧은 작업만 시연하고 확인 즉시 결제 실행 | PayPal 승인은 지급을 보장하지 않음 |
-| 서명 열쇠가 탈취됨 | 사용자 열쇠와 에이전트 열쇠 분리, 취소, 긴급 정지, 복구 열쇠 | 정지 전 확정된 거래는 자동으로 사라지지 않음 |
-| 결제 후 분쟁이 생김 | PayPal 식별값과 거래 증거를 연결해 필요한 자료 제출 | 최종 판단은 PACT가 통제하지 않음 |
-
-## 최소 구현 범위
-
-만드는 것:
-
-- 두 사용자의 제한된 위임장 생성과 취소 확인
-- 두 에이전트의 조건 제안과 같은 합의서 서명
-- 배경 제거 거래 규칙서 한 종류
-- PayPal sandbox 승인과 결제 실행 한 흐름
-- 자동 이행 확인과 중복 결제 차단
-- 양쪽 거래 증거 묶음과 간단한 사건 화면
-
-만들지 않는 것:
-
-- 범용 에이전트 장터
-- 새 화폐, 블록체인 또는 에스크로
-- 여러 거래 종류의 실제 구현
-- 사람 대신 분쟁 결과를 정하는 기능
-- 주관적 품질을 자동으로 보증하는 기능
-- 장기간 또는 여러 단계로 나눈 작업
-
-프로토콜 문서는 여러 거래 종류로 확장할 수 있게 쓰되, 시연 코드는 배경 제거 한 종류만 구현한다.
-
-## 성공 기준
-
-- 양쪽 에이전트가 사람의 추가 클릭 없이 한 거래를 끝낸다.
-- 서로 다른 조건에 서명하려는 시도를 막는다.
-- 취소되거나 한도를 넘은 위임으로 새 거래를 만들지 못한다.
-- 완료 조건을 통과한 거래만 PayPal 결제를 실행한다.
-- 같은 거래를 다시 보내도 결제가 한 번만 발생한다.
-- 양쪽 증거 묶음으로 위임, 합의, 이행과 PayPal 식별값을 연결해 확인할 수 있다.
-
-## 구현 전 확인할 항목
-
-1. 선택한 PayPal sandbox 앱에서 저장된 결제수단을 이용한 후속 무인 결제가 가능한가?
-2. 결제 승인과 실행 흐름을 한 판매자 sandbox 계정에서 재현할 수 있는가?
-3. 시연 계정에서 Disputes API와 증거 제출을 어디까지 보여 줄 수 있는가?
-4. 배경 제거 검사 규칙이 정상 파일과 잘못된 파일을 안정적으로 구분하는가?
-5. 3분 영상에서 한 번의 권한 설정과 무인 거래의 차이가 명확하게 보이는가?
+Marketplace, multiple merchants, general task rules, partial payments, long tasks, and automated dispute submission remain outside scope.
+Key recovery and user backup remain documented future capabilities outside the core demonstration path.
+Document adoption does not prove successful implementation, customer value, production eligibility, or submission readiness.
+Language review scope and exceptions appear in the GD adoption record.

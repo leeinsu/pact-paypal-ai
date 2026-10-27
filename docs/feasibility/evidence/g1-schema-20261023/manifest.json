@@ -1,0 +1,69 @@
+{
+  "status": "research_only_not_approved",
+  "sources": [
+    {
+      "url": "https://developer.paypal.com/api/orders/v2/schema.json",
+      "retrieved_at_utc": "2026-10-23T14:56:09.729375+00:00",
+      "response_sha256": "5bcb2242a4158a307dceff74f74352a078777f9afb9b0fb407ce10e392ee96b7",
+      "response_bytes": 1199000,
+      "response_retained": false,
+      "schema_version": "2.36",
+      "extract_file": "orders.extract.json",
+      "extract_sha256": "bf18115100c4e9a2a7b6da1f626e52c20da8050845e67ed77d1c20b167f41b75",
+      "extract_bytes": 1772,
+      "json_pointers": [
+        "/info/title",
+        "/info/version",
+        "/components/parameters/paypal_request_id",
+        "/paths/~1v2~1checkout~1orders/post/operationId",
+        "/paths/~1v2~1checkout~1orders/post/parameters/0",
+        "/paths/~1v2~1checkout~1orders~1{id}~1authorize/post/operationId",
+        "/paths/~1v2~1checkout~1orders~1{id}~1authorize/post/parameters/0",
+        "/paths/~1v2~1checkout~1orders~1{id}~1authorize/post/requestBody/content/application~1json/examples/samples_orders_authorize_paypal_wallet_vault_id/value",
+        "/paths/~1v2~1checkout~1orders~1{id}~1authorize/post/responses/201/content/application~1json/examples/samples_orders_authorize_paypal_wallet_vault_id/value/status",
+        "/paths/~1v2~1checkout~1orders~1{id}~1authorize/post/responses/201/content/application~1json/examples/samples_orders_authorize_paypal_wallet_vault_id/value/purchase_units/0/payments/authorizations/0/status"
+      ]
+    },
+    {
+      "url": "https://developer.paypal.com/api/payments/v2/schema.json",
+      "retrieved_at_utc": "2026-10-23T14:56:10.090301+00:00",
+      "response_sha256": "c2c95b3b8a4baca873712cc72cc63240ba95f0627aae12614526a2c17792803a",
+      "response_bytes": 349163,
+      "response_retained": false,
+      "schema_version": "2.12",
+      "extract_file": "payments.extract.json",
+      "extract_sha256": "e1978c3bbc3a60bb30a2737cf65e80344cb5ca948888c49c661e6e97669ada3f",
+      "extract_bytes": 1242,
+      "json_pointers": [
+        "/info/title",
+        "/info/version",
+        "/components/parameters/paypal_request_id",
+        "/paths/~1v2~1payments~1authorizations~1{authorization_id}~1capture/post/operationId",
+        "/paths/~1v2~1payments~1authorizations~1{authorization_id}~1capture/post/parameters/1",
+        "/paths/~1v2~1payments~1authorizations~1{authorization_id}~1void/post/operationId",
+        "/paths/~1v2~1payments~1authorizations~1{authorization_id}~1void/post/parameters/3"
+      ]
+    },
+    {
+      "url": "https://developer.paypal.com/api/payment-tokens/v3/schema.json",
+      "retrieved_at_utc": "2026-10-23T14:56:10.464895+00:00",
+      "response_sha256": "8bf036030c40ddd843b0ed8fdbf8f71f11a4960936e87633dfe64f1a9c9be5ab",
+      "response_bytes": 182974,
+      "response_retained": false,
+      "schema_version": "3.5",
+      "extract_file": "vault.extract.json",
+      "extract_sha256": "c5a391b7d76b677c4102f3c53cd6c04369ff00d97eb9559ee66f49d421c042dc",
+      "extract_bytes": 1415,
+      "json_pointers": [
+        "/info/title",
+        "/info/version",
+        "/components/parameters/paypal_request_id",
+        "/paths/~1v3~1vault~1setup-tokens/post/operationId",
+        "/paths/~1v3~1vault~1setup-tokens/post/parameters/1",
+        "/paths/~1v3~1vault~1payment-tokens/post/operationId",
+        "/paths/~1v3~1vault~1payment-tokens/post/parameters/1",
+        "/info/description"
+      ]
+    }
+  ]
+}

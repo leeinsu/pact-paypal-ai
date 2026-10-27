@@ -29,7 +29,11 @@ _Avoid_: 모든 대화 원문, 품질 보증서
 _Avoid_: 일반 거래 위임장, 무제한 분쟁 처리 권한
 
 **최종 거래 합의서**:
-두 개인 에이전트가 같은 내용에 서명한 거래 문서다. 거래 역할, 금액, 통화, 양쪽의 의무, 완료 기준, 기한, 취소·환불 조건과 양쪽 위임장 식별값을 담는다.
+The final transaction agreement contains the same canonical bytes signed by both Personal Agents.
+It binds roles, integer JPY amount, obligations, completion criteria, deadline, cancellation, refund, delivery, and retention conditions.
+It also binds both Mandates, transaction ID, account binding version, merchant, input hash, and rule hash and version.
+The negotiated image amendment adds the image request hash, exact dimensions, and region counts.
+Both signatures are prerequisites, but finalization occurs only at the finalization commit.
 _Avoid_: 대화 요약, 한쪽만 서명한 주문서
 
 **거래 규칙서**:
@@ -65,7 +69,10 @@ _Avoid_: 에이전트 서명 열쇠, 서버가 보관하는 사용자 비밀 열
 _Avoid_: 사용자 서명 열쇠
 
 **위임 취소 기록**:
-특정 위임으로 새 거래를 확정할 수 없음을 사용자가 서명해 공개한 기록이다. 최종 합의 직전에 최신 기록을 확인해야 한다.
+A revocation record is a signed user record that prevents new finalization under the referenced Mandate.
+The server checks it inside the finalization transaction.
+Revocation committed first rejects finalization.
+A later revocation does not erase a previously committed agreement.
 _Avoid_: 이미 확정된 거래의 자동 취소
 
 **복구 열쇠**:
@@ -73,17 +80,83 @@ _Avoid_: 이미 확정된 거래의 자동 취소
 _Avoid_: 중앙 관리자의 임의 복구 권한
 
 **공개 기록판**:
-위임 발급, 위임 취소와 최종 거래 확정의 순서를 확인할 수 있는 변경 감지형 기록이다. 문서 원문 대신 확인값, 기록 종류, 서명자, 순서와 시각을 공개한다.
+The public ordering record exposes hashes, record types, signer references, sequence, and timestamps without original documents or payment secrets.
+SQLite commit order determines revocation and finalization in this implementation.
+Signed receipts permit comparison against retained copies, not proof against consistent server lies or collusion.
 _Avoid_: 거래 원문 공개, 비밀 증거 저장소
 
 **긴급 정지**:
-열쇠 탈취가 의심될 때 사용자가 새 거래 확정, 아직 실행하지 않은 결제와 새 증거 제출을 멈추는 조치다. 이미 생긴 거래 의무를 자동으로 없애지는 않는다.
+Emergency stop prevents new finalization, new payment submission commits, and new evidence submissions.
+A payment submission commit recorded first preserves that existing payment intent, even before HTTP transmission.
+Later stop does not cancel that intent or erase existing obligations.
 _Avoid_: 기존 거래의 자동 취소, 분쟁 확정
 
 **보관 종료일**:
-거래 증거를 정상적으로 삭제할 수 있는 가장 이른 날이다. PayPal 분쟁 가능 기간과 필요한 의무 보관 기간보다 짧을 수 없으며 진행 중인 분쟁이 있으면 연장된다.
+The retention end date is the earliest permitted deletion date under applicable dispute periods and required retention obligations.
+Disputes, unknown payment results, and objections suspend related evidence deletion.
+The server records an applicable new date after those holds end.
 _Avoid_: 모든 자료의 영구 보관, 분쟁 중 자동 삭제
 
 **사용자 백업**:
 개인 에이전트가 자기 사용자의 거래 자료를 사용자가 선택한 저장소에 암호화해 복사하는 선택 기능이다. 사용자가 복호화 열쇠를 관리하며 백업 저장소는 거래 기록의 신뢰 근거가 아니다.
 _Avoid_: 상대방의 비공개 자료 복사, 암호화하지 않은 외부 저장
+
+## GD terms adopted on 2026-10-24
+
+**Account binding version**:
+An immutable server record links a Principal to the buyer identity and payment token obtained during consent.
+The signed agreement references this version, which account changes cannot overwrite.
+_Avoid_: caller-selected token, mutable account alias
+
+**Merchant registration**:
+A server record links the provider Principal to the fixed PayPal merchant identity.
+_Avoid_: agent-selected payee, proof of account ownership from a signature alone
+
+**Finalization commit**:
+The database commit validates both signed Mandates, reserves both original period limits, and records the agreement in order.
+Revocation, expiry, stop, and limit checks occur in that same transaction.
+_Avoid_: last signature time, HTTP payment transmission
+
+**Reservation**:
+An agreement amount remains withheld from its original Mandate period limit until confirmed consumption or confirmed release.
+Unknown payment results retain reservations.
+Release requires confirmed nonpayment and impossibility of payment through the existing path.
+_Avoid_: PayPal authorization, automatic release after timeout
+
+**Payment submission commit**:
+The database commit validates payment conditions and records the immutable payment intent before the external request.
+It rechecks stop, deadline, accepted output, account ownership, and delegated authority.
+A later stop or agreement deadline expiry does not cancel this existing intent.
+_Avoid_: PayPal receipt time, finalization commit
+
+**Unknown payment result**:
+The available evidence cannot confirm payment success or payment impossibility.
+Reservations remain active while supported recovery or evidence review seeks an outcome.
+_Avoid_: assumed payment failure, permission to create another order
+
+**Delivery retry**:
+The system attempts to provide the same paid output file again without another payment.
+_Avoid_: replacement payment, automatic refund
+
+The [GD adoption record](docs/feasibility/gd-reconciliation-20261024.md) records the definition changes and language review.
+Unchanged Korean entries retain their existing meanings.
+
+## Negotiated image terms adopted on 2026-10-24
+
+**Submission request**:
+A submission request specifies source dimensions, background RGB, and the complete versioned image rule before final agreement.
+_Avoid_: provider-selected completion criteria
+
+**Raster operation**:
+A raster operation changes explicitly defined pixels without identifying products, shadows, or photographic quality.
+_Avoid_: semantic background removal, product recognition
+
+**Preflight**:
+Preflight checks exact source bytes against a submission request before final agreement or payment authorization.
+_Avoid_: payment approval, provider assertion
+
+**Image terms**:
+Image terms bind the submission request, source, rule, dimensions, and region counts into the final transaction agreement.
+_Avoid_: unsigned replacement agreement
+
+The [negotiated image amendment](docs/feasibility/negotiated-image-contract-20261024.md) records the scope change and language review.

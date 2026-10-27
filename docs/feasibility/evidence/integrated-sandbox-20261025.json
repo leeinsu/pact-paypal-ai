@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-25",
+  "scope": "One normal transaction with actual account consent, signed browser Mandates, Gemini negotiation, image checking, and Sandbox payment. G3 and G4 remain open.",
+  "tests": {
+    "executed": 515,
+    "skipped": [],
+    "failures": 0,
+    "failure_class": "none"
+  },
+  "full_suite_seconds": 44.566,
+  "javascript_syntax_check": true,
+  "diff_whitespace_check": true,
+  "model_calls": 3,
+  "negotiation_status": "finalized",
+  "candidate_amounts_jpy": [
+    5,
+    6
+  ],
+  "final_amount_jpy": 6,
+  "input_kind": "Synthetic 100-by-100 test fixture. No photographic or customer-value claim.",
+  "private_state_counts": {
+    "orders": 1,
+    "authorizations": 1,
+    "capture_intents": 1,
+    "settlements": 1,
+    "fulfillment_attempts": 1,
+    "consumptions": 2,
+    "reservations": 0
+  },
+  "live_browsers": {
+    "buyer_paid_visible": true,
+    "provider_paid_visible": true,
+    "buyer_output_download_status": 200,
+    "provider_output_download_status": 200,
+    "both_output_hashes_match": true,
+    "lookup_completion_status": true,
+    "activity_completion_status": true
+  },
+  "repeat_worker": {
+    "same_paid_result": true,
+    "additional_capture_intents": 0,
+    "additional_settlements": 0,
+    "additional_fulfillment_attempts": 0
+  },
+  "offline_verification": {
+    "transaction_id": "sandbox-ai-20261025-01",
+    "signatures_verified": true,
+    "record_count": 10,
+    "retained_checkpoint_verified": false,
+    "output_verified": true,
+    "server_payment_assertion": "paid",
+    "paypal_settlement_verified": false
+  },
+  "authorization_jpy": 2500,
+  "historical_conservative_consumption_jpy": 4,
+  "step_consumption_jpy": 6,
+  "cumulative_conservative_consumption_jpy": 10,
+  "remaining_authorization_jpy": 2490,
+  "artifact_sha256": {
+    "pact/http.py": "f7431868236522e3013f7d8fdc7f18838327020677318562c247f4d2b4ffa899",
+    "pact/accounts.py": "7c1a78402fc0b027f87ecb021d0cdb8cddddf631949aa44b7881570488ff6ee0",
+    "pact/paypal.py": "8a187106a58a6ee5eaf0d0e841067c06c3d1ca1346d92a2e153052c589b9e329",
+    "pact/web/app.js": "989f77f19e58faa3d94bcd7511300cc26de5b0a0a0eefd7725a6b090d2ea7473",
+    "pact/web/index.html": "27b81591754fa5a8f1fdac8a2cd045caa81c15da662417a2b77a466119d1fb95",
+    "acceptance/transaction/test_buyer_accounts.py": "d2efe4ebcae5724f83f137c8ccb317214015aeada85baa3b56d7df9a55116152",
+    "docs/feasibility/integrated-sandbox-20261025.md": "f304d2de1daee852f13883ac2fd893bedc4dfad1c11fa78276dba17a02f4d77f",
+    "docs/feasibility/buyer-vault-live-20261025.md": "ca635a9480f883798e2b9cd55e704b304e018ccac4c0ab380d489630bb8d7198",
+    "README.md": "44e9e9640e88427f9423cd87c858e9082ebe2a1c51a809e65a36821bc3727fcf",
+    "docs/feasibility/user-checklist.ko.md": "87a79f06c49d15086bd93e50e487570a9cdc04b122b1d4321cb1125c6b5dddd1"
+  },
+  "language_review": {
+    "scope": "Changed English Markdown and interface messages. Korean checklist follows the existing user exception.",
+    "formal_compliance_claim": false
+  },
+  "focused_browser_asset_tests": {
+    "executed": 7,
+    "failures": 0,
+    "seconds": 0.624
+  }
+}

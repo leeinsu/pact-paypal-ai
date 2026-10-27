@@ -1,3 +1,9 @@
-# 거래 객체는 양측이 독립적으로 검증할 수 있어야 한다
+# Verify signatures independently and state server trust
 
-Mandate, 제안, 최종 합의와 자동 이행 확인 결과는 중앙 PACT 서버 없이도 서명과 확인값을 검증할 수 있어야 한다. 참조 서버는 메시지 전달과 PayPal 연결을 담당하지만 신뢰의 근원은 아니다.
+Both parties can verify signatures and hashes on Mandates, proposals, agreements, and checker records without the PACT server.
+The server remains trusted for account bindings, authenticated PayPal readbacks, and payment orchestration.
+A server signature proves the server made an assertion, not that PayPal signed the agreement.
+PACT does not detect consistent server lies or collusion merely through signed receipts.
+
+GD amendment adopted on 2026-10-24.
+See the [adoption record](../feasibility/gd-reconciliation-20261024.md) and [glossary](../../GLOSSARY.md).

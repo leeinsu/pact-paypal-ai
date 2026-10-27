@@ -1,0 +1,63 @@
+{
+  "account_mutation_requests": 0,
+  "artifacts": {
+    "README.md": "d697922ea8203b8c8ef3205b567c35ad915462cd4197f2167fd52dfd7c9368fb",
+    "acceptance/transaction/test_accounts.py": "c9ccaf3c3927289b5cb90c48ff6dd649803097bcf3b93513b880775a48982fbc",
+    "docs/feasibility/g3-merchant-linkage-20261024.md": "04c017d47908c72b6b06ca43b042549f78e08b21cc5c5c9550193d99546956f3",
+    "docs/pact-revision-proposal.md": "9c4d0d46f4e247f23e5f7d7eab3ee95b4b409ae88c6c611c55a9c01ca23a841b",
+    "pact/accounts.py": "ccda0b3077c9da8f36ef772f1981c8da6c4df457dab4e8035187266dc06cffb6",
+    "pact/auth.py": "44bbebc6ba222eefeeda4445d70ed9b64529ef1e009a7b852b5c1ce9ae564c76",
+    "pact/http.py": "1d7a6024948ed15356a4180fddbedb18aad29e1dee32d46c3919ce386baaee98",
+    "pact/paypal.py": "dc37b81d5d3a295cae716dd48d8d6fd3272401e9c1d89f8075ad7388e93abb98"
+  },
+  "command": "PATH=\"/tmp/pact-opencv-venv/bin:$PATH\" DEVFLOW_TEST_RESULT=/tmp/pact-g3-merchant-linkage-tests.json ./verify.sh",
+  "credential_access": false,
+  "documentation_sources": [
+    "https://developer.paypal.com/log-in/build/",
+    "https://developer.paypal.com/log-in/references/",
+    "https://developer.paypal.com/api/identity/v1/userinfo-get",
+    "https://developer.paypal.com/api/identity/v1/schema.json"
+  ],
+  "exit_code": 0,
+  "g2_freeze_sha256": "d6698d24443725123ec9363bb782193442371904746fdc7fd36bace882715c29",
+  "language_review": "Reviewed changed English prose and glossary terms. No additional exceptions. No formal ASD-STE100 compliance claim.",
+  "local_test_external_requests": 0,
+  "local_tests": {
+    "executed": 442,
+    "failure_class": "none",
+    "failures": 0,
+    "skipped": []
+  },
+  "new_tests": {
+    "merchant_linkage_and_user_transport": 16
+  },
+  "payment_requests": 0,
+  "recorded_at_utc": "2026-10-24T11:05:52.538140+00:00",
+  "scope": "Session-bound merchant consent, isolated user token exchange, and atomic device-signed registration. Actual account ownership remains unverified. G3 remains open.",
+  "test_log_sha256": "7f58d51dd6ba36657fa51c989cb978645ae7850361fe67c53a98f9b349770670",
+  "unchanged_g2_repository_artifacts": 97,
+  "unchanged_g2_runtime_binaries": 3,
+  "unverified": [
+    "Actual Sandbox user login",
+    "App Return URL configuration",
+    "Direct payer_id response",
+    "Buyer Vault registration"
+  ],
+  "verified_baselines": {
+    "authentication": 8,
+    "conditions": 13,
+    "detail": 6,
+    "http": 6,
+    "http-records": 9,
+    "notifications": 6,
+    "offline-records": 6,
+    "operations": 12,
+    "payments": 10,
+    "readback": 5,
+    "records": 6,
+    "reservations": 6,
+    "signed-flow": 11,
+    "submission": 9,
+    "transport": 18
+  }
+}

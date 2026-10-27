@@ -1,3 +1,9 @@
-# 분쟁 대응에는 별도 위임을 요구한다
+# Require separate authority for dispute submission
 
-일반 거래 권한은 PayPal 분쟁 자료의 자동 제출 권한을 포함하지 않는다. 개인 에이전트는 사용자가 별도의 분쟁 대응 위임장을 발급한 경우에만 허용된 분쟁 유형과 금액 범위 안에서 자료를 자동 제출할 수 있다.
+A transaction Mandate does not authorize automatic PayPal dispute submission.
+Any future submission requires a separate dispute Mandate with explicit dispute types and amount limits.
+The demonstration exports permitted evidence only.
+It does not call the Disputes API or claim submission, acceptance, or a favorable decision.
+
+GD amendment adopted on 2026-10-24.
+See the [adoption record](../feasibility/gd-reconciliation-20261024.md) and [glossary](../../GLOSSARY.md).

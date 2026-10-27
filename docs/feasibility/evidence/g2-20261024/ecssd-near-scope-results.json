@@ -1,0 +1,88 @@
+{
+  "recorded_at": "2026-10-23T16:39:37.414304+00:00",
+  "purpose": "Input rejection calibration only. No normal outputs or attacks were generated.",
+  "visual_labels_sha256": "3bf8c8022bd02979ba3b1e5546268f292eab2c02a7dab57e6e276eb6afdd552d",
+  "reference_masks_sent_to_checker": false,
+  "artifact_sha256": {
+    "feasibility/g2-rule.v2.json": "f4278948fc853c2f8f3ffb4f126cf216793d1621ace0926b3e5d6e6607df60f7",
+    "feasibility/g2_checker.py": "51a585f7ad158768a2937b88791c304d15f4f6e8b3fc1d5cc234b84412a772a2",
+    "feasibility/png.py": "e9b3db336592dae24ea8f412fa71c757238dd01ee2e50f7afa1915a570a8b680"
+  },
+  "results": [
+    {
+      "calibration_id": "0837",
+      "independent_support": "unsupported",
+      "checker_result": {
+        "status": "unsupported",
+        "input_sha256": "01ea036e236dfa177b6872ce14e801141ee3a93309fb4d9afb856e5d3bc19463",
+        "width": 400,
+        "height": 283,
+        "rule_id": "g2-v2",
+        "region_counts": {
+          "total": 113200,
+          "background": 9554,
+          "foreground_candidate": 61401,
+          "foreground": 56597,
+          "uncertain": 47049,
+          "foreground_components": 139
+        },
+        "reason_codes": [
+          "perimeter_not_uniform",
+          "foreground_components_not_one",
+          "uncertain_region_exceeds_limit",
+          "input_boundary_ambiguous"
+        ]
+      }
+    },
+    {
+      "calibration_id": "0590",
+      "independent_support": "unsupported",
+      "checker_result": {
+        "status": "unsupported",
+        "input_sha256": "d51b4865ae0d1c1199bc004f3f5fece8f94743d891e2a0b972751b395eb68d10",
+        "width": 400,
+        "height": 267,
+        "rule_id": "g2-v2",
+        "region_counts": {
+          "total": 106800,
+          "background": 11882,
+          "foreground_candidate": 51347,
+          "foreground": 48129,
+          "uncertain": 46789,
+          "foreground_components": 18
+        },
+        "reason_codes": [
+          "perimeter_not_uniform",
+          "foreground_components_not_one",
+          "uncertain_region_exceeds_limit",
+          "input_boundary_ambiguous"
+        ]
+      }
+    },
+    {
+      "calibration_id": "0869",
+      "independent_support": "unsupported",
+      "checker_result": {
+        "status": "unsupported",
+        "input_sha256": "a491707b85819b90aa5cc06f4a687f8b29c97e74570f86a702a4942b049ca62e",
+        "width": 400,
+        "height": 400,
+        "rule_id": "g2-v2",
+        "region_counts": {
+          "total": 160000,
+          "background": 261,
+          "foreground_candidate": 144002,
+          "foreground": 133787,
+          "uncertain": 25952,
+          "foreground_components": 273
+        },
+        "reason_codes": [
+          "perimeter_not_uniform",
+          "foreground_components_not_one",
+          "uncertain_region_exceeds_limit",
+          "input_boundary_ambiguous"
+        ]
+      }
+    }
+  ]
+}

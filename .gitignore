@@ -1,0 +1,15 @@
+sandbox.env
+gemini.env
+/AGENTS.md
+.playwright-mcp/
+.g2-evaluator/
+__pycache__/
+*.py[cod]
+.venv/
+docs/feasibility/evidence/*-baseline-*/
+*.sqlite
+*.sqlite3
+*.sqlite-*
+payment.key
+images.key
+records.key

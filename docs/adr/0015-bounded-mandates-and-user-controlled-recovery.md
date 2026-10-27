@@ -1,3 +1,15 @@
-# 모든 위임의 피해 범위를 제한한다
+# Bound Mandates and preserve period reservations
 
-모든 위임장은 거래 한 건의 최대 금액, 일정 기간의 최대 합계, 허용 거래 종류와 만료 시각을 포함한다. 필요하면 허용 상대도 제한한다. 사용자는 별도로 보관한 복구 열쇠로 사용자 서명 열쇠를 바꿀 수 있다. 기존 열쇠나 복구 열쇠가 서명하지 않은 변경은 인정하지 않으며 두 열쇠를 모두 잃으면 새 거래 신원을 만든다.
+Each Mandate specifies transaction and period limits, permitted tasks, roles, currency, expiry, and any counterparty restriction.
+Amounts are integer JPY yen.
+Each original period must satisfy consumed amount plus reserved amount plus the new amount at or below its limit.
+Reservations remain in their original periods across period boundaries and unknown payment results.
+The provider limit bounds total agreed transaction amounts.
+Refunds do not automatically restore period consumption.
+A separate recovery key can authorize replacement of a user signing key.
+A replacement requires the existing user key or recovery key signature.
+Losing both keys requires a new transaction identity.
+Key recovery remains outside the core demonstration path.
+
+GD amendment adopted on 2026-10-24.
+See the [adoption record](../feasibility/gd-reconciliation-20261024.md) and [glossary](../../GLOSSARY.md).

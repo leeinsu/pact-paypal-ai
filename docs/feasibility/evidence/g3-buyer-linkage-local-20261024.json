@@ -1,0 +1,62 @@
+{
+  "account_mutation_requests": 0,
+  "artifacts": {
+    "README.md": "a18074d22b8d686de47a8968e13960628ae4a3bd54ffb7146631950b0dd7bc1e",
+    "acceptance/transaction/test_buyer_accounts.py": "1fffcf43e0a3d7f954cd8649f956f7a9379c445a97d8d9733c5d7f06b9c809dc",
+    "docs/feasibility/g3-buyer-linkage-20261024.md": "8b16789ec825a1ab7d9da173752bd97c052aedad6985998109219b8de452f5b8",
+    "docs/pact-revision-proposal.md": "73be6dca76f12f50357a272e4090d309079ff3becf4ebb621b4ad866399367a9",
+    "pact/accounts.py": "9fd2ad642ee276fad8f907b965d6ad4ce3adf6fa7951e4f082c82433ec809cdd",
+    "pact/http.py": "c53325cd1e8ea1ed2d6fd5779231cf15600de8faaf8445bc66a1eff82707a108",
+    "pact/paypal.py": "9d7263f2f539da9c937e4362db7d91da506d02b7df3abc42ef6b691d14a2626f"
+  },
+  "command": "PATH=\"/tmp/pact-opencv-venv/bin:$PATH\" DEVFLOW_TEST_RESULT=/tmp/pact-g3-buyer-linkage-tests.json ./verify.sh",
+  "credential_access": false,
+  "documentation_sources": [
+    "https://developer.paypal.com/api/payment-tokens/v3/schema.json",
+    "https://developer.paypal.com/api/payment-tokens/save-without-purchase/paypal/"
+  ],
+  "exit_code": 0,
+  "g2_freeze_sha256": "d6698d24443725123ec9363bb782193442371904746fdc7fd36bace882715c29",
+  "language_review": "Reviewed changed English prose and glossary terms. No additional exceptions. No formal ASD-STE100 compliance claim.",
+  "local_test_external_requests": 0,
+  "local_tests": {
+    "executed": 462,
+    "failure_class": "none",
+    "failures": 0,
+    "skipped": []
+  },
+  "new_tests": {
+    "buyer_linkage_and_vault_transport": 20
+  },
+  "payment_requests": 0,
+  "recorded_at_utc": "2026-10-24T11:36:18.305914+00:00",
+  "scope": "Fresh session-bound buyer Vault consent and atomic device-signed payment source registration. Actual integrated consent remains unverified. G3 remains open.",
+  "test_log_sha256": "163c17dfbf2dd4352319da767991d715426cdd592cd457ab0ec24350235723e9",
+  "unchanged_g2_repository_artifacts": 97,
+  "unchanged_g2_runtime_binaries": 3,
+  "unverified": [
+    "Actual integrated Sandbox Vault consent",
+    "Actual callback parameters and approval URL shape",
+    "Actual buyer identity attributes",
+    "Merchant Identity API discrepancy",
+    "Automatic cleanup of orphaned Vault tokens"
+  ],
+  "verified_baselines": {
+    "authentication": 8,
+    "conditions": 13,
+    "detail": 6,
+    "http": 6,
+    "http-records": 9,
+    "merchant-linkage": 8,
+    "notifications": 6,
+    "offline-records": 6,
+    "operations": 12,
+    "payments": 10,
+    "readback": 5,
+    "records": 6,
+    "reservations": 6,
+    "signed-flow": 11,
+    "submission": 9,
+    "transport": 18
+  }
+}

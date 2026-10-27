@@ -1,0 +1,149 @@
+{
+  "experiment": "g1-response-loss-recovery-20261024",
+  "local_test_date": "2026-10-24",
+  "local_timezone": "Asia/Seoul",
+  "api_host": "api-m.sandbox.paypal.com",
+  "scope": "One JPY 1 capture with a discarded response and recovery in a separate process",
+  "integration_test_passed": true,
+  "g1_passed": false,
+  "user_instruction": "2500엔 한도 내에서는 얼마든지 테스트해도 된다.",
+  "amount": {
+    "currency": "JPY",
+    "additional_test_budget": 2500,
+    "previous_additional_budget_used": 2,
+    "authorized_this_experiment": 1,
+    "captured_this_experiment": 1,
+    "budget_used_conservatively": 3,
+    "remaining_test_budget_conservatively": 2497,
+    "additional_captured_total": 2,
+    "additional_voided_total": 1,
+    "earlier_separate_capture": 5000,
+    "paypal_account_balance_or_limit_verified": false
+  },
+  "fault": {
+    "capture_intent_persisted_before_send": true,
+    "capture_response_body_read": false,
+    "capture_response_file_exists": false,
+    "capture_id_known_before_recovery": false,
+    "capture_outcome_before_recovery": "unknown",
+    "process_exited_before_recovery": true,
+    "mechanism": "Close the HTTP response without reading its body. Exit before persisting status or capture identifiers.",
+    "limit": "The HTTP connection returned response headers. This experiment does not simulate every transport failure."
+  },
+  "recovery": {
+    "new_process": true,
+    "new_oauth_token": true,
+    "payment_mutations_repeated": false,
+    "new_orders_during_recovery": 0,
+    "capture_requests_total": 1,
+    "order_readback_status": "COMPLETED",
+    "order_authorization_status": "CAPTURED",
+    "order_capture_status": "COMPLETED",
+    "capture_readback_status": "COMPLETED",
+    "capture_id_discovered_from_existing_order": true,
+    "amount_currency_buyer_merchant_and_links_verified": true,
+    "browser_interactions": 0,
+    "unique_mutation_request_ids": true
+  },
+  "cleanup": {
+    "oauth_tokens_persisted": false,
+    "restricted_evidence_permissions": "Directories 0700. Files 0600.",
+    "saved_wallet_retained": true,
+    "no_new_consent_context": true
+  },
+  "artifact_hashes": {
+    "runner_sha256": "ab1e1a180bdde8d404eb6f7d9e1c6c7d8243c829c00e1d3147e84d4bf455d929",
+    "checker_sha256": "0cec5748cad025cfc2ebc2c114c0824c405edc03020226209feee6675d9a82e3",
+    "order_readback_sha256": "4326db1d36c8727f33f71141355cbd69bf03bf1620d676d299197d879012c5d2",
+    "capture_readback_sha256": "cb0cdd76c898d5ca435bd919bcd8b1c63f5783d3864e2b54037378acc89a973a"
+  },
+  "limitations": [
+    "Independent review remains absent.",
+    "This experiment covers a known order and authorization with a lost capture response.",
+    "Unknown order creation, missing authorization identifiers, and retention expiry remain untested.",
+    "The helper validates readback. It does not implement a durable payment worker or G3 reservation recovery.",
+    "JP merchant country and production eligibility remain independently unverified."
+  ],
+  "events": [
+    {
+      "operation": "oauth",
+      "method": "POST",
+      "http_status": 200,
+      "status": null,
+      "recorded_at": "2026-10-23T15:49:11.299456+00:00",
+      "endpoint_template": "/v1/oauth2/token"
+    },
+    {
+      "operation": "payment_token",
+      "method": "GET",
+      "http_status": 200,
+      "status": null,
+      "recorded_at": "2026-10-23T15:49:12.048030+00:00",
+      "endpoint_template": "/v3/vault/payment-tokens/{payment_token_id}"
+    },
+    {
+      "operation": "order_create",
+      "method": "POST",
+      "http_status": 201,
+      "status": "CREATED",
+      "recorded_at": "2026-10-23T15:49:13.114571+00:00",
+      "endpoint_template": "/v2/checkout/orders"
+    },
+    {
+      "operation": "order_before",
+      "method": "GET",
+      "http_status": 200,
+      "status": "CREATED",
+      "recorded_at": "2026-10-23T15:49:13.856975+00:00",
+      "endpoint_template": "/v2/checkout/orders/{order_id}"
+    },
+    {
+      "operation": "order_authorize",
+      "method": "POST",
+      "http_status": 201,
+      "status": "COMPLETED",
+      "recorded_at": "2026-10-23T15:49:15.916475+00:00",
+      "endpoint_template": "/v2/checkout/orders/{order_id}/authorize"
+    },
+    {
+      "operation": "order_after",
+      "method": "GET",
+      "http_status": 200,
+      "status": "COMPLETED",
+      "recorded_at": "2026-10-23T15:49:16.763868+00:00",
+      "endpoint_template": "/v2/checkout/orders/{order_id}"
+    },
+    {
+      "operation": "authorization_before",
+      "method": "GET",
+      "http_status": 200,
+      "status": "CREATED",
+      "recorded_at": "2026-10-23T15:49:17.610932+00:00",
+      "endpoint_template": "/v2/payments/authorizations/{authorization_id}"
+    },
+    {
+      "operation": "recovery_oauth",
+      "method": "POST",
+      "http_status": 200,
+      "status": null,
+      "recorded_at": "2026-10-23T15:49:23.668508+00:00",
+      "endpoint_template": "/v1/oauth2/token"
+    },
+    {
+      "operation": "order_recovery",
+      "method": "GET",
+      "http_status": 200,
+      "status": "COMPLETED",
+      "recorded_at": "2026-10-23T15:49:24.519011+00:00",
+      "endpoint_template": "/v2/checkout/orders/{order_id}"
+    },
+    {
+      "operation": "capture_recovery",
+      "method": "GET",
+      "http_status": 200,
+      "status": "COMPLETED",
+      "recorded_at": "2026-10-23T15:49:25.769878+00:00",
+      "endpoint_template": "/v2/payments/captures/{capture_id}"
+    }
+  ]
+}

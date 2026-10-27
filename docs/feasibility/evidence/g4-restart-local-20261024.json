@@ -1,0 +1,43 @@
+{
+  "actual_sandbox_preflight": {
+    "application_oauth": "accepted",
+    "authorization_reset": false,
+    "callback": "https://localhost:8443/api/paypal/merchant/callback",
+    "developer_dashboard": "developer_login_required",
+    "merchant_login": "rejected_before_account_login",
+    "observed_error": "invalid client_id or redirect_uri",
+    "payment_mutations": 0,
+    "payment_token_mutations": 0,
+    "sandbox_spend_jpy": 0,
+    "specific_configuration_cause": "unverified",
+    "user_authorization_jpy": 2500
+  },
+  "additional_checks": [
+    "Output commit before capture: restart preserves the output hash without regeneration.",
+    "Capture response loss: restart restores buyer access without another payment.",
+    "Temporary output read failure: later restart downloads the same file without another payment."
+  ],
+  "artifacts": {
+    "acceptance/transaction/test_worker.py": "c1d0143283247ce9e9591e2462249c1d40928e6df3fcf18e7ba1eab52ec081fb",
+    "docs/feasibility/g4-restart-check-20261024.md": "dfedadbfd50171f266f6e3aeb69a9b9013360fd53cc9b67fff3a9e9139179284",
+    "docs/feasibility/user-checklist.ko.md": "4f916cc8e75c580d616f8deafaa41777952958a6c961f5aacc701baf73c52ae5"
+  },
+  "command": "PATH=/tmp/pact-opencv-venv/bin:$PATH DEVFLOW_TEST_RESULT=/tmp/pact-g4-restart-tests.json ./verify.sh",
+  "date": "2026-10-24",
+  "integrity": {
+    "frozen_artifacts_verified": 100,
+    "historical_baselines_verified": 21
+  },
+  "language_review": {
+    "exception": "The user requested Korean checklist prose.",
+    "formal_compliance_claimed": false,
+    "scope": "Changed English report prose and test identifiers."
+  },
+  "scope": "Local G4 restart checks and actual merchant login preflight. G3 and G4 remain open.",
+  "tests": {
+    "executed": 509,
+    "failure_class": "none",
+    "failures": 0,
+    "skipped": []
+  }
+}

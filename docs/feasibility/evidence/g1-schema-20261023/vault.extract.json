@@ -1,0 +1,25 @@
+{
+  "/info/title": "Payment Method Tokens",
+  "/info/version": "3.5",
+  "/components/parameters/paypal_request_id": {
+    "name": "PayPal-Request-Id",
+    "description": "The server stores keys for 3 hours.",
+    "in": "header",
+    "required": false,
+    "schema": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 108,
+      "pattern": "^.*$"
+    }
+  },
+  "/paths/~1v3~1vault~1setup-tokens/post/operationId": "setup-tokens.create",
+  "/paths/~1v3~1vault~1setup-tokens/post/parameters/1": {
+    "$ref": "#/components/parameters/paypal_request_id"
+  },
+  "/paths/~1v3~1vault~1payment-tokens/post/operationId": "payment-tokens.create",
+  "/paths/~1v3~1vault~1payment-tokens/post/parameters/1": {
+    "$ref": "#/components/parameters/paypal_request_id"
+  },
+  "/info/description": "The Payment Method Tokens API saves payment methods so payers don't have to enter details for future transactions. Payers can check out faster or pay without being present after they agree to save a payment method.<br><br>The API associates a payment method with a temporary setup token. Pass the setup token to the API to exchange the setup token for a permanent token.<br><br>The permanent token represents a payment method that's saved to the vault. This token can be used repeatedly for checkout or recurring transactions such as subscriptions.<br><br>The Payment Method Tokens API is available in the US only."
+}

@@ -1,0 +1,66 @@
+{
+  "experiment": "global-background-protected-intermediate-v3",
+  "purpose": "calibration diagnosis only",
+  "python": "3.13.5",
+  "holdout_accessed": false,
+  "adopted": false,
+  "artifacts": {
+    "feasibility/g2_v3_experiment.py": "b5be4ff51ab34ed1a26bb3aa39277a8bcba28630e123f8566905b45ac36eea17",
+    "feasibility/g2_checker.py": "51a585f7ad158768a2937b88791c304d15f4f6e8b3fc1d5cc234b84412a772a2",
+    "feasibility/g2-rule.v2.json": "f4278948fc853c2f8f3ffb4f126cf216793d1621ace0926b3e5d6e6607df60f7",
+    "acceptance/feasibility/test_g2_v3_experiment.py": "4ceb8cad2ca84831f06ce7f29ccb02dcfa128ae82b17cf79517c98562d438f2d"
+  },
+  "originals": [
+    {
+      "row": 28,
+      "first_experimental_result": {
+        "status": "unsupported",
+        "input_sha256": "65caabb51389f2f9af783f471bb09bf4b3956aaa629c7f517491f82332555622",
+        "width": 960,
+        "height": 960,
+        "rule_id": "experimental-g2-v3",
+        "region_counts": {
+          "total": 921600,
+          "background": 680457,
+          "foreground_candidate": 217750,
+          "foreground": 199089,
+          "uncertain": 42054,
+          "foreground_components": 52
+        },
+        "reason_codes": [
+          "foreground_components_not_one"
+        ]
+      }
+    },
+    {
+      "row": 29,
+      "first_experimental_result": {
+        "status": "unsupported",
+        "input_sha256": "ed7d6183f6cb0e9ac6fe7c7d3f9e84d7d68c489881f9fb5d3c1f02b2c03b96d9",
+        "width": 600,
+        "height": 600,
+        "rule_id": "experimental-g2-v3",
+        "region_counts": {
+          "total": 360000,
+          "background": 270095,
+          "foreground_candidate": 74037,
+          "foreground": 53355,
+          "uncertain": 36550,
+          "foreground_components": 377
+        },
+        "reason_codes": [
+          "foreground_components_not_one",
+          "uncertain_region_exceeds_limit"
+        ]
+      }
+    }
+  ],
+  "verification": {
+    "command": "./verify.sh",
+    "tests": 122,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "log_sha256": "f55dce89fc6721b5486dc772165c3089616e0caef44484bd1b01df41d5aeec7b"
+  }
+}

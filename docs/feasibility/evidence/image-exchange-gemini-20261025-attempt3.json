@@ -1,0 +1,9 @@
+{
+  "cases": [],
+  "error_code": "gemini_connection_error",
+  "live_ai": true,
+  "live_paypal": false,
+  "sandbox_spend_jpy": 0,
+  "schema_version": 1,
+  "status": "incomplete"
+}

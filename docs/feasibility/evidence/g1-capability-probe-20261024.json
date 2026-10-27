@@ -1,0 +1,30 @@
+{
+  "started_at_utc": "2026-10-23T15:04:19.803980+00:00",
+  "scope": "oauth_and_unapproved_wallet_setup_only",
+  "host": "api-m.sandbox.paypal.com",
+  "automatic_retries": false,
+  "buyer_approval_attempted": false,
+  "payment_token_exchange_attempted": false,
+  "order_creation_attempted": false,
+  "payment_authorization_attempted": false,
+  "capture_attempted": false,
+  "g1_passed": false,
+  "checks": [
+    {
+      "operation": "oauth",
+      "http_status": 200,
+      "access_token_received": true,
+      "error_codes": []
+    },
+    {
+      "operation": "wallet_setup_token",
+      "http_status": 201,
+      "setup_token_received": true,
+      "setup_status": "CREATED",
+      "approval_link_received": false,
+      "error_codes": [],
+      "usage_pattern_explicitly_selected": false
+    }
+  ],
+  "finished_at_utc": "2026-10-23T15:04:21.750667+00:00"
+}

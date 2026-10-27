@@ -1,0 +1,69 @@
+{
+  "actual_payment_requests": 0,
+  "actual_sandbox_requests": 0,
+  "artifacts": {
+    "README.md": "45629da8a0348f167621d4705247d2a18e76ca67078d091d13a4251502c136ce",
+    "acceptance/transaction/test_worker_runtime.py": "d97bdb112b442f7ab295198c9741d21ce02d7eed01642d41cfaf863acccd9df3",
+    "docs/feasibility/g3-worker-runtime-20261024.md": "4eb0a3a262e212c5939a1ea39764e4d37716987a28ed97985aac88a5c3a87d7f",
+    "docs/feasibility/user-checklist.ko.md": "1d21dc76f7ebe52048e31367fbb7931bc119739668c51b59224cb4fe3ba6bad7",
+    "pact/server.py": "7137c8131294ffe4c25caabe2db52e3d289f2b18f1c7a49a58509ec63efeedf1"
+  },
+  "command": "PATH=\"/tmp/pact-opencv-venv/bin:$PATH\" DEVFLOW_TEST_RESULT=/tmp/pact-g3-worker-runtime-tests.json ./verify.sh",
+  "credential_access": false,
+  "exit_code": 0,
+  "focused_tests": 15,
+  "g2_freeze_sha256": "d6698d24443725123ec9363bb782193442371904746fdc7fd36bace882715c29",
+  "language_review": "Reviewed changed English prose and glossary terms separately from technical verification. The Korean checklist follows the explicit user exception. No formal ASD-STE100 compliance claim.",
+  "local_tests": {
+    "executed": 484,
+    "failure_class": "none",
+    "failures": 0,
+    "skipped": []
+  },
+  "new_runtime_tests": 5,
+  "recorded_at_utc": "2026-10-24T12:13:59.901023+00:00",
+  "scope": "Explicit worker command with private persistent state and synthetic payments. G3 remains open.",
+  "test_log_sha256": "862c5ca78e3e646eb4d146cc86473721695b1eb84bd627618570dfe55a916aca",
+  "unchanged_g2_repository_artifacts": 97,
+  "unchanged_g2_runtime_binaries": 3,
+  "unverified": [
+    "Actual integrated Sandbox transaction",
+    "Autonomous agent negotiation and scheduling",
+    "Evidence retention controls",
+    "Complete demonstration"
+  ],
+  "verified_baselines": {
+    "authentication": 8,
+    "browser-consent": 9,
+    "browser-workspace": 8,
+    "buyer-linkage": 7,
+    "conditions": 13,
+    "detail": 6,
+    "http": 6,
+    "http-records": 9,
+    "local-runtime": 5,
+    "merchant-linkage": 8,
+    "notifications": 6,
+    "offline-records": 6,
+    "operations": 12,
+    "payments": 10,
+    "readback": 5,
+    "records": 6,
+    "reservations": 6,
+    "signed-flow": 11,
+    "submission": 9,
+    "transport": 18
+  },
+  "verified_conditions": [
+    "Persistent application reconstruction",
+    "No duplicate payment after repeated execution",
+    "Paid output hash preservation",
+    "Uncertain capture recovery without replacement",
+    "Stop before external requests",
+    "Unknown transaction rejection",
+    "Service origin mismatch rejection",
+    "Invalid port rejection",
+    "Interruption warning without secret exception details",
+    "No HTTP listener from worker execution"
+  ]
+}

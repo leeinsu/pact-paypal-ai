@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "stage": "pre_calibration_baseline",
+  "gate_status": "unresolved",
+  "checker_frozen": false,
+  "evidence_class": "local",
+  "developer": "/root",
+  "evaluator": "/root/g2_independent_evaluator",
+  "runtime": "3.13.5",
+  "artifacts": {
+    "feasibility/g2_checker.py": "51a585f7ad158768a2937b88791c304d15f4f6e8b3fc1d5cc234b84412a772a2",
+    "feasibility/png.py": "e9b3db336592dae24ea8f412fa71c757238dd01ee2e50f7afa1915a570a8b680",
+    "feasibility/g2_evaluation.py": "0f49e6c089a115850d7c50fabd7583a61e3ebbdab21bf2c81e229d5a6bfd46e2",
+    "feasibility/g2-rule.v2.json": "f4278948fc853c2f8f3ffb4f126cf216793d1621ace0926b3e5d6e6607df60f7",
+    "docs/feasibility/g2-protocol.md": "68852fb46488594fe012a3550048f5ef93c1e61c78989d023061af209220e5bc"
+  },
+  "verification": {
+    "command": "python3 -B -m unittest acceptance.feasibility.test_g2_checker acceptance.feasibility.test_g2_boundary_v2 acceptance.feasibility.test_g2_evaluation acceptance.feasibility.test_evaluation_regressions acceptance.feasibility.test_png",
+    "executed": 53,
+    "failures": 0,
+    "skipped": 0,
+    "scope": "Local checker, decoder, and evidence validation tests. No independent image quality claim."
+  },
+  "constraints": [
+    "Use ten calibration originals before freezing the checker and rule.",
+    "Disclose twenty independent evaluation originals only after the freeze.",
+    "Do not provide evaluation reference masks to the generator or checker.",
+    "Retain all first-run results, including failures.",
+    "Do not claim G2 success from synthetic images or local fixtures."
+  ]
+}
