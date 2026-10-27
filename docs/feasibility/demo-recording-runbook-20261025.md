@@ -148,7 +148,8 @@ The video must last under three minutes and show the functioning project.
 The current Tailscale address provides private access and does not establish public judge access.
 The repository uses the top-level MIT License.
 The [source setup check](clean-start-20261025.md) passed fresh dependency installation, all 550 tests, and synthetic HTTPS startup.
-Fresh-account commerce setup, public repository, public video, and final submission remain unverified.
+The [public repository](https://github.com/leeinsu/pact-paypal-ai) and MIT License are available.
+Fresh-account commerce setup, public video, and final submission remain unverified.
 Do not publish credentials, private state, participant evidence packages, or browser artifacts.
 Public publication and submission have not been performed.
 

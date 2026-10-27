@@ -6,6 +6,7 @@ Contest research checked: 2026-10-19 (KST).
 - [Project glossary](./GLOSSARY.md)
 - [Source setup guide](./docs/feasibility/clean-start-20261025.md)
 - [Submission description](./docs/feasibility/submission-description-draft-20261025.md)
+- [Public source repository](https://github.com/leeinsu/pact-paypal-ai)
 
 ## Submission summary
 
@@ -127,7 +128,7 @@ The application connects those services through the source exchange and existing
 The target interface uses one transaction detail view with expandable agreement, checker, and payment evidence.
 A private [2:45 review draft](docs/feasibility/demo-recording-runbook-20261025.md) combines actual browser actions, recorded command execution, and labeled retained evidence.
 The [actual Gemini command](docs/feasibility/evidence/single-command-live-gemini-20261025.json) used synthetic PayPal responses and made no additional payment.
-Adopted demonstration acceptance and public publication remain unverified.
+The public source repository and MIT License are available for review.
 The demonstration exports evidence without Disputes API submission.
 
 The historical contest research below retains its 2026-10-19 reference date.

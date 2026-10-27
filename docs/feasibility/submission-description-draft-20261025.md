@@ -64,7 +64,7 @@ Production retention policy, external objection outcome linkage, shared-referenc
 Deletion remains disabled.
 G5 value measurements, production eligibility, and customer economics remain unverified.
 The current service address requires private access.
-The project uses the MIT License. Public repository publication and final submission remain unresolved.
+The project uses the MIT License. The [public repository](https://github.com/leeinsu/pact-paypal-ai) is available. Final submission remains unresolved.
 
 ## Language review
 
